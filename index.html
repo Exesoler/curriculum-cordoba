@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/favicon-16x16.png">
+    <link rel="manifest" href="/src/assets/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style/style.css">
+    <title>Currículum Córdoba - Proyecto en construcción</title>
+
+    
+    <!-- MS, fb & Whatsapp -->
+
+    <!-- MS Tile - for Microsoft apps-->
+    <meta name="msapplication-TileImage" content="/src/assets/android-chrome-512x512.png">    
+
+    <!-- fb & Whatsapp -->
+
+    <!-- Site Name, Title, and Description to be displayed -->
+    <meta property="og:site_name" content="Currículum Córdoba">
+    <meta property="og:title" content="Currículum Córdoba - Proyecto en construcción">
+    <!-- <meta property="og:description" content="-"> -->
+
+    <!-- Image to display -->
+    <!-- Replace   «example.com/image01.jpg» with your own -->
+    <meta property="og:image" content="/src/assets/android-chrome-512x512.png">
+
+    <!-- No need to change anything here -->
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/png">
+
+    <!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+
+    <!-- Website to visit when clicked in fb or WhatsApp-->
+    <meta property="og:url" content="https://curriculumcordoba.ar">
+
+  </head>
+  <body>
+    <header>
+      <div class="logoContainer">
+        <picture>
+          <source srcset='/src/assets/logoH.svg' type='image/svg+xml'>
+          <source srcset='/src/assets/logoH.webp' type='image/webp'>
+          <img src='/src/assets/logoH.png' type='image/png' alt='Logo de Currículum Córdoba'>
+        </picture>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#marcoCurricular"><img src="/src/assets/asideIcon__marcoCurricular.svg" type='image/svg+xml' alt="Marco Curricular Común">Marco Curricular Común</a></li>
+          <li><a href="#marcoCurricular"><img src="/src/assets/asideIcon__progresionAprendizajes.svg" type='image/svg+xml' alt="Marco Curricular Común">Progresión
+            de aprendizajes</a></li>
+          <li><a href="#marcoCurricular"><img src="/src/assets/asideIcon__metas.svg" type='image/svg+xml' alt="Marco Curricular Común">Metas 2025</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <section id="slider" class="row">
+        <div class="col-12">
+          <picture>
+            <source srcset='/src/assets/slide__marcoCurricular.webp' type='image/webp'>
+            <img src='/src/assets/slide__marcoCurricular.jpg' type='image/jpg' alt='Marco Curricular Slide'>
+          </picture>
+        </div>
+        <div class="col-auto">
+          <button class="button button--secondary">Acceder</button>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script type="module" src="/src/js/header.js"></script>
+    <!-- <script type="module" src="/src/js/main.js"></script> -->
+  </body>
+</html>
