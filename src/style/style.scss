@@ -99,13 +99,23 @@ h{
   &1,&2,&3,&4,&5,&6{
     font-family: "Fira Sans", sans-serif;
     font-weight: 600;
+    color: $color-primary;
+    &.secondary{
+      color: $color-secondary;
+    }
   }
 }
 
+img{
+  width: 100%;
+  height: auto;
+}
+
 header{
-  position: static;
+  position: sticky;
   top: 0;
-  height: 100dvh;
+  height: 100%;
+  max-height: 100dvh;
   width: 20dvw;
   background-color: $white;
   padding: 4rem 3rem;
@@ -153,6 +163,11 @@ header{
 
 main{
   padding: 4rem 3rem !important;
+  >section{
+    &:not(:last-child){
+      margin-bottom: 8rem;
+    }
+  }
 }
 
 #slider{
@@ -181,3 +196,19 @@ button,
   }
 }
 
+.destacadoItem{
+  &__picture{
+    position: relative;
+    span{
+      background-color: $white;
+      color: $color-primary;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: $border-rounded;
+      font-weight: 600;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+  }
+}

@@ -44,23 +44,7 @@
 
   </head>
   <body>
-    <header>
-      <div class="logoContainer">
-        <picture>
-          <source srcset='/src/assets/logoH.svg' type='image/svg+xml'>
-          <source srcset='/src/assets/logoH.webp' type='image/webp'>
-          <img src='/src/assets/logoH.png' type='image/png' alt='Logo de Currículum Córdoba'>
-        </picture>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#marcoCurricular"><img src="/src/assets/asideIcon__marcoCurricular.svg" type='image/svg+xml' alt="Marco Curricular Común">Marco Curricular Común</a></li>
-          <li><a href="#marcoCurricular"><img src="/src/assets/asideIcon__progresionAprendizajes.svg" type='image/svg+xml' alt="Marco Curricular Común">Progresión
-            de aprendizajes</a></li>
-          <li><a href="#marcoCurricular"><img src="/src/assets/asideIcon__metas.svg" type='image/svg+xml' alt="Marco Curricular Común">Metas 2025</a></li>
-        </ul>
-      </nav>
-    </header>
+    <header></header>
     <main class="container-fluid">
       <section id="slider" class="row">
         <div class="col-12">
@@ -73,9 +57,39 @@
           <button class="button button--secondary">Acceder</button>
         </div>
       </section>
+      <section id="destacados" class="row">
+        <div class="col-12">
+          <h2>Destacados</h2>
+        </div>
+        <div class="col-12 col-md-6 destacadoItem">
+          <div class="destacadoItem__picture">
+            <picture>
+              <source srcset='/src/assets/metasAprendizaje.webp' type='image/webp'>
+              <img src='/src/assets/metasAprendizaje.jpg' type='image/jpg' alt='Metas de aprendizaje'>
+            </picture>
+            <span>Documento</span>
+          </div>
+          <div class="destadoItem__text">
+            <h3>Metas de aprendizaje</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 destacadoItem">
+          <div class="destacadoItem__picture">
+            <picture>
+              <source srcset='/src/assets/progesionesAprendizaje.webp' type='image/webp'>
+              <img src='/src/assets/progesionesAprendizaje.jpg' type='image/jpg' alt='Progresiones de aprendizaje'>
+            </picture>
+            <span>Interactivo</span>
+          </div>
+          <div class="destadoItem__text">
+            <h3>Progresiones de aprendizaje</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
-    <script type="module" src="/src/js/header.js"></script>
-    <!-- <script type="module" src="/src/js/main.js"></script> -->
+    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

@@ -4171,12 +4171,22 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Fira Sans", sans-serif;
   font-weight: 600;
+  color: #004582;
+}
+h1.secondary, h2.secondary, h3.secondary, h4.secondary, h5.secondary, h6.secondary {
+  color: #e2464c;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 header {
-  position: static;
+  position: sticky;
   top: 0;
-  height: 100dvh;
+  height: 100%;
+  max-height: 100dvh;
   width: 20dvw;
   background-color: #fafafa;
   padding: 4rem 3rem;
@@ -4223,6 +4233,9 @@ header ul li img {
 main {
   padding: 4rem 3rem !important;
 }
+main > section:not(:last-child) {
+  margin-bottom: 8rem;
+}
 
 #slider {
   gap: 1rem;
@@ -4248,4 +4261,19 @@ button--secondary,
 button--secondary:hover,
 .button--secondary:hover {
   background-color: #712326;
+}
+
+.destacadoItem__picture {
+  position: relative;
+}
+.destacadoItem__picture span {
+  background-color: #fafafa;
+  color: #004582;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1000px;
+  font-weight: 600;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }/*# sourceMappingURL=style.css.map */
