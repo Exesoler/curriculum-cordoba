@@ -4230,8 +4230,42 @@ header ul li img {
   border-radius: 0.75rem;
 }
 
+footer .acercaContainer {
+  background-color: #ededed;
+  padding: 4rem 3rem;
+}
+footer .acercaContainer__title {
+  margin-bottom: 1rem;
+}
+footer .acercaContainer__title h2 {
+  margin: 0;
+}
+footer .acercaContainer__image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer .acercaContainer__action {
+  margin-top: 1rem;
+}
+footer .base {
+  align-items: center;
+  padding: 4rem 3rem 3rem;
+  background-color: #004582;
+  margin-top: 4rem;
+  color: #fafafa;
+  gap: 1rem;
+}
+footer .base p {
+  margin: 0;
+}
+footer .base__logo img {
+  width: 100px;
+  height: auto;
+}
+
 main {
-  padding: 4rem 3rem !important;
+  padding: 4rem 3rem 0 !important;
 }
 main > section:not(:last-child) {
   margin-bottom: 8rem;
@@ -4261,6 +4295,28 @@ button--secondary,
 button--secondary:hover,
 .button--secondary:hover {
   background-color: #712326;
+}
+button--icon,
+.button--icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #fafafa;
+  border: none;
+  padding: 1rem 0;
+  font-size: 1rem;
+  transition: all 300ms ease-in-out;
+}
+button--icon img,
+.button--icon img {
+  width: auto;
+  height: 1rem;
+}
+button--icon:hover,
+.button--icon:hover {
+  opacity: 0.7;
+  transition: all 300ms ease-in-out;
 }
 
 .destacadoItem__picture {
