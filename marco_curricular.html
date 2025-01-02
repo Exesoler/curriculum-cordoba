@@ -77,6 +77,12 @@
       <footer></footer>
     </main>
     <script src="https://unpkg.com/pdfobject"></script>
+    <script src="/src/js/pdfObject.js"></script>s
     <script type="module" src="/src/js/main.js"></script>
+    <script>
+      setTimeout(() => {
+        PDFObject.embed("/src/assets/prueba.pdf", "#pdfContainer");
+      }, 2000);
+    </script>
   </body>
 </html>
