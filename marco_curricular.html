@@ -47,7 +47,7 @@
     <header></header>
     <main class="container-fluid">
       <section class="actionVolver">
-        <button class="button button--volver">
+        <button class="button button--volver" onclick="window.location.href='index.html';">
           <img src="/src/assets/arrowBack.svg" alt="Volver icon">
           Volver
         </button>
@@ -56,7 +56,7 @@
         <div class="col-12 mainContent__title">
           <h1>Marco Curricular Común</h1>
         </div>
-        <div class="col-12 col-md-6 col-lg-8 mainContent__resume">
+        <div class="col-12 col-md-6 col-lg-7 mainContent__resume">
           <picture>
             <source srcset='/src/assets/marcoCurricular.webp' type='image/webp'>
             <img src='/src/assets/marcoCurricular.jpg' type='image/jpg' alt='Flowers'>
@@ -64,9 +64,19 @@
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
           <button class="button button--text">Ver más</button>
         </div>
+        <div class="col-12 col-md-6 col-lg-5 mainContent__image">
+          <img src="/src/assets/barrilete.png" alt="Barrilete">
+        </div>
+      </section>
+      <hr>
+      <section class="row mainContent mainContent--pdfContainer">
+        <div class="col-12">
+          <div id="pdfContainer"></div>
+        </div>
       </section>
       <footer></footer>
     </main>
+    <script src="https://unpkg.com/pdfobject"></script>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

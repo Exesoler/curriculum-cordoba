@@ -4177,6 +4177,10 @@ h1.secondary, h2.secondary, h3.secondary, h4.secondary, h5.secondary, h6.seconda
   color: #e2464c;
 }
 
+hr {
+  margin: 4rem 0;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -4337,6 +4341,9 @@ button--text,
   gap: 0.5rem;
   background-color: transparent;
   color: #004582;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
 }
 button--text:hover,
 .button--text:hover {
@@ -4360,4 +4367,28 @@ button--text:hover,
   position: absolute;
   top: 1rem;
   left: 1rem;
+}
+
+.mainContent:not(.mainContent--pdfContainer) {
+  margin-bottom: 0 !important;
+}
+.mainContent__resume {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.mainContent__resume p {
+  margin: 0;
+}
+.mainContent__image img {
+  width: auto;
+  height: 100%;
+}
+
+#pdfContainer {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 100/145;
+  border-radius: 0.75rem;
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */
