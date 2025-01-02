@@ -205,7 +205,7 @@ footer{
 main{
   padding: 4rem 3rem 0 !important;
   >section{
-    &:not(:last-child){
+    &:not(:last-child):not(.actionVolver){
       margin-bottom: 8rem;
     }
   }
@@ -225,10 +225,11 @@ button,
 .button{
   font-size: $font-size-button;
   cursor: pointer;
+  border: none;
+  transition: $transition;
   &--secondary{
     background-color: $color-secondary;
     color: $white;
-    border: none;
     padding: 1rem 3rem;
     border-radius: $border-rounded;
     &:hover{
@@ -241,19 +242,42 @@ button,
     gap: 0.5rem;
     background-color: transparent;
     color: $white;
-    border: none;
     padding: 1rem 0;
     font-size: $font-size-base;
-    transition: $transition;
     img{
       width: auto;
       height: 1rem;
     }
     &:hover{
       opacity: 0.7;
-      transition: $transition;
     }
   }
+  &--volver{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: $color-primary;
+    font-size: $font-size-sm;
+    img{
+      width: $font-size-sm;
+      height: auto;
+    }
+  }
+  &--text{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: $color-primary;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.actionVolver{
+  margin-bottom: 1rem;
 }
 
 .destacadoItem{

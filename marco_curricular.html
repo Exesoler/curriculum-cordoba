@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/style/style.css">
-    <title>Currículum Córdoba - Proyecto en construcción</title>
+    <title>Marco Curricular Común - Currículum Córdoba</title>
 
     
     <!-- MS, fb & Whatsapp -->
@@ -40,52 +40,29 @@
     <meta property="og:image:height" content="300">
 
     <!-- Website to visit when clicked in fb or WhatsApp-->
-    <meta property="og:url" content="https://curriculumcordoba.ar">
+    <meta property="og:url" content="https://curriculumcordoba.ar/marco_curricular.html">
 
   </head>
   <body>
     <header></header>
     <main class="container-fluid">
-      <section id="slider" class="row">
-        <div class="col-12">
-          <picture>
-            <source srcset='/src/assets/slide__marcoCurricular.webp' type='image/webp'>
-            <img src='/src/assets/slide__marcoCurricular.jpg' type='image/jpg' alt='Marco Curricular Slide'>
-          </picture>
-        </div>
-        <div class="col-auto">
-          <button class="button button--secondary">Acceder</button>
-        </div>
+      <section class="actionVolver">
+        <button class="button button--volver">
+          <img src="/src/assets/arrowBack.svg" alt="Volver icon">
+          Volver
+        </button>
       </section>
-      <section id="destacados" class="row">
-        <div class="col-12">
-          <h2>Destacados</h2>
+      <section class="row mainContent">
+        <div class="col-12 mainContent__title">
+          <h1>Marco Curricular Común</h1>
         </div>
-        <div class="col-12 col-md-6 destacadoItem">
-          <div class="destacadoItem__picture">
-            <picture>
-              <source srcset='/src/assets/metasAprendizaje.webp' type='image/webp'>
-              <img src='/src/assets/metasAprendizaje.jpg' type='image/jpg' alt='Metas de aprendizaje'>
-            </picture>
-            <span>Documento</span>
-          </div>
-          <div class="destadoItem__text">
-            <h3>Metas de aprendizaje</h3>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </p>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 destacadoItem">
-          <div class="destacadoItem__picture">
-            <picture>
-              <source srcset='/src/assets/progesionesAprendizaje.webp' type='image/webp'>
-              <img src='/src/assets/progesionesAprendizaje.jpg' type='image/jpg' alt='Progresiones de aprendizaje'>
-            </picture>
-            <span>Interactivo</span>
-          </div>
-          <div class="destadoItem__text">
-            <h3>Progresiones de aprendizaje</h3>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </p>
-          </div>
+        <div class="col-12 col-md-6 col-lg-8 mainContent__resume">
+          <picture>
+            <source srcset='/src/assets/marcoCurricular.webp' type='image/webp'>
+            <img src='/src/assets/marcoCurricular.jpg' type='image/jpg' alt='Flowers'>
+          </picture>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+          <button class="button button--text">Ver más</button>
         </div>
       </section>
       <footer></footer>

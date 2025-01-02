@@ -4267,7 +4267,7 @@ footer .base__logo img {
 main {
   padding: 4rem 3rem 0 !important;
 }
-main > section:not(:last-child) {
+main > section:not(:last-child):not(.actionVolver) {
   margin-bottom: 8rem;
 }
 
@@ -4283,12 +4283,13 @@ button,
 .button {
   font-size: 1.125rem;
   cursor: pointer;
+  border: none;
+  transition: all 300ms ease-in-out;
 }
 button--secondary,
 .button--secondary {
   background-color: #e2464c;
   color: #fafafa;
-  border: none;
   padding: 1rem 3rem;
   border-radius: 1000px;
 }
@@ -4303,10 +4304,8 @@ button--icon,
   gap: 0.5rem;
   background-color: transparent;
   color: #fafafa;
-  border: none;
   padding: 1rem 0;
   font-size: 1rem;
-  transition: all 300ms ease-in-out;
 }
 button--icon img,
 .button--icon img {
@@ -4316,7 +4315,36 @@ button--icon img,
 button--icon:hover,
 .button--icon:hover {
   opacity: 0.7;
-  transition: all 300ms ease-in-out;
+}
+button--volver,
+.button--volver {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #004582;
+  font-size: 0.875rem;
+}
+button--volver img,
+.button--volver img {
+  width: 0.875rem;
+  height: auto;
+}
+button--text,
+.button--text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #004582;
+}
+button--text:hover,
+.button--text:hover {
+  text-decoration: underline;
+}
+
+.actionVolver {
+  margin-bottom: 1rem;
 }
 
 .destacadoItem__picture {
