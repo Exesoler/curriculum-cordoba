@@ -71,18 +71,15 @@
       <hr>
       <section class="row mainContent mainContent--pdfContainer">
         <div class="col-12">
-          <div id="pdfContainer"></div>
+          <div id="pdfContainer">
+            <iframe src="/src/assets/prueba.pdf#toolbar=0&view=FitH" width="100%" height="100%" style="border:none" title="Embedded PDF Viewer"></iframe>
+          </div>
         </div>
       </section>
       <footer></footer>
     </main>
-    <script src="https://unpkg.com/pdfobject"></script>
-    <script src="/src/js/pdfObject.js"></script>s
+    <div class="backdrop hidden"></div>
+    <script src="/src/js/functions.js"></script>
     <script type="module" src="/src/js/main.js"></script>
-    <script>
-      setTimeout(() => {
-        PDFObject.embed("/src/assets/prueba.pdf", "#pdfContainer");
-      }, 2000);
-    </script>
   </body>
 </html>

@@ -4233,6 +4233,12 @@ header ul li img {
   background-color: #004582;
   border-radius: 0.75rem;
 }
+header .closeContainer {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  display: none;
+}
 
 footer .acercaContainer {
   background-color: #ededed;
@@ -4273,6 +4279,27 @@ main {
 }
 main > section:not(:last-child):not(.actionVolver) {
   margin-bottom: 8rem;
+}
+
+#mobileHeader {
+  display: none;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+#mobileHeader .logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mobileHeader .logoContainer picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mobileHeader .logoContainer picture img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
 }
 
 #slider {
@@ -4391,4 +4418,47 @@ button--text:hover,
   aspect-ratio: 100/145;
   border-radius: 0.75rem;
   overflow: hidden;
+}
+
+.backdrop {
+  width: 100dvw;
+  height: 100dvh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  transition: all 300ms ease-in-out;
+}
+.backdrop.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  body.noScroll {
+    overflow: hidden !important;
+  }
+  main {
+    padding: 2rem 1rem 0 !important;
+  }
+  main > section:not(:last-child):not(.actionVolver) {
+    margin-bottom: 2rem;
+  }
+  header {
+    position: absolute;
+    width: 60dvw;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: all 300ms ease-in-out;
+  }
+  header .closeContainer {
+    display: block;
+  }
+  header.hidden {
+    left: calc(-60dvw - 100px);
+  }
+  #mobileHeader {
+    display: flex;
+  }
 }/*# sourceMappingURL=style.css.map */

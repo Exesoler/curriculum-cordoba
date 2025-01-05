@@ -1,5 +1,9 @@
 export const header = () => {
+
     return `
+<div class="closeContainer">
+    <button class="button button--icon" onclick="closeMenu()"><img src="/src/assets/close.svg" type='image/svg+xml'></button>
+</div>
 <div class="logoContainer">
     <a href="index.html">
         <picture>
