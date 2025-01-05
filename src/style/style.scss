@@ -379,10 +379,15 @@ button,
     }
   }
   main{
-    padding: 2rem 1rem 0 !important;
+    padding: 2rem 0.75rem 0 !important;
     >section{
       &:not(:last-child):not(.actionVolver){
         margin-bottom: 2rem;
+      }
+    }
+    .mainContent{
+      &__image{
+        display: none;
       }
     }
   }
