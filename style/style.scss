@@ -391,6 +391,11 @@ button,
       }
     }
   }
+  .destacadoItem{
+    &:not(:last-child){
+      margin-bottom: 2rem;
+    }
+  }
   header{
     position: absolute;
     width: 60dvw;
@@ -403,6 +408,11 @@ button,
     }
     &.hidden{
       left: calc(-60dvw - 100px);
+    }
+  }
+  footer{
+    .acercaContainer{
+      padding: 2rem 0rem;
     }
   }
   #mobileHeader{

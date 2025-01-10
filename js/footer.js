@@ -1,3 +1,9 @@
+import acercadeWEBP from '../assets/acercaDe.webp';
+import acercadeJPG from '../assets/acercaDe.jpg';
+import emailSVG from '../assets/email.svg';
+import logoEducacionSVG from '../assets/logoEducacion.svg';
+import logoCordobaSVG from '../assets/logoCordoba.svg';
+
 export const footer = () => {
     return `
 <div class="row acercaContainer">
@@ -6,8 +12,8 @@ export const footer = () => {
     </div>
     <div class="col-12 col-md-6 acercaContainer__image">
         <picture>
-            <source srcset='./assets/acercaDe.webp' type='image/webp'>
-            <img src='./assets/acercaDe.jpg' type='image/jpg' alt='Acerca de Currículum Córdoba'>
+            <source srcset='${acercadeWEBP}' type='image/webp'>
+            <img src='${acercadeJPG}' type='image/jpg' alt='Acerca de Currículum Córdoba'>
         </picture>
     </div>
     <div class="col-12 col-md-6 acercaContainer__text">
@@ -22,16 +28,16 @@ export const footer = () => {
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
     </div>
     <div class="col base__action">
-        <button class="button button--icon">Contacto <img src="./assets/email.svg" alt="Email icon"></button>
+        <button class="button button--icon">Contacto <img src="${emailSVG}" alt="Email icon"></button>
     </div>
     <div class="col-auto base__logo">
         <a href="#">
-            <img style="width: 150px;" src="./assets/logoEducacion.svg" alt="Logo Ministerio de Educación de Córdoba">
+            <img style="width: 150px;" src="${logoEducacionSVG}" alt="Logo Ministerio de Educación de Córdoba">
         </a>
     </div>
     <div class="col-auto base__logo">
         <a href="#">
-            <img src="./assets/logoCordoba.svg" alt="Logo Gobierno de la provincia de Córdoba">
+            <img src="${logoCordobaSVG}" alt="Logo Gobierno de la provincia de Córdoba">
         </a>
     </div>
 </div>

@@ -4447,6 +4447,9 @@ button--text:hover,
   main .mainContent__image {
     display: none;
   }
+  .destacadoItem:not(:last-child) {
+    margin-bottom: 2rem;
+  }
   header {
     position: absolute;
     width: 60dvw;
@@ -4460,6 +4463,9 @@ button--text:hover,
   }
   header.hidden {
     left: calc(-60dvw - 100px);
+  }
+  footer .acercaContainer {
+    padding: 2rem 0rem;
   }
   #mobileHeader {
     display: flex;
