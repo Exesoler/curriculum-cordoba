@@ -23,10 +23,9 @@ export const header = () => {
 </div>
 <nav>
     <ul>
-        <li><a href="marco_curricular.html"><img src="${asideIcon__marcoCurricularSVG}" type='image/svg+xml' alt="Marco Curricular Común">Marco Curricular Común</a></li>
-        <li><a href="#"><img src="${asideIcon__progresionAprendizajesSVG}" type='image/svg+xml' alt="Marco Curricular Común">Progresión
-            de aprendizajes</a></li>
-        <li><a href="#"><img src="${asideIcon__metasSVG}" type='image/svg+xml' alt="Marco Curricular Común">Metas 2025</a></li>
+    <li><a href="#"><img src="${asideIcon__metasSVG}" type='image/svg+xml' alt="Metas por ciclo">Metas por ciclo</a></li>
+    <li><a href="marco_curricular.html"><img src="${asideIcon__marcoCurricularSVG}" type='image/svg+xml' alt="Marco Curricular Común">Marco Curricular Común</a></li>
+    <li><a href="#"><img src="${asideIcon__progresionAprendizajesSVG}" type='image/svg+xml' alt="Progresión de aprendizajes y contenidos">Progresión de aprendizajes y contenidos</a></li>
     </ul>
 </nav>
 `;}

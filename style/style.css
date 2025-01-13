@@ -4,7 +4,7 @@
   font-weight: 400;
   color-scheme: light dark;
   color: #333333;
-  background-color: #fafafa;
+  background-color: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -4192,7 +4192,7 @@ header {
   height: 100%;
   max-height: 100dvh;
   width: 20dvw;
-  background-color: #fafafa;
+  background-color: #ffffff;
   padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
@@ -4226,6 +4226,12 @@ header ul li a {
 header ul li a:hover {
   color: #e2464c;
 }
+header ul li a.active {
+  color: #e2464c;
+}
+header ul li a.active img {
+  background-color: #e2464c;
+}
 header ul li img {
   width: 2rem;
   height: auto;
@@ -4241,7 +4247,7 @@ header .closeContainer {
 }
 
 footer .acercaContainer {
-  background-color: #ededed;
+  background-color: #fbfbfb;
   padding: 4rem 3rem;
 }
 footer .acercaContainer__title {
@@ -4263,13 +4269,14 @@ footer .base {
   padding: 4rem 3rem 3rem;
   background-color: #004582;
   margin-top: 4rem;
-  color: #fafafa;
+  color: #ffffff;
   gap: 1rem;
 }
 footer .base p {
   margin: 0;
 }
 footer .base__logo img {
+  margin-left: 2rem;
   width: 100px;
   height: auto;
 }
@@ -4320,7 +4327,7 @@ button,
 button--secondary,
 .button--secondary {
   background-color: #e2464c;
-  color: #fafafa;
+  color: #ffffff;
   padding: 1rem 3rem;
   border-radius: 1000px;
 }
@@ -4334,7 +4341,7 @@ button--icon,
   align-items: center;
   gap: 0.5rem;
   background-color: transparent;
-  color: #fafafa;
+  color: #ffffff;
   padding: 1rem 0;
   font-size: 1rem;
 }
@@ -4385,7 +4392,7 @@ button--text:hover,
   position: relative;
 }
 .destacadoItem__picture span {
-  background-color: #fafafa;
+  background-color: #ffffff;
   color: #004582;
   border: none;
   padding: 0.5rem 1rem;
@@ -4394,6 +4401,9 @@ button--text:hover,
   position: absolute;
   top: 1rem;
   left: 1rem;
+}
+.destacadoItem__text h3 {
+  color: #333333;
 }
 
 .mainContent:not(.mainContent--pdfContainer) {
@@ -4411,11 +4421,16 @@ button--text:hover,
   width: auto;
   height: 100%;
 }
+.mainContent--colapsed {
+  height: 0px;
+  opacity: 0;
+  margin: 0 !important;
+}
 
 #pdfContainer {
   width: 100%;
   height: auto;
-  aspect-ratio: 100/145;
+  aspect-ratio: 145/101;
   border-radius: 0.75rem;
   overflow: hidden;
 }

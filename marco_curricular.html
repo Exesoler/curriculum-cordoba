@@ -61,24 +61,25 @@
             <source srcset='./assets/marcoCurricular.webp' type='image/webp'>
             <img src='./assets/marcoCurricular.jpg' type='image/jpg' alt='Flowers'>
           </picture>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-          <button class="button button--text">Ver más</button>
+          <p>El <strong>Marco Curricular Común</strong> es el documento que presenta la perspectiva pedagógica del currículum provincial desde un enfoque renovado, pensando en las trayectorias completas de los/as estudiantes. Toma en cuenta las notas identitarias de nuestro sistema educativo, permite el trabajo curricular de cada comunidad educativa en contexto y avanza a las actualizaciones necesarias a los tiempos que vivimos.</p>
+          <button class="button button--text" onclick="toggleColapse('.mainContent--pdfContainer')">Ver más</button>
         </div>
         <div class="col-12 col-md-6 col-lg-5 mainContent__image">
           <img src="./assets/barrilete.png" alt="Barrilete">
         </div>
       </section>
       <hr>
-      <section class="row mainContent mainContent--pdfContainer">
+      <section class="row mainContent mainContent--pdfContainer mainContent--colapsed">
         <div class="col-12">
           <div id="pdfContainer">
-            <iframe src="./assets/prueba.pdf#toolbar=0&view=FitH" width="100%" height="100%" style="border:none" title="Embedded PDF Viewer"></iframe>
+            <iframe src="./downloads/MCC_2025_v1.0.pdf#toolbar=0&view=FitH" width="100%" height="100%" style="border:none" title="Embedded PDF Viewer"></iframe>
           </div>
         </div>
       </section>
       <footer></footer>
     </main>
     <div class="backdrop hidden"></div>
+    <!-- <script async defer data-website-id="158ea222-f786-49a5-b864-16c7f51f8c5e" src="https://analytics.exesoler.com.ar/umami.js"></script> -->
     <script src="./js/functions.js"></script>
     <script type="module" src="./js/main.js"></script>
   </body>

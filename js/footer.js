@@ -3,6 +3,7 @@ import acercadeJPG from '../assets/acercaDe.jpg';
 import emailSVG from '../assets/email.svg';
 import logoEducacionSVG from '../assets/logoEducacion.svg';
 import logoCordobaSVG from '../assets/logoCordoba.svg';
+import logoTransformarCBASVG from '../assets/logoTransformarCBA.svg';
 
 export const footer = () => {
     return `
@@ -17,7 +18,8 @@ export const footer = () => {
         </picture>
     </div>
     <div class="col-12 col-md-6 acercaContainer__text">
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+        <p>El programa <strong>TransFORMAR@Cba</strong>, inicia un proceso gradual y progresivo de renovación curricular y didáctica en el Sistema Educativo de la provincia de Córdoba.</p>
+        <p><strong>Currículum Córdoba</strong> es el desarrollo curricular del programa y es una invitación a coconstruir un currículum vivo, democrático y participativo, donde se entraman los acuerdos sobre lo que es importante que la escuela transmita hoy a las nuevas generaciones cordobesas.</p>
     </div>
     <div class="col-auto acercaContainer__action">
         <button class="button button--secondary">Conocenos</button>
@@ -29,6 +31,11 @@ export const footer = () => {
     </div>
     <div class="col base__action">
         <button class="button button--icon">Contacto <img src="${emailSVG}" alt="Email icon"></button>
+    </div>
+    <div class="col-auto base__logo">
+        <a href="#">
+            <img src="${logoTransformarCBASVG}" alt="Logo Gobierno de la provincia de Córdoba">
+        </a>
     </div>
     <div class="col-auto base__logo">
         <a href="#">

@@ -3,7 +3,8 @@ $color-secondary: #e2464c;
 
 $black: #111111;
 $color-gray: #dbdbdb;
-$white: #fafafa;
+$white: #ffffff;
+// $white: #fafafa;
 
 $color-primary-600: mix(black, $color-primary, 50%) !default;
 $color-primary-500: mix(black, $color-primary, 30%) !default;
@@ -155,6 +156,12 @@ header{
         &:hover{
           color: $color-secondary;
         }
+        &.active{
+          color: $color-secondary;
+          img{
+            background-color: $color-secondary;
+          }
+        }
       }
       img{
         width: 2rem;
@@ -175,7 +182,7 @@ header{
 
 footer{
   .acercaContainer{
-    background-color: $color-gray-100;
+    background-color: $color-gray-50;
     padding: 4rem 3rem;
     &__title{
       h2{
@@ -205,6 +212,7 @@ footer{
     }
     &__logo{
       img{
+        margin-left: 2rem;
         width: 100px;
         height: auto;
       }
@@ -328,6 +336,11 @@ button,
       left: 1rem;
     }
   }
+  &__text{
+    h3{
+      color: $color-text-dark;
+    }
+  }
 }
 
 .mainContent{
@@ -348,12 +361,17 @@ button,
       height: 100%;
     }
   }
+  &--colapsed{
+    height: 0px;
+    opacity: 0;
+    margin: 0 !important;
+  }
 }
 
 #pdfContainer{
   width: 100%;
   height: auto;
-  aspect-ratio: 100/145;
+  aspect-ratio: 145/101;
   border-radius: $border-radius;
   overflow: hidden;
 }

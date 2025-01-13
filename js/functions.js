@@ -30,6 +30,19 @@ const disableMenuResponsive = () => {
     }
 };
 
+const toggleColapse = (elementClass) => {
+
+    element = document.querySelector(elementClass);
+
+    console.log(element.classList.contains('mainContent--colapsed'));
+
+    if(element.classList.contains('mainContent--colapsed')){
+        element.classList.remove('mainContent--colapsed');
+    }else{
+        element.classList.add('mainContent--colapsed');
+    }
+};
+
 window.addEventListener("resize", () => {
     console.log('resize event')
     disableMenuResponsive();
