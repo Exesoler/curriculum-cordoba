@@ -361,7 +361,7 @@ button,
       height: 100%;
     }
   }
-  &--colapsed{
+  &.colapsed{
     height: 0px;
     opacity: 0;
     margin: 0 !important;
@@ -371,7 +371,7 @@ button,
 #pdfContainer{
   width: 100%;
   height: auto;
-  aspect-ratio: 145/101;
+  aspect-ratio: 145/109;
   border-radius: $border-radius;
   overflow: hidden;
 }

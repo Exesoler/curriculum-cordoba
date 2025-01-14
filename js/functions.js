@@ -34,12 +34,12 @@ const toggleColapse = (elementClass) => {
 
     element = document.querySelector(elementClass);
 
-    console.log(element.classList.contains('mainContent--colapsed'));
+    console.log(`colapsed`)
 
-    if(element.classList.contains('mainContent--colapsed')){
-        element.classList.remove('mainContent--colapsed');
+    if(element.classList.contains(`colapsed`)){
+        element.classList.remove(`colapsed`);
     }else{
-        element.classList.add('mainContent--colapsed');
+        element.classList.add(`colapsed`);
     }
 };
 

@@ -4421,7 +4421,7 @@ button--text:hover,
   width: auto;
   height: 100%;
 }
-.mainContent--colapsed {
+.mainContent.colapsed {
   height: 0px;
   opacity: 0;
   margin: 0 !important;
@@ -4430,7 +4430,7 @@ button--text:hover,
 #pdfContainer {
   width: 100%;
   height: auto;
-  aspect-ratio: 145/101;
+  aspect-ratio: 145/109;
   border-radius: 0.75rem;
   overflow: hidden;
 }
