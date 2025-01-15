@@ -22,7 +22,7 @@ export const footer = () => {
         <p><strong>Currículum Córdoba</strong> es el desarrollo curricular del programa y es una invitación a coconstruir un currículum vivo, democrático y participativo, donde se entraman los acuerdos sobre lo que es importante que la escuela transmita hoy a las nuevas generaciones cordobesas.</p>
     </div>
     <div class="col-auto acercaContainer__action">
-        <button class="button button--secondary">Conocenos</button>
+        <button class="button button--secondary" onclick="window.location.href='quienes_somos.html';">Conocenos</button>
     </div>
 </div>
 <div class="row base">
