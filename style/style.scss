@@ -90,6 +90,11 @@ $transition: all 300ms ease-in-out;
   navigation: auto;
 }
 
+*{
+  outline: none;
+}
+
+
 .loader{
   position: absolute;
     display: flex;
@@ -115,6 +120,7 @@ body {
   min-width: 320px;
   min-height: 100dvh;
   width: 100dvw;
+  scroll-snap-type: y mandatory;
 }
 
 h{
@@ -241,7 +247,8 @@ footer{
 
 main{
   padding: 4rem 3rem 0 !important;
-  >section{
+  > section{
+    scroll-snap-stop: always;
     &:not(:last-child):not(.actionVolver){
       margin-bottom: 4rem;
     }
@@ -285,6 +292,7 @@ button,
   cursor: pointer;
   border: none;
   transition: $transition;
+  color: $color-primary;
   &--secondary{
     background-color: $color-secondary;
     color: $white;
@@ -299,15 +307,18 @@ button,
     align-items: center;
     gap: 0.5rem;
     background-color: transparent;
-    color: $white;
     padding: 1rem 0;
     font-size: $font-size-base;
+    text-decoration: none;
     img{
       width: auto;
       height: 1rem;
     }
     &:hover{
       opacity: 0.7;
+    }
+    &:not(.button--primary){
+      color: $white;
     }
   }
   &--volver{
@@ -385,6 +396,7 @@ button,
     height: 0px;
     opacity: 0;
     margin: 0 !important;
+    display: none;
   }
   &__subtitle{
     h2{
@@ -396,6 +408,19 @@ button,
       margin-top: 0;
     }
   }
+  &--genially{
+    > .col-12{
+      > div{
+        overflow: hidden;
+        border-radius: $border-radius;
+      }
+    }
+  }
+}
+
+.actionsContainer{
+  align-items: center;
+  gap: 2rem;
 }
 
 #pdfContainer{
@@ -462,8 +487,26 @@ button,
     .acercaContainer{
       padding: 2rem 0rem;
     }
+    .base{
+      padding: 2rem;
+      > div{
+        display: flex;
+        justify-content: center;
+      }
+      &__logo{
+        padding: 0;
+        img{
+          margin: 0;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
   }
   #mobileHeader{
     display: flex;
+  }
+  .hide-mobile{
+    display: none !important;
   }
 }

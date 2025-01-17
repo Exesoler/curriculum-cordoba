@@ -11,11 +11,17 @@ export const footer = () => {
     <div class="col-12 acercaContainer__title">
         <h2>Acerca de Currículum Córdoba</h2>
     </div>
-    <div class="col-12 col-md-6 acercaContainer__image">
+    <!--<div class="col-12 col-md-6 acercaContainer__image">
         <picture>
             <source srcset='${acercadeWEBP}' type='image/webp'>
             <img src='${acercadeJPG}' type='image/jpg' alt='Acerca de Currículum Córdoba'>
         </picture>
+    </div>-->
+    <div class="col-12 col-md-6 acercaContainer__video">
+        <video controls width="100%">
+            <source src="./assets/nature_1080p.webm" type="video/webm" />
+            <source src="./assets/nature_1080p.mp4" type="video/mp4" />
+        </video>
     </div>
     <div class="col-12 col-md-6 acercaContainer__text">
         <p>El programa <strong>TransFORMAR@Cba</strong>, inicia un proceso gradual y progresivo de renovación curricular y didáctica en el Sistema Educativo de la provincia de Córdoba.</p>
@@ -29,20 +35,20 @@ export const footer = () => {
     <div class="col-12 base__text">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
     </div>
-    <div class="col base__action">
+    <div class="col-12 col-md base__action">
         <button class="button button--icon">Contacto <img src="${emailSVG}" alt="Email icon"></button>
     </div>
-    <div class="col-auto base__logo">
+    <div class="col-4 col-md-auto base__logo">
         <a href="#">
             <img src="${logoTransformarCBASVG}" alt="Logo Gobierno de la provincia de Córdoba">
         </a>
     </div>
-    <div class="col-auto base__logo">
+    <div class="col col-md-auto base__logo">
         <a href="#">
-            <img style="width: 150px;" src="${logoEducacionSVG}" alt="Logo Ministerio de Educación de Córdoba">
+            <img src="${logoEducacionSVG}" alt="Logo Ministerio de Educación de Córdoba">
         </a>
     </div>
-    <div class="col-auto base__logo">
+    <div class="col-4 col-md-auto base__logo">
         <a href="#">
             <img src="${logoCordobaSVG}" alt="Logo Gobierno de la provincia de Córdoba">
         </a>
