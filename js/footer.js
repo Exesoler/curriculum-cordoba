@@ -5,6 +5,9 @@ import logoEducacionSVG from '../assets/logoEducacion.svg';
 import logoCordobaSVG from '../assets/logoCordoba.svg';
 import logoTransformarCBASVG from '../assets/logoTransformarCBA.svg';
 
+import videoFooterWEBP from '../assets/nature_1080p.webm';
+import videoFooterMP4 from '../assets/nature_1080p.mp4';
+
 export const footer = () => {
     return `
 <div class="row acercaContainer">
@@ -19,8 +22,8 @@ export const footer = () => {
     </div>-->
     <div class="col-12 col-md-6 acercaContainer__video">
         <video controls width="100%">
-            <source src="./assets/nature_1080p.webm" type="video/webm" />
-            <source src="./assets/nature_1080p.mp4" type="video/mp4" />
+            <source src="${videoFooterWEBP}" type="video/webm" />
+            <source src="${videoFooterMP4}" type="video/mp4" />
         </video>
     </div>
     <div class="col-12 col-md-6 acercaContainer__text">
