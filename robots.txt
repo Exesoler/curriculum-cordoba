@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /
-
-Sitemap: https://genially.exesoler.com.ar/

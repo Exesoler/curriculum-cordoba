@@ -3,6 +3,8 @@ import logohWEBP from '../assets/logoH.webp';
 import logohPNG from '../assets/logoH.png';
 import menuMobile from '../assets/menuMobile.svg';
 
+// import { openMenu } from './functions.js';
+
 export const mobileHeader = () => {
     return `
     <section id="mobileHeader">

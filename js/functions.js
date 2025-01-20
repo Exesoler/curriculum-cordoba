@@ -3,8 +3,6 @@ const backdrop = document.querySelector('.backdrop');
 
 const body = document.querySelector('body');
 
-let menuIsOpen = false;
-
 const closeMenu = () => {
     menu.classList.add('hidden');
     backdrop.classList.add('hidden');
@@ -17,22 +15,9 @@ const openMenu = () => {
     body.classList.add('noScroll');
 };
 
-const disableMenuResponsive = () => {
-
-    console.log('disableMenuResponsive() Active')
-
-    if(window.innerWidth > 767){
-        menu.classList.remove('hidden');
-        backdrop.classList.add('hidden');
-        body.classList.remove('noScroll');
-    }else{
-        closeMenu();
-    }
-};
-
 const toggleColapse = (elementClass) => {
 
-    element = document.querySelector(elementClass);
+    // element = document.querySelector(elementClass);
 
     console.log(`colapsed`)
 
@@ -43,7 +28,9 @@ const toggleColapse = (elementClass) => {
     }
 };
 
-window.addEventListener("resize", () => {
-    console.log('resize event')
-    disableMenuResponsive();
-});
+// export default{
+//     closeMenu,
+//     openMenu,
+//     disableMenuResponsive,
+//     toggleColapse
+// }
