@@ -17,7 +17,7 @@ const openMenu = () => {
 
 const toggleColapse = (elementClass) => {
 
-    // element = document.querySelector(elementClass);
+    element = document.querySelector(elementClass);
 
     console.log(`colapsed`)
 
