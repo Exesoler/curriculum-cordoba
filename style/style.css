@@ -4477,7 +4477,8 @@ button--text:hover,
   gap: 2rem;
 }
 
-#pdfContainer {
+#pdfContainer,
+#pdf-canvas {
   width: 100%;
   height: auto;
   aspect-ratio: 145/109;
