@@ -80,27 +80,8 @@
       <section class="row mainContent mainContent--pdfContainer colapsed">
         <div class="col-12">
           <div class="loader"><img src="./assets/loader.svg" alt="Loader icon"></div>
-          <canvas id="pdf-canvas"></canvas>
-          <div class="row pdfNavigation">
-            <div class="col-auto pdfNavigation__control">
-              <a class="button button--primary button--icon previous round" id="prev_page">
-                <img src="./assets/arrowBack.svg" alt="Página anterior icon">
-              </a>
-            </div>
-            <div class="col-auto pdfNavigation__current">
-              <p>
-                Página
-                <strong id="page_num"></strong>
-                de
-                <strong id="page_count"></strong>
-              </p>
-            </div>
-            <input style="display: none;" type="number" value="1" id="current_page" />
-            <div class="col-auto pdfNavigation__control">
-              <a class="button button--primary button--icon next round" id="next_page">
-                <img src="./assets/arrowBack.svg" alt="Página siguiente icon">
-              </a>
-            </div>
+          <div id="pdfContainer">
+            <iframe src="./downloads/METAS_2025_v1.0_LOW.pdf#view=FitH" width="100%" height="100%" style="border:none" title="Embedded PDF Viewer"></iframe>
           </div>
         </div>
         <div class="col-12 d-flex justify-content-center">

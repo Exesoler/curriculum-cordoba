@@ -31,10 +31,3 @@ const toggleColapse = (elementClass) => {
         actionContainerDownload.classList.remove(`d-none`);
     }
 };
-
-// export default{
-//     closeMenu,
-//     openMenu,
-//     disableMenuResponsive,
-//     toggleColapse
-// }
