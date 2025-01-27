@@ -19,12 +19,16 @@ const toggleColapse = (elementClass) => {
 
     element = document.querySelector(elementClass);
 
+    actionContainerDownload = document.querySelector('.actionsContainer > .actionsContainer__download');
+
     console.log(`colapsed`)
 
     if(element.classList.contains(`colapsed`)){
         element.classList.remove(`colapsed`);
+        actionContainerDownload.classList.add(`d-none`);
     }else{
         element.classList.add(`colapsed`);
+        actionContainerDownload.classList.remove(`d-none`);
     }
 };
 

@@ -3,12 +3,13 @@ import {header} from './header.js';
 import {footer} from './footer.js';
 import {mobileHeader} from './mobileHeader.js';
 
+import loadingGIF from './../assets/loading.gif';
+
 import { GlobalWorkerOptions } from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.5.136/build/pdf.min.mjs';
 GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.5.136/build/pdf.worker.min.mjs';
 
 import metasPDF from './../public/downloads/METAS_2025_v1.0_LOW.pdf';
 import marcoPDF from './../public/downloads/MCC_2025_v1.0_LOW.pdf';
-
 
 document.querySelector('header').innerHTML = header();
 document.querySelector('footer').innerHTML = footer();
@@ -64,12 +65,12 @@ let pdf = '';
 switch (filename) {
     case 'metas_ciclo.html':
         pdf = metasPDF;
-        console.log('pdf de metas');
+        // console.log('pdf de metas');
         break;
 
     case 'marco_curricular.html':
         pdf = marcoPDF;
-        console.log('pdf de marco');
+        // console.log('pdf de marco');
         break;
 
     default:
@@ -87,7 +88,7 @@ const initialState = {
 	pdfDoc: null,
 	currentPage: 1,
 	pageCount: 0,
-	zoom: 1,
+	zoom: 3,
 };
 
 if(pdf !== false){
@@ -112,7 +113,7 @@ if(pdf !== false){
         initialState.pdfDoc
             .getPage(initialState.currentPage)
             .then((page) => {
-                console.log('page', page);
+                // console.log('page', page);
 
                 const canvas = document.querySelector('#pdf-canvas');
                 const ctx = canvas.getContext('2d');
@@ -180,3 +181,7 @@ if(pdf !== false){
     });
 }
 
+document.querySelector('#contact-submit').addEventListener('click', (e) => {
+    e.classList.add('loading');
+    e.innerHTML = `<img src="${loadingGIF}" alt="loading">`;
+});

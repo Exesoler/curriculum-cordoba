@@ -9,7 +9,7 @@ module.exports = defineConfig({
         progresiones_aprendizaje: './progresiones_aprendizaje.html',
         metas_ciclo: './metas_ciclo.html',
         marco_curricular: './marco_curricular.html',
-        functions: './js/functions.js',
+        contacto: './contacto.html',
       }
     }
   }

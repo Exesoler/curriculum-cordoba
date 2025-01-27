@@ -65,9 +65,19 @@
         <div class="col-12 col-md-6 mainContent__resume">
           <p>El documento <strong>Metas por ciclo</strong> nos invita a reflexionar sobre el currículum entre colegas, en el contexto de cada escuela y su comunidad. Propone metas de aprendizaje para cada campo y espacio curricular para toda la trayectoria educativa.</p>
         </div>
+        <div class="col-12 col-md-6 mainContent__actions">
+          <div class="row actionsContainer">
+            <div class="col-auto">
+              <button class="button button--text" onclick="toggleColapse('.mainContent--pdfContainer')">Ver más</button>
+            </div>
+            <div class="col-auto actionsContainer__download">
+              <a href="./downloads/METAS_2025_v1.0.pdf" download="Metas por Ciclo 2025" class="button button--primary button--icon">Descargar PDF <img src="./assets/download.svg" alt="Download icon"></a>
+            </div>
+          </div>
+        </div>
       </section>
       <hr>
-      <section class="row mainContent mainContent--pdfContainer">
+      <section class="row mainContent mainContent--pdfContainer colapsed">
         <div class="col-12">
           <div class="loader"><img src="./assets/loader.svg" alt="Loader icon"></div>
           <canvas id="pdf-canvas"></canvas>
@@ -92,16 +102,16 @@
               </a>
             </div>
           </div>
-          <!-- <hr>
-          <div id="pdfContainer">
-            <iframe src="./public/downloads/METAS_2025_v1.0.pdf" width="100%" height="100%" style="border:none" title="Embedded PDF Viewer"></iframe>
-          </div> -->
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <a href="./downloads/METAS_2025_v1.0.pdf" download="Metas por Ciclo 2025" class="button button--primary button--icon">Descargar PDF <img src="./assets/download.svg" alt="Download icon"></a>
         </div>
       </section>
       <footer></footer>
     </main>
     <div class="backdrop hidden"></div>
     <!-- <script async defer data-website-id="158ea222-f786-49a5-b864-16c7f51f8c5e" src="https://analytics.exesoler.com.ar/umami.js"></script> -->
+    <script async defer data-website-id="c28ab245-8f57-498a-bfca-d7ec564b992a" src="https://analytics.exesoler.com.ar/umami.js"></script>
     <script src="./functions.js"></script>
     <script type="module" src="./js/main.js"></script>
   </body>
