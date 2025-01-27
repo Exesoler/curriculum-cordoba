@@ -364,12 +364,14 @@ button,
   transition: $transition;
   color: $color-primary;
   &--primary{
-    background-color: $color-primary;
-    color: $white;
-    padding: 1rem 3rem;
-    border-radius: $border-rounded;
-    &:hover{
-      background-color: $color-primary-600;
+    &:not(.button--icon){
+      background-color: $color-primary;
+      color: $white;
+      padding: 1rem 3rem;
+      border-radius: $border-rounded;
+      &:hover{
+        background-color: $color-primary-600;
+      }
     }
   }
   &--secondary{
