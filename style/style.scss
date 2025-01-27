@@ -104,6 +104,7 @@ $transition: all 300ms ease-in-out;
     justify-content: center;
     width: 100%;
     height: 100%;
+    z-index: -1;
     img{
       width: 150px;
       height: 150px;
@@ -138,10 +139,66 @@ hr{
   margin: 4rem 0;
 }
 
+video{
+  border-radius: $border-radius;
+}
+
 img{
   width: 100%;
   height: auto;
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: $color-gray-75;
+  padding: 2rem;
+  border-radius: $border-radius;
+  border: 1px solid $color-gray-100;
+
+  fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+
+    label{
+      padding: 0 1rem;
+    }
+
+    input,
+    select,
+    textarea{
+      outline: none;
+      border-radius: $border-radius;
+      padding: 0.75rem 1rem;
+      border: 1px solid $color-gray-100;
+      background-color: $white;
+      color: $color-text-dark;
+      box-sizing: border-box;
+      width: 100%;
+      &:active,
+      &:focus{
+        border-color: $color-primary;
+        border-width: 2px;
+        padding-block: calc(0.75rem - 1px);
+        padding-inline: calc(1rem - 1px);
+      }
+      &:autofill{
+        box-shadow: 0px 0px 0px 25px $color-primary-100 inset;
+      }
+      &::placeholder{
+        color: $color-gray;
+      }
+    }
+  }
+}
+
+
 
 header{
   position: sticky;
@@ -227,18 +284,31 @@ footer{
   }
   .base{
     align-items: center;
+    justify-content: center;
     padding: 4rem 3rem 3rem; 
     background-color: $color-primary;
     margin-top: 4rem;
     color: $white;
-    gap: 1rem;
+    gap: 2rem;
+    &__action{
+      display: flex;
+      justify-content: flex-end !important;
+    }
     p{
       margin: 0;
     }
     &__logo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.col{
+        img{
+          width: 225px;
+        }
+      }
       img{
         margin-left: 2rem;
-        width: 100px;
+        width: 150px;
         height: auto;
       }
     }
@@ -293,6 +363,17 @@ button,
   border: none;
   transition: $transition;
   color: $color-primary;
+  &--primary{
+    &:not(.button--icon){
+      background-color: $color-primary;
+      color: $white;
+      padding: 1rem 3rem;
+      border-radius: $border-rounded;
+      &:hover{
+        background-color: $color-primary-600;
+      }
+    }
+  }
   &--secondary{
     background-color: $color-secondary;
     color: $white;
@@ -343,6 +424,15 @@ button,
     padding: 0;
     &:hover{
       text-decoration: underline;
+    }
+  }
+  &.loading{
+    transition: $transition;
+    pointer-events: none;
+    img{
+      width: 1rem;
+      height: 1rem;
+      mix-blend-mode: hard-light;
     }
   }
 }
@@ -420,15 +510,34 @@ button,
 
 .actionsContainer{
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
+  height: 56px;
 }
 
-#pdfContainer{
+#pdfContainer,
+#pdf-canvas{
   width: 100%;
   height: auto;
   aspect-ratio: 145/109;
   border-radius: $border-radius;
   overflow: hidden;
+}
+
+.pdfNavigation{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__control{
+    .round{
+      padding: 0.5rem;
+    }
+    .next{
+      img{
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
 
 .backdrop{
@@ -464,6 +573,10 @@ button,
       }
     }
   }
+  hr{
+    margin: 2rem 0;
+  }
+  
   .destacadoItem{
     &:not(:last-child){
       margin-bottom: 2rem;
@@ -489,12 +602,18 @@ button,
     }
     .base{
       padding: 2rem;
+      gap: 1rem;
       > div{
         display: flex;
         justify-content: center;
       }
       &__logo{
         padding: 0;
+        &.col{
+          img{
+            width: 140px;
+          }
+        }
         img{
           margin: 0;
           width: 100%;

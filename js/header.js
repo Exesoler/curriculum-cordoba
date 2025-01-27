@@ -6,6 +6,8 @@ import asideIcon__marcoCurricularSVG from '../assets/asideIcon__marcoCurricular.
 import asideIcon__progresionAprendizajesSVG from '../assets/asideIcon__progresionAprendizajes.svg';
 import asideIcon__metasSVG from '../assets/asideIcon__metas.svg';
 
+// import { closeMenu } from './functions.js';
+
 export const header = () => {
 
     return `

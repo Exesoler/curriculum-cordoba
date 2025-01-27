@@ -4172,6 +4172,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 .loader img {
   width: 150px;
@@ -4204,9 +4205,73 @@ hr {
   margin: 4rem 0;
 }
 
+video {
+  border-radius: 0.75rem;
+}
+
 img {
   width: 100%;
   height: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #ededed;
+}
+form fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem;
+}
+form fieldset label {
+  padding: 0 1rem;
+}
+form fieldset input,
+form fieldset select,
+form fieldset textarea {
+  outline: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ededed;
+  background-color: #ffffff;
+  color: #333333;
+  box-sizing: border-box;
+  width: 100%;
+}
+form fieldset input:active, form fieldset input:focus,
+form fieldset select:active,
+form fieldset select:focus,
+form fieldset textarea:active,
+form fieldset textarea:focus {
+  border-color: #004582;
+  border-width: 2px;
+  padding-block: calc(0.75rem - 1px);
+  padding-inline: calc(1rem - 1px);
+}
+form fieldset input:-webkit-autofill, form fieldset select:-webkit-autofill, form fieldset textarea:-webkit-autofill {
+  box-shadow: 0px 0px 0px 25px #80a2c1 inset;
+}
+form fieldset input:autofill,
+form fieldset select:autofill,
+form fieldset textarea:autofill {
+  box-shadow: 0px 0px 0px 25px #80a2c1 inset;
+}
+form fieldset input::-moz-placeholder, form fieldset select::-moz-placeholder, form fieldset textarea::-moz-placeholder {
+  color: #dbdbdb;
+}
+form fieldset input::placeholder,
+form fieldset select::placeholder,
+form fieldset textarea::placeholder {
+  color: #dbdbdb;
 }
 
 header {
@@ -4289,18 +4354,31 @@ footer .acercaContainer__action {
 }
 footer .base {
   align-items: center;
+  justify-content: center;
   padding: 4rem 3rem 3rem;
   background-color: #004582;
   margin-top: 4rem;
   color: #ffffff;
-  gap: 1rem;
+  gap: 2rem;
+}
+footer .base__action {
+  display: flex;
+  justify-content: flex-end !important;
 }
 footer .base p {
   margin: 0;
 }
+footer .base__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .base__logo.col img {
+  width: 225px;
+}
 footer .base__logo img {
   margin-left: 2rem;
-  width: 100px;
+  width: 150px;
   height: auto;
 }
 
@@ -4350,6 +4428,17 @@ button,
   border: none;
   transition: all 300ms ease-in-out;
   color: #004582;
+}
+button--primary:not(.button--icon),
+.button--primary:not(.button--icon) {
+  background-color: #004582;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 1000px;
+}
+button--primary:not(.button--icon):hover,
+.button--primary:not(.button--icon):hover {
+  background-color: #002341;
 }
 button--secondary,
 .button--secondary {
@@ -4414,6 +4503,17 @@ button--text:hover,
 .button--text:hover {
   text-decoration: underline;
 }
+button.loading,
+.button.loading {
+  transition: all 300ms ease-in-out;
+  pointer-events: none;
+}
+button.loading img,
+.button.loading img {
+  width: 1rem;
+  height: 1rem;
+  mix-blend-mode: hard-light;
+}
 
 .actionVolver {
   margin-bottom: 1rem;
@@ -4474,15 +4574,30 @@ button--text:hover,
 
 .actionsContainer {
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
+  height: 56px;
 }
 
-#pdfContainer {
+#pdfContainer,
+#pdf-canvas {
   width: 100%;
   height: auto;
   aspect-ratio: 145/109;
   border-radius: 0.75rem;
   overflow: hidden;
+}
+
+.pdfNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pdfNavigation__control .round {
+  padding: 0.5rem;
+}
+.pdfNavigation__control .next img {
+  transform: rotate(180deg);
 }
 
 .backdrop {
@@ -4512,6 +4627,9 @@ button--text:hover,
   main .mainContent__image {
     display: none;
   }
+  hr {
+    margin: 2rem 0;
+  }
   .destacadoItem:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -4534,6 +4652,7 @@ button--text:hover,
   }
   footer .base {
     padding: 2rem;
+    gap: 1rem;
   }
   footer .base > div {
     display: flex;
@@ -4541,6 +4660,9 @@ button--text:hover,
   }
   footer .base__logo {
     padding: 0;
+  }
+  footer .base__logo.col img {
+    width: 140px;
   }
   footer .base__logo img {
     margin: 0;
