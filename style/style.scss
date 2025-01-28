@@ -1,5 +1,6 @@
 $color-primary: #004582;
 $color-secondary: #e2464c;
+$color-tertiary: #258394;
 
 $black: #111111;
 $color-gray: #dbdbdb;
@@ -25,6 +26,15 @@ $color-secondary-100: mix(white, $color-secondary, 50%) !default;
 $color-secondary-75: mix(white, $color-secondary, 70%) !default;
 $color-secondary-50: mix(white, $color-secondary, 90%) !default;
 
+$color-tertiary-600: mix(black, $color-tertiary, 50%) !default;
+$color-tertiary-500: mix(black, $color-tertiary, 30%) !default;
+$color-tertiary-400: mix(black, $color-tertiary, 10%) !default;
+$color-tertiary-200: mix(white, $color-tertiary, 10%) !default;
+$color-tertiary-150: mix(white, $color-tertiary, 30%) !default;
+$color-tertiary-100: mix(white, $color-tertiary, 50%) !default;
+$color-tertiary-75: mix(white, $color-tertiary, 70%) !default;
+$color-tertiary-50: mix(white, $color-tertiary, 90%) !default;
+
 $color-gray-600: mix(black, $color-gray, 50%) !default;
 $color-gray-500: mix(black, $color-gray, 30%) !default;
 $color-gray-400: mix(black, $color-gray, 10%) !default;
@@ -47,6 +57,8 @@ $font-size-sm: 0.875rem;
 $font-size-button: $font-size-base + 0.125rem;
 
 $transition: all 300ms ease-in-out;
+
+$box-shadow-1: 0 6px 12px 0 rgba(100,100,100,0.05);
 
 
 :root {
@@ -132,6 +144,55 @@ h{
     &.secondary{
       color: $color-secondary;
     }
+    &.dark{
+      color: $color-text-dark;
+    }
+  }
+}
+
+a{
+  color: $color-primary;
+  &:hover{
+    color: $color-primary-500;
+  }
+}
+
+p{
+  &.autor{
+    text-align: right !important;
+    padding: 2rem 0;
+    margin: 0;
+    small{
+      color: $color-gray-500;
+      font-style: italic;
+    }
+  }
+  &.secondary{
+    color: $color-secondary;
+  }
+  &.tertiary{
+    color: $color-tertiary;
+  }
+}
+
+blockquote {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  width: 80%;
+  color: $color-primary;
+  border-left: 4px solid $color-primary;
+  border-left-style: solid;
+  margin: 3rem 0;
+  padding: 0.5rem 0;
+  padding-left: 1rem;
+  ul{
+    margin-bottom: 0;
+    li{
+      &:last-child{
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -139,8 +200,48 @@ hr{
   margin: 4rem 0;
 }
 
-video{
+[data-tooltip] {
+  border-bottom: 1px dashed $color-primary;
+  position: relative;
+  cursor: pointer;
+  // display: inline-block;
+  &:hover {
+    &::after {
+      display: block;
+      position: absolute;
+      content: attr(data-tooltip);
+      background-color: $color-gray-50;
+      border: 1px solid $color-gray-100;
+      border-radius: $border-radius;
+      padding: 0.5em 1rem;
+      left: 100%;
+      transform: translate(-50%,0);
+      width: max-content;
+      max-width: 450px;
+      font-size: $font-size-sm;
+      font-weight: 300;
+      box-shadow: $box-shadow-1;
+      z-index: 1;
+    }
+  }
+}
+
+video,
+picture{
   border-radius: $border-radius;
+  overflow: hidden;
+  &.hidden{
+    display: none !important;
+  }
+}
+
+picture{
+  &#videoFrame{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 img{
@@ -266,6 +367,9 @@ footer{
   .acercaContainer{
     background-color: $color-gray-50;
     padding: 4rem 3rem;
+    &.hidden{
+      display: none !important;
+    }
     &__title{
       h2{
         margin: 0;
@@ -282,18 +386,22 @@ footer{
       margin-top: 1rem;
     }
   }
-  .base{
+  .contactoContainer{
     align-items: center;
     justify-content: center;
-    padding: 4rem 3rem 3rem; 
-    background-color: $color-primary;
-    margin-top: 4rem;
-    color: $white;
-    gap: 2rem;
+    margin: 1rem 0;
     &__action{
       display: flex;
       justify-content: flex-end !important;
     }
+  }
+  .base{
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem; 
+    padding-bottom: 2rem;
+    background-color: $color-primary;
+    color: $white;
     p{
       margin: 0;
     }
@@ -301,14 +409,9 @@ footer{
       display: flex;
       align-items: center;
       justify-content: center;
-      &.col{
-        img{
-          width: 225px;
-        }
-      }
       img{
-        margin-left: 2rem;
-        width: 150px;
+        width: 100%;
+        max-width: 150px;
         height: auto;
       }
     }
@@ -358,11 +461,17 @@ main{
 
 button,
 .button{
+  display: inline-block;
   font-size: $font-size-button;
   cursor: pointer;
   border: none;
   transition: $transition;
   color: $color-primary;
+  text-decoration: none;
+  img{
+    width: auto;
+    height: 1rem;
+  }
   &--primary{
     &:not(.button--icon){
       background-color: $color-primary;
@@ -380,7 +489,18 @@ button,
     padding: 1rem 3rem;
     border-radius: $border-rounded;
     &:hover{
+      color: white;
       background-color: $color-secondary-600;
+    }
+  }
+  &--tertiary{
+    background-color: $color-tertiary;
+    color: $white;
+    padding: 1rem 3rem;
+    border-radius: $border-rounded;
+    &:hover{
+      color: white;
+      background-color: $color-tertiary-600;
     }
   }
   &--icon{
@@ -437,6 +557,24 @@ button,
   }
 }
 
+.text-justify{
+  a{
+    font-style: italic;
+  }
+  p,
+  blockquote{
+    text-align: justify;
+  }
+  ul{
+    padding-left: 1rem;
+    li{
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+  }
+}
+
 .actionVolver{
   margin-bottom: 1rem;
 }
@@ -481,6 +619,9 @@ button,
       width: auto;
       height: 100%;
     }
+    + .mainContent__resume{
+      margin-top: 2rem;
+    }
   }
   &.colapsed{
     height: 0px;
@@ -498,12 +639,25 @@ button,
       margin-top: 0;
     }
   }
+  &__media{
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
   &--genially{
     > .col-12{
       > div{
         overflow: hidden;
         border-radius: $border-radius;
       }
+    }
+  }
+  &--autor{
+    display: flex;
+    justify-content: center;
+    .mainContent__media{
+      margin-top: -5rem;
     }
   }
 }
@@ -513,6 +667,36 @@ button,
   justify-content: space-between;
   gap: 2rem;
   height: 56px;
+}
+
+.actionsContainerProgresiones{
+  padding-bottom: 2rem;
+  &__item{
+    p{
+      min-height: 48px;
+      margin-bottom: 2rem;
+    }
+    .actionsContainerProgresionesItem{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__image{
+        position: relative;
+        picture{
+          position: absolute;
+          left: 10%;
+          top: 0;
+          z-index: -1;
+          margin-top: -1.5rem;
+          img{
+            width: 175px;
+            height: auto;
+          }
+        }
+      }
+      &__action{}
+    }
+  }
 }
 
 #pdfContainer,

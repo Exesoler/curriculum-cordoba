@@ -4,6 +4,7 @@ import emailSVG from '../assets/email.svg';
 import logoEducacionSVG from '../assets/logoEducacion.svg';
 import logoCordobaSVG from '../assets/logoCordoba.svg';
 import logoTransformarCBASVG from '../assets/logoTransformarCBA.svg';
+import logoCurriculumCordobaSVG from '../assets/logoHWhite.svg';
 
 import videoFooterWEBP from '../assets/nature_1080p.webm';
 import videoFooterMP4 from '../assets/nature_1080p.mp4';
@@ -28,27 +29,23 @@ export const footer = () => {
         <button class="button button--secondary" onclick="window.location.href='quienes_somos.html';">Conocenos</button>
     </div>
 </div>
+<div class="row contactoContainer">
+    <div class="col-12 contactoContainer__action">
+        <button class="button button--primary button--icon" onclick="window.location.href='contacto.html';">Contacto <img src="${emailSVG}" alt="Email icon"></button>
+    </div>
+</div>
 <div class="row base">
-    <div class="col-12 base__text d-none">
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+    <div class="col-12 col-md-3 base__logo">
+        <img src="${logoCurriculumCordobaSVG}" alt="Logo Currículum Córdoba">
     </div>
-    <div class="col-12 base__action">
-        <button class="button button--icon" onclick="window.location.href='contacto.html';">Contacto <img src="${emailSVG}" alt="Email icon"></button>
+    <div class="col-12 col-md-3 base__logo">
+        <img src="${logoTransformarCBASVG}" alt="Logo Gobierno de la provincia de Córdoba">
     </div>
-    <div class="col-3 col-md base__logo">
-        <a href="#">
-            <img src="${logoTransformarCBASVG}" alt="Logo Gobierno de la provincia de Córdoba">
-        </a>
+    <div class="col-12 col-md-3 base__logo">
+        <img src="${logoEducacionSVG}" alt="Logo Ministerio de Educación de Córdoba">
     </div>
-    <div class="col base__logo">
-        <a href="#">
-            <img src="${logoEducacionSVG}" alt="Logo Ministerio de Educación de Córdoba">
-        </a>
-    </div>
-    <div class="col-3 col-md base__logo">
-        <a href="#">
-            <img src="${logoCordobaSVG}" alt="Logo Gobierno de la provincia de Córdoba">
-        </a>
+    <div class="col-12 col-md-3 base__logo">
+        <img src="${logoCordobaSVG}" alt="Logo Gobierno de la provincia de Córdoba">
     </div>
 </div>
 `;}
