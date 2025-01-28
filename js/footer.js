@@ -13,7 +13,7 @@ export const footer = () => {
     return `
 <div class="row acercaContainer">
     <div class="col-12 acercaContainer__title">
-        <h2>Acerca de Currículum Córdoba</h2>
+        <h3>Acerca de Currículum Córdoba</h3>
     </div>
     <!--<div class="col-12 col-md-6 acercaContainer__image">
         <picture>
