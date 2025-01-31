@@ -78,7 +78,7 @@
           </div>
         </div> -->
       </section>
-      <section class="row mainContent mainContent--pdfContainer">
+      <section class="row mainContent mainContent--pdfContainer hide-mobile">
         <div class="col-12">
           <div class="loader"><img src="./assets/loader.svg" alt="Loader icon"></div>
           <div id="pdfContainer">
@@ -86,9 +86,22 @@
           </div>
         </div>
       </section>
-      <section class="row">
+      <section class="row hide-desktop">
+        <div class="col-12">
+          <picture>
+            <source srcset='./assets/thumbnail_MetasPDF.webp' type='image/webp'>
+            <img src='./assets/thumbnail_MetasPDF.jpg' type='image/jpg' alt='Thumbnail Metas por ciclo PDF'>
+          </picture>
+        </div>
+      </section>
+      <section class="row hide-mobile">
         <div class="col-12 d-flex justify-content-end">
           <a href="./downloads/METAS_2025_v1.0.pdf" download="Metas por Ciclo 2025" class="button button--primary"><img src="./assets/download--white.svg" alt="Download icon"> Descargar</a>
+        </div>
+      </section>
+      <section class="row hide-desktop">
+        <div class="col-12 d-flex justify-content-end">
+          <a href="./downloads/METAS_2025_v1.0.pdf" download="Metas por Ciclo 2025" class="button button--secondary">Acceder</a>
         </div>
       </section>
       <footer></footer>

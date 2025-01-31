@@ -4714,6 +4714,12 @@ button.loading img,
 .mainContent__image + .mainContent__resume {
   margin-top: 2rem;
 }
+.mainContent__image--banner {
+  margin-bottom: 3rem;
+}
+.mainContent__image--banner img {
+  max-width: 350px;
+}
 .mainContent.colapsed {
   height: 0px;
   opacity: 0;
@@ -4756,6 +4762,9 @@ button.loading img,
 }
 .mainContent--autor .mainContent__media {
   margin-top: -5rem;
+}
+.mainContent--autor > .mainContent__image.justify-content-end {
+  margin-bottom: 2rem;
 }
 
 .actionsContainer {
@@ -4826,6 +4835,11 @@ button.loading img,
   display: none;
 }
 
+@media screen and (min-width: 768px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 767px) {
   body.noScroll {
     overflow: hidden !important;
@@ -4836,8 +4850,13 @@ button.loading img,
   main > section:not(:last-child):not(.actionVolver) {
     margin-bottom: 2rem;
   }
-  main .mainContent__image {
+  main .mainContent__image:not(.mainContent__image--banner) {
     display: none;
+  }
+  main .mainContent__image--banner {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 4rem;
   }
   hr {
     margin: 2rem 0;
@@ -4883,6 +4902,9 @@ button.loading img,
   }
   #mobileHeader {
     display: flex;
+  }
+  #destacados {
+    margin-top: 4rem;
   }
   .hide-mobile {
     display: none !important;
