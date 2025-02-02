@@ -33,6 +33,19 @@ const disableMenuResponsive = () => {
     }
 };
 
+const hasSubMenu = document.querySelector('.hasSubMenu');
+const subMenu = document.querySelector('.subMenu');
+
+const submenuCollapse = () => {
+
+    if(subMenu.classList.contains('collapsed')){
+        subMenu.classList.remove('collapsed');
+    }else{
+        subMenu.classList.add('collapsed');
+    }
+
+};
+
 window.addEventListener("resize", () => {
     // console.log('resize event')
     disableMenuResponsive();
@@ -44,7 +57,7 @@ let url = window.location.pathname;
 let filename = url.split('/').pop();
 
 const addMenuActive = (filename) => {
-    let menuItems = document.querySelectorAll('nav > ul > li > a');
+    let menuItems = document.querySelectorAll('nav a');
     menuItems.forEach(item => {
         if (item.getAttribute('href') == filename) {
             item.classList.add('active');
@@ -68,20 +81,34 @@ if(window.innerWidth < 768){
 
 window.scrollY = 0;
 
+hasSubMenu.addEventListener('click', () => {
+    console.log('click para la función submenuCollapse')
+    submenuCollapse();
+});
+
+if (filename == 'contacto.html') {
+    document.querySelector('#contact-submit').addEventListener('click', (e) => {
+        e.classList.add('loading');
+        e.innerHTML = `<img src="${loadingGIF}" alt="loading">`;
+    });
+}
+
+if (filename == 'metas_ciclo.html' || filename == 'progresiones_aprendizaje.html') {
+    submenuCollapse();
+}
+
+
 const videoFrame = document.querySelector('#videoFrame');
 const video = document.querySelector('#videoFrame + video');
 
-videoFrame.addEventListener('click', () => {
-    console.log('video frame clicked');
-    videoFrame.classList.add('hidden');
-    video.classList.remove('hidden');
-    setTimeout(() => {
-        video.play();
-    }, 1000);
-});
+if (videoFrame) {
+    videoFrame.addEventListener('click', () => {
+        videoFrame.classList.add('hidden');
+        video.classList.remove('hidden');
+        setTimeout(() => {
+            video.play();
+        }, 1000);
+    });
+}
 
 
-document.querySelector('#contact-submit').addEventListener('click', (e) => {
-    e.classList.add('loading');
-    e.innerHTML = `<img src="${loadingGIF}" alt="loading">`;
-});

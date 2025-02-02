@@ -342,6 +342,7 @@ header{
         display: flex;
         align-items: center;
         gap: 1rem;
+        cursor: pointer;
         &:hover{
           color: $color-secondary;
         }
@@ -358,6 +359,34 @@ header{
         padding: 0.5rem;
         background-color: $color-primary;
         border-radius: $border-radius;
+      }
+      &.subMenu{
+        padding-left: 4rem;
+        height: auto;
+        transition: $transition;
+        ul{
+          border-top: 1px solid $color-primary;
+          padding-top: 1rem;
+          li{
+            a{
+              display: flex;
+              align-items: flex-start;
+              gap: 0.75rem;
+            }
+            img{
+              padding: 0.25rem 0;
+              max-width: 8px;
+              height: auto;
+              background: unset;
+            }
+          }
+        }
+        &.collapsed{
+          // display: none;
+          height: 0;
+          overflow: hidden;
+          transition: $transition;
+        }
       }
     }
   }
@@ -686,6 +715,14 @@ button,
   &__text{
     p{
       margin-top: 0;
+    }
+  }
+  &__title{
+    small{
+      font-weight: 400;
+    }
+    &:has(br){
+      line-height: 200%;
     }
   }
   &__media{
