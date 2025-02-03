@@ -45,6 +45,9 @@
   </head>
   <body>
     <header class="hidden"></header>
+    <div id="buttonIndiceMCC">
+      <button class="button button--tertiary">Índice</button>
+    </div>
     <main class="container-fluid">
       <section class="actionVolver">
         <button class="button button--volver" onclick="window.location.href='index.html';">
@@ -96,7 +99,7 @@
           <a href="./downloads/MCC_2025_v1.0.pdf" download="Marco Curricular Común 2025" class="button button--primary button--icon">Descargar PDF <img src="./assets/download.svg" alt="Download icon"></a>
         </div>
       </section> -->
-      <section class="row mainContent mainContent--autor text-justify">
+      <section id="autor" class="row mainContent mainContent--autor">
         <div class="col-12 mainContent__image mainContent__image--banner">
           <picture>
             <source srcset='./assets/head_mcc.webp' type='image/webp'>
@@ -121,7 +124,7 @@
           </picture>
         </div>
       </section>
-      <section class="row mainContent text-justify">
+      <section id="I" class="row mainContent">
         <div class="col-12 mainContent__subtitle">
           <h2>I. Un Marco Curricular Común para la Provincia de Córdoba</h2>
         </div>
@@ -179,7 +182,7 @@
             Educativo Provincial 2024-2017:3).</p>
         </div>
       </section>
-      <section class="row mainContent text-justify">
+      <section id="Ia" class="row mainContent">
         <div class="col-12 mainContent__subtitle">
           <h3>I.a. Puntos de partida para un marco curricular común</h3>
         </div>
@@ -260,7 +263,7 @@
           </ul>
         </div>
       </section>
-      <section class="row mainContent text-justify">
+      <section id="Ib" class="row mainContent">
         <div class="col-12 mainContent__subtitle">
           <h3>I.b. Renovación y transformaciones para enriquecer la enseñanza y atender a las demandas de nuestro tiempo</h3>
         </div>
@@ -308,9 +311,27 @@
           <a href="./downloads/MCC_2025_v1.0.pdf" download="Marco Curricular Común 2025" class="button button--primary"><img src="./assets/download--white.svg" alt="Download icon"> Descargar</a>
         </div>
       </section>
+      <aside id="indiceMCC" class="hidden">
+        <div class="row">
+          <div class="col">
+            <h3>Índice</h3>
+          </div>
+          <div class="col-auto">
+            <button class="button button--icon close"><img src="./assets/close.svg" type='image/svg+xml'></button>
+          </div>
+          <div class="col-12">
+            <ul>
+              <li><a href="#autor">Palabras del Sr. Ministro de Educación de la provincia de Córdoba</a></li>
+              <li><a href="#I"><strong>I.</strong> Un Marco Curricular Común para la Provincia de Córdoba</a></li>
+              <li class="subitem"><a href="#Ia"><strong>I.a.</strong> Puntos de partida para un marco curricular común</a></li>
+              <li class="subitem"><a href="#Ib"><strong>I.b.</strong> Renovación y transformaciones para enriquecer la enseñanza y atender a las demandas de nuestro tiempo</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
       <footer></footer>
     </main>
-    <div class="backdrop hidden"></div>
+    <div class="backdrop hidden" style="opacity: 0;"></div>
     <!-- <script async defer data-website-id="158ea222-f786-49a5-b864-16c7f51f8c5e" src="https://analytics.exesoler.com.ar/umami.js"></script> -->
     <script async defer data-website-id="c28ab245-8f57-498a-bfca-d7ec564b992a" src="https://analytics.exesoler.com.ar/umami.js"></script>
     <script src="./functions.js"></script>

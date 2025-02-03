@@ -112,3 +112,36 @@ if (videoFrame) {
 }
 
 
+const indiceMCC = document.querySelector('#indiceMCC');
+const buttonIndiceMCC = document.querySelector('#buttonIndiceMCC');
+const closeIndiceMCC = document.querySelector('#indiceMCC .close');
+const itemIndiceMCC = document.querySelectorAll('#indiceMCC a');
+
+const toggleIndiceMCC = () => {
+    indiceMCC.classList.toggle('hidden');
+    if (backdrop.style.opacity == '1') {
+        backdrop.style.opacity = ((backdrop.style.opacity!='0') ? '0' : '1');
+        setTimeout(() => {
+            backdrop.classList.toggle('hidden');
+        }, 300);
+    } else {
+        backdrop.classList.toggle('hidden');
+        setTimeout(() => {
+            backdrop.style.opacity = ((backdrop.style.opacity!='0') ? '0' : '1');
+        }, 300);
+    }
+}
+
+if (buttonIndiceMCC) {
+    buttonIndiceMCC.addEventListener('click', () => {
+        toggleIndiceMCC();
+    });
+    closeIndiceMCC.addEventListener('click', () => {
+        toggleIndiceMCC();
+    });
+    itemIndiceMCC.forEach(item => {
+        item.addEventListener('click', () => {
+            toggleIndiceMCC();
+        });
+    });
+}
