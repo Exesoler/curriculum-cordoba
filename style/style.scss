@@ -840,6 +840,7 @@ button,
     p{
       min-height: 48px;
       margin-bottom: 2rem;
+      text-align: center;
     }
     .actionsContainerProgresionesItem{
       display: flex;
@@ -917,7 +918,7 @@ button,
     }
   }
   main{
-    padding: 2rem 0.75rem 0 !important;
+    padding: 2rem 1rem 0 !important;
     >section{
       &:not(:last-child):not(.actionVolver){
         margin-bottom: 2rem;
@@ -1010,7 +1011,7 @@ button,
       margin-bottom: 3rem;
     }
     > p{
-      margin: 0;
+      margin: 0 0 1rem;
     }
   }
 }

@@ -4864,6 +4864,7 @@ button.loading img,
 .actionsContainerProgresiones__item p {
   min-height: 48px;
   margin-bottom: 2rem;
+  text-align: center;
 }
 .actionsContainerProgresiones__item .actionsContainerProgresionesItem {
   display: flex;
@@ -4930,7 +4931,7 @@ button.loading img,
     overflow: hidden !important;
   }
   main {
-    padding: 2rem 0.75rem 0 !important;
+    padding: 2rem 1rem 0 !important;
   }
   main > section:not(:last-child):not(.actionVolver) {
     margin-bottom: 2rem;
@@ -5008,6 +5009,6 @@ button.loading img,
     margin-bottom: 3rem;
   }
   .actionsContainerProgresiones__item > p {
-    margin: 0;
+    margin: 0 0 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
