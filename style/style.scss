@@ -134,6 +134,9 @@ body {
   min-height: 100dvh;
   width: 100dvw;
   scroll-snap-type: y mandatory;
+  &.noScroll{
+    overflow: hidden !important;
+  }
 }
 
 h{
@@ -412,11 +415,20 @@ header{
   z-index: 10;
   background: white;
   height: 100dvh;
-  width: 50dvw;
-  padding: 4rem 3rem;
+  width: 60dvw;
+  max-width: 1024px;
+  padding: 2rem 3rem;
   transition: $transition;
   .row{
     align-items: center;
+    >.col-12{
+      max-height: calc(100dvh - 110px);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+  h3{
+    margin: 0;
   }
   ul{
     list-style: none;
@@ -424,6 +436,7 @@ header{
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 0;
     gap: 1rem;
     li{
       a{
@@ -439,7 +452,7 @@ header{
   }
   &.hidden{
     transition: $transition;
-    right: calc(-50dvw - 100px);
+    right: -80dvw;
   }
 }
 
@@ -447,7 +460,7 @@ header{
 #buttonDescargaMCC{
   position: fixed;
   right: 0;
-  bottom: calc(50vh - 50px);
+  bottom: calc((30vh + 140px) + 1rem);
   z-index: 5;
   .button{
     writing-mode: sideways-lr;
@@ -461,7 +474,7 @@ header{
 }
 
 #buttonDescargaMCC{
-  bottom: calc(32vh - 50px);
+  bottom: 30vh;
   a{
     width: 24px !important;
   }
@@ -755,8 +768,9 @@ button,
   }
   &__image{
     img{
-      width: auto;
+      object-fit: cover;
       height: 100%;
+      object-position: left;
     }
     &.col-lg-3{
       img{
@@ -997,11 +1011,6 @@ button,
 }
 
 @media screen and (max-width: 767px){
-  body{
-    &.noScroll{
-      overflow: hidden !important;
-    }
-  }
   main{
     padding: 2rem 1rem 0 !important;
     >section{

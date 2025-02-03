@@ -119,6 +119,7 @@ const itemIndiceMCC = document.querySelectorAll('#indiceMCC a');
 
 const toggleIndiceMCC = () => {
     indiceMCC.classList.toggle('hidden');
+    body.classList.toggle('noScroll');
     if (backdrop.style.opacity == '1') {
         backdrop.style.opacity = ((backdrop.style.opacity!='0') ? '0' : '1');
         setTimeout(() => {

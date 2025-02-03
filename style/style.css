@@ -4191,6 +4191,9 @@ body {
   width: 100dvw;
   scroll-snap-type: y mandatory;
 }
+body.noScroll {
+  overflow: hidden !important;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Fira Sans", sans-serif;
@@ -4461,12 +4464,21 @@ header .closeContainer {
   z-index: 10;
   background: white;
   height: 100dvh;
-  width: 50dvw;
-  padding: 4rem 3rem;
+  width: 60dvw;
+  max-width: 1024px;
+  padding: 2rem 3rem;
   transition: all 300ms ease-in-out;
 }
 #indiceMCC .row {
   align-items: center;
+}
+#indiceMCC .row > .col-12 {
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#indiceMCC h3 {
+  margin: 0;
 }
 #indiceMCC ul {
   list-style: none;
@@ -4474,6 +4486,7 @@ header .closeContainer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin-bottom: 0;
   gap: 1rem;
 }
 #indiceMCC ul li a {
@@ -4487,14 +4500,14 @@ header .closeContainer {
 }
 #indiceMCC.hidden {
   transition: all 300ms ease-in-out;
-  right: calc(-50dvw - 100px);
+  right: -80dvw;
 }
 
 #buttonIndiceMCC,
 #buttonDescargaMCC {
   position: fixed;
   right: 0;
-  bottom: calc(50vh - 50px);
+  bottom: calc(30vh + 140px + 1rem);
   z-index: 5;
 }
 #buttonIndiceMCC .button,
@@ -4509,7 +4522,7 @@ header .closeContainer {
 }
 
 #buttonDescargaMCC {
-  bottom: calc(32vh - 50px);
+  bottom: 30vh;
 }
 #buttonDescargaMCC a {
   width: 24px !important;
@@ -4799,8 +4812,11 @@ button.loading img,
   margin-top: 1rem;
 }
 .mainContent__image img {
-  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
+  -o-object-position: left;
+     object-position: left;
 }
 .mainContent__image.col-lg-3 img {
   width: 100%;
@@ -4996,9 +5012,6 @@ button.loading img,
   }
 }
 @media screen and (max-width: 767px) {
-  body.noScroll {
-    overflow: hidden !important;
-  }
   main {
     padding: 2rem 1rem 0 !important;
   }
