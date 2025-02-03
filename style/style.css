@@ -4245,6 +4245,9 @@ blockquote {
 blockquote ul {
   margin-bottom: 0;
 }
+blockquote ul:last-child {
+  margin-top: 0rem;
+}
 blockquote ul li:last-child {
   margin: 0;
 }
@@ -4265,17 +4268,19 @@ hr.primary {
 }
 [data-tooltip]:hover::after {
   display: block;
-  position: absolute;
+  position: fixed;
   content: attr(data-tooltip);
   background-color: #fbfbfb;
   border: 1px solid #ededed;
   border-radius: 0.75rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   padding: 0.5em 1rem;
-  left: 100%;
-  transform: translate(-50%, 0);
+  bottom: -1px;
+  right: 60px;
   width: -moz-max-content;
   width: max-content;
-  max-width: 450px;
+  max-width: calc(100% - 434px);
   font-size: 0.875rem;
   font-weight: 300;
   box-shadow: 0 6px 12px 0 rgba(100, 100, 100, 0.05);
@@ -4486,19 +4491,32 @@ header .closeContainer {
   right: calc(-50dvw - 100px);
 }
 
-#buttonIndiceMCC {
+#buttonIndiceMCC,
+#buttonDescargaMCC {
   position: fixed;
   right: 0;
-  bottom: calc(50dvh - 50px);
+  bottom: calc(50vh - 50px);
   z-index: 5;
 }
-#buttonIndiceMCC .button {
+#buttonIndiceMCC .button,
+#buttonDescargaMCC .button {
   writing-mode: sideways-lr;
   text-orientation: mixed;
   border-radius: 0.5rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  padding: 2rem 1rem;
+  padding: 1rem 0.5rem;
+  width: 40px;
+}
+
+#buttonDescargaMCC {
+  bottom: calc(32vh - 50px);
+}
+#buttonDescargaMCC a {
+  width: 24px !important;
+}
+#buttonDescargaMCC img {
+  transform: rotate(-90deg);
 }
 
 footer .acercaContainer {
@@ -4810,6 +4828,43 @@ button.loading img,
 .mainContent__text p {
   margin-top: 0;
 }
+.mainContent__text ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.mainContent__text ul li p {
+  margin-bottom: 0.5rem;
+}
+.mainContent__text ol {
+  list-style: none;
+}
+.mainContent__text ol li {
+  position: relative;
+}
+.mainContent__text ol li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.mainContent__text ol li p {
+  margin-bottom: 0.5rem;
+}
+.mainContent__text ol li > span {
+  position: absolute;
+  left: -1.5rem;
+  font-weight: 600;
+}
+.mainContent__text ol li h4 {
+  margin: 0.5rem 0;
+}
+.mainContent__text ol li h4 span {
+  font-weight: 400;
+  color: #333333;
+}
+.mainContent__text ol li img {
+  width: 2rem;
+  height: auto;
+  position: absolute;
+  left: -2.5rem;
+  top: -4px;
+}
 .mainContent__title small {
   font-weight: 400;
 }
@@ -4849,6 +4904,10 @@ button.loading img,
 }
 .mainContent--autor > .mainContent__image.justify-content-end {
   margin-bottom: 2rem;
+}
+
+.MCC .mainContent {
+  padding-right: 1.25rem;
 }
 
 .actionsContainer {
@@ -4986,6 +5045,9 @@ button.loading img,
     width: 100%;
     height: auto;
   }
+  .MCC .mainContent {
+    padding-right: 2.25rem;
+  }
   #indiceMCC {
     padding: 2rem;
     width: 80dvw;
@@ -4993,14 +5055,15 @@ button.loading img,
   #indiceMCC.hidden {
     right: calc(-80dvw - 100px);
   }
-  #buttonIndiceMCC {
-    bottom: calc(10dvh - 50px);
-  }
   #mobileHeader {
     display: flex;
   }
   #destacados {
     margin-top: 4rem;
+  }
+  [data-tooltip]:hover::after {
+    max-width: calc(100vw - 102px);
+    right: 52px;
   }
   .hide-mobile {
     display: none !important;

@@ -188,6 +188,9 @@ blockquote {
   padding: 0.5rem 0;
   padding-left: 1rem;
   ul{
+    &:last-child{
+      margin-top: 0rem;
+    }
     margin-bottom: 0;
     li{
       &:last-child{
@@ -214,16 +217,20 @@ hr{
   &:hover {
     &::after {
       display: block;
-      position: absolute;
+      position: fixed;
       content: attr(data-tooltip);
       background-color: $color-gray-50;
       border: 1px solid $color-gray-100;
       border-radius: $border-radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
       padding: 0.5em 1rem;
-      left: 100%;
-      transform: translate(-50%,0);
+      bottom: -1px;
+      // left: auto;
+      right: 60px;
+      // transform: translate(-50%,0);
       width: max-content;
-      max-width: 450px;
+      max-width: calc(100% - 434px);
       font-size: $font-size-sm;
       font-weight: 300;
       box-shadow: $box-shadow-1;
@@ -436,10 +443,11 @@ header{
   }
 }
 
-#buttonIndiceMCC{
+#buttonIndiceMCC,
+#buttonDescargaMCC{
   position: fixed;
   right: 0;
-  bottom: calc(50dvh - 50px);
+  bottom: calc(50vh - 50px);
   z-index: 5;
   .button{
     writing-mode: sideways-lr;
@@ -447,7 +455,18 @@ header{
     border-radius: $border-radius-sm;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    padding: 2rem 1rem;
+    padding: 1rem 0.5rem;
+    width: 40px;
+  }
+}
+
+#buttonDescargaMCC{
+  bottom: calc(32vh - 50px);
+  a{
+    width: 24px !important;
+  }
+  img{
+    transform: rotate(-90deg);
   }
 }
 
@@ -770,6 +789,47 @@ button,
     p{
       margin-top: 0;
     }
+    ul{
+      li{
+        &:not(:last-child){
+          margin-bottom: 1rem;
+        }
+        p{
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    ol{
+      list-style: none;
+      li{
+        position: relative;
+        &:not(:last-child){
+          margin-bottom: 2rem;
+        }
+        p{
+          margin-bottom: 0.5rem;
+        }
+        >span{
+          position: absolute;
+          left: -1.5rem;
+          font-weight: 600;
+        }
+        h4{
+          margin: 0.5rem 0;
+          span{
+            font-weight: 400;
+            color: $color-text-dark;
+          }
+        }
+        img{
+          width: 2rem;
+          height: auto;
+          position: absolute;
+          left: -2.5rem;
+          top: -4px;
+        }
+      }
+    }
   }
   &__title{
     small{
@@ -824,6 +884,12 @@ button,
         margin-bottom: 2rem;
       }
     }
+  }
+}
+
+.MCC{
+  .mainContent{
+    padding-right: 1.25rem;
   }
 }
 
@@ -986,6 +1052,11 @@ button,
       }
     }
   }
+  .MCC{
+    .mainContent{
+      padding-right: 2.25rem;
+    }
+  }
   #indiceMCC{
     padding: 2rem;
     width: 80dvw;
@@ -993,14 +1064,19 @@ button,
       right: calc(-80dvw - 100px);
     }
   }
-  #buttonIndiceMCC{
-    bottom: calc(10dvh - 50px);
-  }
   #mobileHeader{
     display: flex;
   }
   #destacados{
     margin-top: 4rem;
+  }
+  [data-tooltip] {
+    &:hover {
+      &::after {
+        max-width: calc(100vw - 102px);
+        right: 52px;
+      }
+    }
   }
   .hide-mobile{
     display: none !important;
