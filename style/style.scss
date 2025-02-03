@@ -229,7 +229,7 @@ hr{
       // left: auto;
       right: 60px;
       // transform: translate(-50%,0);
-      width: max-content;
+      width: 100%;
       max-width: calc(100% - 434px);
       font-size: $font-size-sm;
       font-weight: 300;
@@ -883,6 +883,25 @@ button,
       &.justify-content-end{
         margin-bottom: 2rem;
       }
+    }
+  }
+  &#anexo,&#referencias{
+    h2,h3{
+      color: $color-text-dark;
+    }
+  }
+  &#anexo{
+    .mainContent{
+      &__text{
+        background-color: $color-gray-100;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+  &#referencias{
+    p{
+      text-indent: -2rem;
+      padding-left: 2rem;
     }
   }
 }

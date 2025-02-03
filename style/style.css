@@ -4278,8 +4278,7 @@ hr.primary {
   padding: 0.5em 1rem;
   bottom: -1px;
   right: 60px;
-  width: -moz-max-content;
-  width: max-content;
+  width: 100%;
   max-width: calc(100% - 434px);
   font-size: 0.875rem;
   font-weight: 300;
@@ -4904,6 +4903,17 @@ button.loading img,
 }
 .mainContent--autor > .mainContent__image.justify-content-end {
   margin-bottom: 2rem;
+}
+.mainContent#anexo h2, .mainContent#anexo h3, .mainContent#referencias h2, .mainContent#referencias h3 {
+  color: #333333;
+}
+.mainContent#anexo .mainContent__text {
+  background-color: #ededed;
+  padding: 1rem 2rem;
+}
+.mainContent#referencias p {
+  text-indent: -2rem;
+  padding-left: 2rem;
 }
 
 .MCC .mainContent {
