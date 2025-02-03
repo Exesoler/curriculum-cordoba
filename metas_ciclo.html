@@ -56,16 +56,18 @@
         <div class="col-12 mainContent__title">
           <h1>Metas por ciclo</h1>
         </div>
-        <div class="col-12 col-md-6 mainContent__video">
+        <!-- <div class="col-12 col-md-6 mainContent__video">
           <video controls width="100%">
             <source src="./assets/nature_1080p.webm" type="video/webm" />
             <source src="./assets/nature_1080p.mp4" type="video/mp4" />
           </video>
+        </div> -->
+        <div class="col-12 mainContent__resume">
+          <p><strong>Metas por ciclo</strong> nos invita a reflexionar sobre el currículum entre colegas, en el contexto de cada escuela y su comunidad. En ese sentido, es un recurso que puede ser compartido con las familias para favorecer su participación activa en los procesos de aprendizaje de las/os estudiantes.</p>
+          <p>El documento propone metas de aprendizaje para cada campo y espacio curricular para toda la trayectoria educativa. Así, colegas de un mismo ciclo enseñan, en la sala, grado o año en que trabajan, para lograr metas de aprendizaje comunes. Mientras tienen a la vista la secuencia completa de lo que se espera que los estudiantes logren durante la escolaridad.</p>
+          <p>Aquí podrán acceder al documento como también descargarlo en su versión PDF.</p>
         </div>
-        <div class="col-12 col-md-6 mainContent__resume">
-          <p>El documento <strong>Metas por ciclo</strong> nos invita a reflexionar sobre el currículum entre colegas, en el contexto de cada escuela y su comunidad. Propone metas de aprendizaje para cada campo y espacio curricular para toda la trayectoria educativa.</p>
-        </div>
-        <div class="col-12 col-md-6 mainContent__actions">
+        <!-- <div class="col-12 col-md-6 mainContent__actions">
           <div class="row actionsContainer">
             <div class="col-auto">
               <button class="button button--text" onclick="toggleColapse('.mainContent--pdfContainer')">Ver más</button>
@@ -74,18 +76,32 @@
               <a href="./downloads/METAS_2025_v1.0.pdf" download="Metas por Ciclo 2025" class="button button--primary button--icon">Descargar PDF <img src="./assets/download.svg" alt="Download icon"></a>
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
-      <hr>
-      <section class="row mainContent mainContent--pdfContainer colapsed">
+      <section class="row mainContent mainContent--pdfContainer hide-mobile">
         <div class="col-12">
           <div class="loader"><img src="./assets/loader.svg" alt="Loader icon"></div>
           <div id="pdfContainer">
             <iframe src="./downloads/METAS_2025_v1.0_LOW.pdf#view=FitH" width="100%" height="100%" style="border:none" title="Embedded PDF Viewer"></iframe>
           </div>
         </div>
-        <div class="col-12 d-flex justify-content-center">
-          <a href="./downloads/METAS_2025_v1.0.pdf" download="Metas por Ciclo 2025" class="button button--primary button--icon">Descargar PDF <img src="./assets/download.svg" alt="Download icon"></a>
+      </section>
+      <section class="row hide-desktop">
+        <div class="col-12">
+          <picture>
+            <source srcset='./assets/thumbnail_MetasPDF.webp' type='image/webp'>
+            <img src='./assets/thumbnail_MetasPDF.jpg' type='image/jpg' alt='Thumbnail Metas por ciclo PDF'>
+          </picture>
+        </div>
+      </section>
+      <section class="row hide-mobile">
+        <div class="col-12 d-flex justify-content-end">
+          <a href="./downloads/METAS_2025_v1.0.pdf" download="Metas por Ciclo 2025" class="button button--primary"><img src="./assets/download--white.svg" alt="Download icon"> Descargar</a>
+        </div>
+      </section>
+      <section class="row hide-desktop">
+        <div class="col-12 d-flex justify-content-end">
+          <a href="./downloads/METAS_2025_v1.0.pdf" download="Metas por Ciclo 2025" class="button button--secondary">Acceder</a>
         </div>
       </section>
       <footer></footer>

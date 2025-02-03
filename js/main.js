@@ -33,6 +33,19 @@ const disableMenuResponsive = () => {
     }
 };
 
+const hasSubMenu = document.querySelector('.hasSubMenu');
+const subMenu = document.querySelector('.subMenu');
+
+const submenuCollapse = () => {
+
+    if(subMenu.classList.contains('collapsed')){
+        subMenu.classList.remove('collapsed');
+    }else{
+        subMenu.classList.add('collapsed');
+    }
+
+};
+
 window.addEventListener("resize", () => {
     // console.log('resize event')
     disableMenuResponsive();
@@ -44,7 +57,7 @@ let url = window.location.pathname;
 let filename = url.split('/').pop();
 
 const addMenuActive = (filename) => {
-    let menuItems = document.querySelectorAll('nav > ul > li > a');
+    let menuItems = document.querySelectorAll('nav a');
     menuItems.forEach(item => {
         if (item.getAttribute('href') == filename) {
             item.classList.add('active');
@@ -52,7 +65,15 @@ const addMenuActive = (filename) => {
     });
 }
 
+const removeAcercaDe = (filename) => {
+    const acercaContainer = document.querySelector('.acercaContainer');
+    if (filename == 'quienes_somos.html') {
+        acercaContainer.classList.add('hidden');
+    }
+}
+
 addMenuActive(filename);
+removeAcercaDe(filename);
 
 if(window.innerWidth < 768){
     document.querySelector('header').classList.add('hidden');
@@ -60,128 +81,67 @@ if(window.innerWidth < 768){
 
 window.scrollY = 0;
 
-let pdf = '';
-
-switch (filename) {
-    case 'metas_ciclo.html':
-        pdf = metasPDF;
-        // console.log('pdf de metas');
-        break;
-
-    case 'marco_curricular.html':
-        pdf = marcoPDF;
-        // console.log('pdf de marco');
-        break;
-
-    default:
-        pdf = false;
-        break;
-}
-
-const pageNum = document.querySelector('#page_num');
-const pageCount = document.querySelector('#page_count');
-const currentPage = document.querySelector('#current_page');
-const previousPage = document.querySelector('#prev_page');
-const nextPage = document.querySelector('#next_page');
-
-const initialState = {
-	pdfDoc: null,
-	currentPage: 1,
-	pageCount: 0,
-	zoom: 3,
-};
-
-if(pdf !== false){
-    pdfjsLib
-    .getDocument(pdf)
-    .promise.then((data) => {
-        initialState.pdfDoc = data;
-        // console.log('pdfDocument', initialState.pdfDoc);
-
-        pageCount.textContent = initialState.pdfDoc.numPages;
-
-        renderPage();
-    })
-    .catch((err) => {
-        console.error(`Error en el lector de pdf = ${err.message}`);
-    });
-
-    // Render the page.
-    const renderPage = () => {
-        // Load the first page.
-        // console.log(initialState.pdfDoc, 'pdfDoc');
-        initialState.pdfDoc
-            .getPage(initialState.currentPage)
-            .then((page) => {
-                // console.log('page', page);
-
-                const canvas = document.querySelector('#pdf-canvas');
-                const ctx = canvas.getContext('2d');
-                const viewport = page.getViewport({
-                    scale: initialState.zoom,
-                });
-
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                // Render the PDF page into the canvas context.
-                const renderCtx = {
-                    canvasContext: ctx,
-                    viewport: viewport,
-                };
-
-                page.render(renderCtx);
-
-                pageNum.textContent = initialState.currentPage;
-            });
-    };
-
-    const showPrevPage = () => {
-        if (initialState.pdfDoc === null || initialState.currentPage <= 1)
-            return;
-        initialState.currentPage--;
-        // Render the current page.
-        currentPage.value = initialState.currentPage;
-        renderPage();
-    };
-
-    const showNextPage = () => {
-        if (
-            initialState.pdfDoc === null ||
-            initialState.currentPage >= initialState.pdfDoc._pdfInfo.numPages
-        )
-            return;
-
-        initialState.currentPage++;
-        currentPage.value = initialState.currentPage;
-        renderPage();
-    };
-
-    // Button events.
-    previousPage.addEventListener('click', showPrevPage);
-    nextPage.addEventListener('click', showNextPage);
-
-    // Keypress event.
-    currentPage.addEventListener('keypress', (event) => {
-        if (initialState.pdfDoc === null) return;
-        // Get the key code.
-        const keycode = event.keyCode ? event.keyCode : event.which;
-
-        if (keycode === 13) {
-            // Get the new page number and render it.
-            let desiredPage = currentPage.valueAsNumber;
-            initialState.currentPage = Math.min(
-                Math.max(desiredPage, 1),
-                initialState.pdfDoc._pdfInfo.numPages,
-            );
-
-            currentPage.value = initialState.currentPage;
-            renderPage();
-        }
-    });
-}
-
-document.querySelector('#contact-submit').addEventListener('click', (e) => {
-    e.classList.add('loading');
-    e.innerHTML = `<img src="${loadingGIF}" alt="loading">`;
+hasSubMenu.addEventListener('click', () => {
+    console.log('click para la función submenuCollapse')
+    submenuCollapse();
 });
+
+if (filename == 'contacto.html') {
+    document.querySelector('#contact-submit').addEventListener('click', (e) => {
+        e.classList.add('loading');
+        e.innerHTML = `<img src="${loadingGIF}" alt="loading">`;
+    });
+}
+
+if (filename == 'metas_ciclo.html' || filename == 'progresiones_aprendizaje.html') {
+    submenuCollapse();
+}
+
+
+const videoFrame = document.querySelector('#videoFrame');
+const video = document.querySelector('#videoFrame + video');
+
+if (videoFrame) {
+    videoFrame.addEventListener('click', () => {
+        videoFrame.classList.add('hidden');
+        video.classList.remove('hidden');
+        setTimeout(() => {
+            video.play();
+        }, 1000);
+    });
+}
+
+
+const indiceMCC = document.querySelector('#indiceMCC');
+const buttonIndiceMCC = document.querySelector('#buttonIndiceMCC');
+const closeIndiceMCC = document.querySelector('#indiceMCC .close');
+const itemIndiceMCC = document.querySelectorAll('#indiceMCC a');
+
+const toggleIndiceMCC = () => {
+    indiceMCC.classList.toggle('hidden');
+    if (backdrop.style.opacity == '1') {
+        backdrop.style.opacity = ((backdrop.style.opacity!='0') ? '0' : '1');
+        setTimeout(() => {
+            backdrop.classList.toggle('hidden');
+        }, 300);
+    } else {
+        backdrop.classList.toggle('hidden');
+        setTimeout(() => {
+            backdrop.style.opacity = ((backdrop.style.opacity!='0') ? '0' : '1');
+        }, 300);
+    }
+}
+
+if (buttonIndiceMCC) {
+    buttonIndiceMCC.addEventListener('click', () => {
+        toggleIndiceMCC();
+    });
+    closeIndiceMCC.addEventListener('click', () => {
+        toggleIndiceMCC();
+    });
+    itemIndiceMCC.forEach(item => {
+        item.addEventListener('click', () => {
+            toggleIndiceMCC();
+        });
+    });
+}
