@@ -5059,8 +5059,26 @@ button.loading img,
     padding-right: 2.25rem;
   }
   #indiceMCC {
-    padding: 2rem;
+    padding: 1rem 2rem;
     width: 80dvw;
+  }
+  #indiceMCC ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  #indiceMCC ul li.subitem {
+    max-width: calc(100% - 1.25rem);
+  }
+  #indiceMCC ul li a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #indiceMCC h3 {
+    margin: 0;
   }
   #indiceMCC.hidden {
     right: calc(-80dvw - 100px);

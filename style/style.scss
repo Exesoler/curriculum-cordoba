@@ -1077,8 +1077,28 @@ button,
     }
   }
   #indiceMCC{
-    padding: 2rem;
+    padding: 1rem 2rem;
     width: 80dvw;
+    ul{
+      li{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 100%;
+        &.subitem{
+          max-width: calc(100% - 1.25rem);
+        }
+        a{
+          display: block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    h3{
+      margin: 0;
+    }
     &.hidden{
       right: calc(-80dvw - 100px);
     }
