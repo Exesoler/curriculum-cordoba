@@ -4512,13 +4512,18 @@ header .closeContainer {
 }
 #buttonIndiceMCC .button,
 #buttonDescargaMCC .button {
-  writing-mode: sideways-lr;
+  writing-mode: tb;
   text-orientation: mixed;
   border-radius: 0.5rem;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   padding: 1rem 0.5rem;
   width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transform: rotate(180deg);
 }
 
 #buttonDescargaMCC {
@@ -4528,7 +4533,7 @@ header .closeContainer {
   width: 24px !important;
 }
 #buttonDescargaMCC img {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
 }
 
 footer .acercaContainer {
@@ -4797,6 +4802,9 @@ button.loading img,
 .mainContent--gray p {
   margin-bottom: 0.5rem;
 }
+.mainContent--gray p small {
+  color: #999999;
+}
 .mainContent--gray .mainContent__subtitle:not(:first-child) {
   margin-top: 2rem;
 }
@@ -4811,7 +4819,7 @@ button.loading img,
 .mainContent__resume + .mainContent__resume {
   margin-top: 1rem;
 }
-.mainContent__image img {
+.mainContent__image:not(.mainContent__image--banner) img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
@@ -4889,6 +4897,71 @@ button.loading img,
 .mainContent__media img {
   width: 100%;
   height: auto;
+}
+.mainContent__form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainContent__form form {
+  flex-grow: 1;
+}
+.mainContent__form #contactSuccess,
+.mainContent__form #contactDanger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2rem;
+  background-color: #eaf4e9;
+  border: 1px solid #94ca92;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  margin: 0 2rem;
+  z-index: 1;
+}
+.mainContent__form #contactSuccess:not(.hidden) ~ form,
+.mainContent__form #contactDanger:not(.hidden) ~ form {
+  opacity: 0.5;
+  pointer-events: none;
+  min-height: 260px;
+}
+.mainContent__form #contactSuccess:not(.hidden) ~ form > fieldset,
+.mainContent__form #contactDanger:not(.hidden) ~ form > fieldset {
+  display: none;
+}
+.mainContent__form #contactSuccess h2, .mainContent__form #contactSuccess p,
+.mainContent__form #contactDanger h2,
+.mainContent__form #contactDanger p {
+  text-align: center;
+}
+.mainContent__form #contactSuccess h2,
+.mainContent__form #contactDanger h2 {
+  color: #299425;
+  margin: 0;
+}
+.mainContent__form #contactSuccess .button,
+.mainContent__form #contactDanger .button {
+  margin-top: 3rem;
+  color: #299425;
+}
+.mainContent__form #contactSuccess.hidden,
+.mainContent__form #contactDanger.hidden {
+  display: none;
+}
+.mainContent__form #contactDanger {
+  background-color: #f7e6e6;
+  border: 1px solid #d58080;
+}
+.mainContent__form #contactDanger h2 {
+  color: #aa0000;
+}
+.mainContent__form #contactDanger .button {
+  color: #aa0000;
 }
 .mainContent--genially > .col-12 > div {
   overflow: hidden;
@@ -5025,6 +5098,12 @@ button.loading img,
     display: flex;
     justify-content: center;
     margin: 3rem 0 4rem;
+  }
+  main .mainContent--gray p:not(:last-child) {
+    margin-bottom: 1.25rem !important;
+  }
+  main .mainContent__video + .mainContent__resume {
+    margin-top: 2rem;
   }
   hr {
     margin: 2rem 0;

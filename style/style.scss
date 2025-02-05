@@ -1,6 +1,8 @@
 $color-primary: #004582;
 $color-secondary: #e2464c;
 $color-tertiary: #258394;
+$color-success: #299425;
+$color-danger: #aa0000;
 
 $black: #111111;
 $color-gray: #dbdbdb;
@@ -34,6 +36,24 @@ $color-tertiary-150: mix(white, $color-tertiary, 30%) !default;
 $color-tertiary-100: mix(white, $color-tertiary, 50%) !default;
 $color-tertiary-75: mix(white, $color-tertiary, 70%) !default;
 $color-tertiary-50: mix(white, $color-tertiary, 90%) !default;
+
+$color-success-600: mix(black, $color-success, 50%) !default;
+$color-success-500: mix(black, $color-success, 30%) !default;
+$color-success-400: mix(black, $color-success, 10%) !default;
+$color-success-200: mix(white, $color-success, 10%) !default;
+$color-success-150: mix(white, $color-success, 30%) !default;
+$color-success-100: mix(white, $color-success, 50%) !default;
+$color-success-75: mix(white, $color-success, 70%) !default;
+$color-success-50: mix(white, $color-success, 90%) !default;
+
+$color-danger-600: mix(black, $color-danger, 50%) !default;
+$color-danger-500: mix(black, $color-danger, 30%) !default;
+$color-danger-400: mix(black, $color-danger, 10%) !default;
+$color-danger-200: mix(white, $color-danger, 10%) !default;
+$color-danger-150: mix(white, $color-danger, 30%) !default;
+$color-danger-100: mix(white, $color-danger, 50%) !default;
+$color-danger-75: mix(white, $color-danger, 70%) !default;
+$color-danger-50: mix(white, $color-danger, 90%) !default;
 
 $color-gray-600: mix(black, $color-gray, 50%) !default;
 $color-gray-500: mix(black, $color-gray, 30%) !default;
@@ -463,13 +483,18 @@ header{
   bottom: calc((30vh + 140px) + 1rem);
   z-index: 5;
   .button{
-    writing-mode: sideways-lr;
+    writing-mode: tb;
     text-orientation: mixed;
     border-radius: $border-radius-sm;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     padding: 1rem 0.5rem;
     width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transform: rotate(180deg);
   }
 }
 
@@ -479,7 +504,7 @@ header{
     width: 24px !important;
   }
   img{
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
   }
 }
 
@@ -744,6 +769,9 @@ button,
     margin: 0;
     p{
       margin-bottom: 0.5rem;
+      small{
+        color: $color-gray-500;
+      }
     }
     .mainContent{
       &__subtitle{
@@ -767,10 +795,12 @@ button,
     }
   }
   &__image{
-    img{
-      object-fit: cover;
-      height: 100%;
-      object-position: left;
+    &:not(.mainContent__image--banner){
+      img{
+        object-fit: cover;
+        height: 100%;
+        object-position: left;
+      }
     }
     &.col-lg-3{
       img{
@@ -859,6 +889,65 @@ button,
       height: auto;
     }
   }
+  &__form{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+      flex-grow: 1;
+    }
+    #contactSuccess,
+    #contactDanger{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: fit-content;
+      padding: 2rem;
+      background-color: $color-success-50;
+      border: 1px solid $color-success-100;
+      border-radius: $border-radius;
+      box-sizing: border-box;
+      margin: 0 2rem;
+      z-index: 1;
+      &:not(.hidden){
+        & ~ form{
+          opacity: 0.5;
+          pointer-events: none;
+          min-height: 260px;
+          > fieldset{
+            display: none;
+          }
+        }
+      }
+      h2,p{
+        text-align: center;
+      }
+      h2{
+        color: $color-success;
+        margin: 0;
+      }
+      .button{
+        margin-top: 3rem;
+        color: $color-success;
+      }
+      &.hidden{
+        display: none;
+      }
+    }
+    #contactDanger{
+      background-color: $color-danger-50;
+      border: 1px solid $color-danger-100;
+      h2{
+        color: $color-danger;
+      }
+      .button{
+        color: $color-danger;
+      }
+    }
+  }
   &--genially{
     > .col-12{
       > div{
@@ -932,6 +1021,8 @@ button,
   gap: 2rem;
   height: 56px;
 }
+
+
 
 .actionsContainerProgresiones{
   padding-bottom: 2rem;
@@ -1027,6 +1118,18 @@ button,
           display: flex;
           justify-content: center;
           margin: 3rem 0 4rem;
+        }
+      }
+      &--gray{
+        p{
+          &:not(:last-child){
+            margin-bottom: 1.25rem !important;
+          }
+        }
+      }
+      &__video{
+        + .mainContent__resume{
+          margin-top: 2rem;
         }
       }
     }
