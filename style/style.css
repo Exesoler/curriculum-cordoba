@@ -4191,6 +4191,9 @@ body {
   width: 100dvw;
   scroll-snap-type: y mandatory;
 }
+body.noScroll {
+  overflow: hidden !important;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Fira Sans", sans-serif;
@@ -4245,6 +4248,9 @@ blockquote {
 blockquote ul {
   margin-bottom: 0;
 }
+blockquote ul:last-child {
+  margin-top: 0rem;
+}
 blockquote ul li:last-child {
   margin: 0;
 }
@@ -4265,17 +4271,18 @@ hr.primary {
 }
 [data-tooltip]:hover::after {
   display: block;
-  position: absolute;
+  position: fixed;
   content: attr(data-tooltip);
   background-color: #fbfbfb;
   border: 1px solid #ededed;
   border-radius: 0.75rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   padding: 0.5em 1rem;
-  left: 100%;
-  transform: translate(-50%, 0);
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 450px;
+  bottom: -1px;
+  right: 60px;
+  width: 100%;
+  max-width: calc(100% - 434px);
   font-size: 0.875rem;
   font-weight: 300;
   box-shadow: 0 6px 12px 0 rgba(100, 100, 100, 0.05);
@@ -4457,12 +4464,21 @@ header .closeContainer {
   z-index: 10;
   background: white;
   height: 100dvh;
-  width: 50dvw;
-  padding: 4rem 3rem;
+  width: 60dvw;
+  max-width: 1024px;
+  padding: 2rem 3rem;
   transition: all 300ms ease-in-out;
 }
 #indiceMCC .row {
   align-items: center;
+}
+#indiceMCC .row > .col-12 {
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#indiceMCC h3 {
+  margin: 0;
 }
 #indiceMCC ul {
   list-style: none;
@@ -4470,6 +4486,7 @@ header .closeContainer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin-bottom: 0;
   gap: 1rem;
 }
 #indiceMCC ul li a {
@@ -4483,22 +4500,40 @@ header .closeContainer {
 }
 #indiceMCC.hidden {
   transition: all 300ms ease-in-out;
-  right: calc(-50dvw - 100px);
+  right: -80dvw;
 }
 
-#buttonIndiceMCC {
+#buttonIndiceMCC,
+#buttonDescargaMCC {
   position: fixed;
   right: 0;
-  bottom: calc(50dvh - 50px);
+  bottom: calc(30vh + 140px + 1rem);
   z-index: 5;
 }
-#buttonIndiceMCC .button {
-  writing-mode: sideways-lr;
+#buttonIndiceMCC .button,
+#buttonDescargaMCC .button {
+  writing-mode: tb;
   text-orientation: mixed;
   border-radius: 0.5rem;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  padding: 2rem 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 1rem 0.5rem;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transform: rotate(180deg);
+}
+
+#buttonDescargaMCC {
+  bottom: 30vh;
+}
+#buttonDescargaMCC a {
+  width: 24px !important;
+}
+#buttonDescargaMCC img {
+  transform: rotate(90deg);
 }
 
 footer .acercaContainer {
@@ -4767,6 +4802,9 @@ button.loading img,
 .mainContent--gray p {
   margin-bottom: 0.5rem;
 }
+.mainContent--gray p small {
+  color: #999999;
+}
 .mainContent--gray .mainContent__subtitle:not(:first-child) {
   margin-top: 2rem;
 }
@@ -4781,9 +4819,12 @@ button.loading img,
 .mainContent__resume + .mainContent__resume {
   margin-top: 1rem;
 }
-.mainContent__image img {
-  width: auto;
+.mainContent__image:not(.mainContent__image--banner) img {
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
+  -o-object-position: left;
+     object-position: left;
 }
 .mainContent__image.col-lg-3 img {
   width: 100%;
@@ -4810,6 +4851,43 @@ button.loading img,
 .mainContent__text p {
   margin-top: 0;
 }
+.mainContent__text ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.mainContent__text ul li p {
+  margin-bottom: 0.5rem;
+}
+.mainContent__text ol {
+  list-style: none;
+}
+.mainContent__text ol li {
+  position: relative;
+}
+.mainContent__text ol li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.mainContent__text ol li p {
+  margin-bottom: 0.5rem;
+}
+.mainContent__text ol li > span {
+  position: absolute;
+  left: -1.5rem;
+  font-weight: 600;
+}
+.mainContent__text ol li h4 {
+  margin: 0.5rem 0;
+}
+.mainContent__text ol li h4 span {
+  font-weight: 400;
+  color: #333333;
+}
+.mainContent__text ol li img {
+  width: 2rem;
+  height: auto;
+  position: absolute;
+  left: -2.5rem;
+  top: -4px;
+}
 .mainContent__title small {
   font-weight: 400;
 }
@@ -4819,6 +4897,71 @@ button.loading img,
 .mainContent__media img {
   width: 100%;
   height: auto;
+}
+.mainContent__form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainContent__form form {
+  flex-grow: 1;
+}
+.mainContent__form #contactSuccess,
+.mainContent__form #contactDanger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2rem;
+  background-color: #eaf4e9;
+  border: 1px solid #94ca92;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  margin: 0 2rem;
+  z-index: 1;
+}
+.mainContent__form #contactSuccess:not(.hidden) ~ form,
+.mainContent__form #contactDanger:not(.hidden) ~ form {
+  opacity: 0.5;
+  pointer-events: none;
+  min-height: 260px;
+}
+.mainContent__form #contactSuccess:not(.hidden) ~ form > fieldset,
+.mainContent__form #contactDanger:not(.hidden) ~ form > fieldset {
+  display: none;
+}
+.mainContent__form #contactSuccess h2, .mainContent__form #contactSuccess p,
+.mainContent__form #contactDanger h2,
+.mainContent__form #contactDanger p {
+  text-align: center;
+}
+.mainContent__form #contactSuccess h2,
+.mainContent__form #contactDanger h2 {
+  color: #299425;
+  margin: 0;
+}
+.mainContent__form #contactSuccess .button,
+.mainContent__form #contactDanger .button {
+  margin-top: 3rem;
+  color: #299425;
+}
+.mainContent__form #contactSuccess.hidden,
+.mainContent__form #contactDanger.hidden {
+  display: none;
+}
+.mainContent__form #contactDanger {
+  background-color: #f7e6e6;
+  border: 1px solid #d58080;
+}
+.mainContent__form #contactDanger h2 {
+  color: #aa0000;
+}
+.mainContent__form #contactDanger .button {
+  color: #aa0000;
 }
 .mainContent--genially > .col-12 > div {
   overflow: hidden;
@@ -4849,6 +4992,21 @@ button.loading img,
 }
 .mainContent--autor > .mainContent__image.justify-content-end {
   margin-bottom: 2rem;
+}
+.mainContent#anexo h2, .mainContent#anexo h3, .mainContent#referencias h2, .mainContent#referencias h3 {
+  color: #333333;
+}
+.mainContent#anexo .mainContent__text {
+  background-color: #ededed;
+  padding: 1rem 2rem;
+}
+.mainContent#referencias p {
+  text-indent: -2rem;
+  padding-left: 2rem;
+}
+
+.MCC .mainContent {
+  padding-right: 1.25rem;
 }
 
 .actionsContainer {
@@ -4927,9 +5085,6 @@ button.loading img,
   }
 }
 @media screen and (max-width: 767px) {
-  body.noScroll {
-    overflow: hidden !important;
-  }
   main {
     padding: 2rem 1rem 0 !important;
   }
@@ -4943,6 +5098,12 @@ button.loading img,
     display: flex;
     justify-content: center;
     margin: 3rem 0 4rem;
+  }
+  main .mainContent--gray p:not(:last-child) {
+    margin-bottom: 1.25rem !important;
+  }
+  main .mainContent__video + .mainContent__resume {
+    margin-top: 2rem;
   }
   hr {
     margin: 2rem 0;
@@ -4986,21 +5147,43 @@ button.loading img,
     width: 100%;
     height: auto;
   }
+  .MCC .mainContent {
+    padding-right: 2.25rem;
+  }
   #indiceMCC {
-    padding: 2rem;
+    padding: 1rem 2rem;
     width: 80dvw;
+  }
+  #indiceMCC ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  #indiceMCC ul li.subitem {
+    max-width: calc(100% - 1.25rem);
+  }
+  #indiceMCC ul li a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #indiceMCC h3 {
+    margin: 0;
   }
   #indiceMCC.hidden {
     right: calc(-80dvw - 100px);
-  }
-  #buttonIndiceMCC {
-    bottom: calc(10dvh - 50px);
   }
   #mobileHeader {
     display: flex;
   }
   #destacados {
     margin-top: 4rem;
+  }
+  [data-tooltip]:hover::after {
+    max-width: calc(100vw - 102px);
+    right: 52px;
   }
   .hide-mobile {
     display: none !important;
