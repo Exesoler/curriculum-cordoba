@@ -1,6 +1,8 @@
 $color-primary: #004582;
 $color-secondary: #e2464c;
 $color-tertiary: #258394;
+$color-success: #299425;
+$color-danger: #aa0000;
 
 $black: #111111;
 $color-gray: #dbdbdb;
@@ -34,6 +36,24 @@ $color-tertiary-150: mix(white, $color-tertiary, 30%) !default;
 $color-tertiary-100: mix(white, $color-tertiary, 50%) !default;
 $color-tertiary-75: mix(white, $color-tertiary, 70%) !default;
 $color-tertiary-50: mix(white, $color-tertiary, 90%) !default;
+
+$color-success-600: mix(black, $color-success, 50%) !default;
+$color-success-500: mix(black, $color-success, 30%) !default;
+$color-success-400: mix(black, $color-success, 10%) !default;
+$color-success-200: mix(white, $color-success, 10%) !default;
+$color-success-150: mix(white, $color-success, 30%) !default;
+$color-success-100: mix(white, $color-success, 50%) !default;
+$color-success-75: mix(white, $color-success, 70%) !default;
+$color-success-50: mix(white, $color-success, 90%) !default;
+
+$color-danger-600: mix(black, $color-danger, 50%) !default;
+$color-danger-500: mix(black, $color-danger, 30%) !default;
+$color-danger-400: mix(black, $color-danger, 10%) !default;
+$color-danger-200: mix(white, $color-danger, 10%) !default;
+$color-danger-150: mix(white, $color-danger, 30%) !default;
+$color-danger-100: mix(white, $color-danger, 50%) !default;
+$color-danger-75: mix(white, $color-danger, 70%) !default;
+$color-danger-50: mix(white, $color-danger, 90%) !default;
 
 $color-gray-600: mix(black, $color-gray, 50%) !default;
 $color-gray-500: mix(black, $color-gray, 30%) !default;
@@ -134,6 +154,9 @@ body {
   min-height: 100dvh;
   width: 100dvw;
   scroll-snap-type: y mandatory;
+  &.noScroll{
+    overflow: hidden !important;
+  }
 }
 
 h{
@@ -188,6 +211,9 @@ blockquote {
   padding: 0.5rem 0;
   padding-left: 1rem;
   ul{
+    &:last-child{
+      margin-top: 0rem;
+    }
     margin-bottom: 0;
     li{
       &:last-child{
@@ -214,16 +240,20 @@ hr{
   &:hover {
     &::after {
       display: block;
-      position: absolute;
+      position: fixed;
       content: attr(data-tooltip);
       background-color: $color-gray-50;
       border: 1px solid $color-gray-100;
       border-radius: $border-radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
       padding: 0.5em 1rem;
-      left: 100%;
-      transform: translate(-50%,0);
-      width: max-content;
-      max-width: 450px;
+      bottom: -1px;
+      // left: auto;
+      right: 60px;
+      // transform: translate(-50%,0);
+      width: 100%;
+      max-width: calc(100% - 434px);
       font-size: $font-size-sm;
       font-weight: 300;
       box-shadow: $box-shadow-1;
@@ -405,11 +435,20 @@ header{
   z-index: 10;
   background: white;
   height: 100dvh;
-  width: 50dvw;
-  padding: 4rem 3rem;
+  width: 60dvw;
+  max-width: 1024px;
+  padding: 2rem 3rem;
   transition: $transition;
   .row{
     align-items: center;
+    >.col-12{
+      max-height: calc(100dvh - 110px);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+  h3{
+    margin: 0;
   }
   ul{
     list-style: none;
@@ -417,6 +456,7 @@ header{
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 0;
     gap: 1rem;
     li{
       a{
@@ -432,22 +472,39 @@ header{
   }
   &.hidden{
     transition: $transition;
-    right: calc(-50dvw - 100px);
+    right: -80dvw;
   }
 }
 
-#buttonIndiceMCC{
+#buttonIndiceMCC,
+#buttonDescargaMCC{
   position: fixed;
   right: 0;
-  bottom: calc(50dvh - 50px);
+  bottom: calc((30vh + 140px) + 1rem);
   z-index: 5;
   .button{
-    writing-mode: sideways-lr;
+    writing-mode: tb;
     text-orientation: mixed;
     border-radius: $border-radius-sm;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    padding: 2rem 1rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 1rem 0.5rem;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transform: rotate(180deg);
+  }
+}
+
+#buttonDescargaMCC{
+  bottom: 30vh;
+  a{
+    width: 24px !important;
+  }
+  img{
+    transform: rotate(90deg);
   }
 }
 
@@ -712,6 +769,9 @@ button,
     margin: 0;
     p{
       margin-bottom: 0.5rem;
+      small{
+        color: $color-gray-500;
+      }
     }
     .mainContent{
       &__subtitle{
@@ -735,9 +795,12 @@ button,
     }
   }
   &__image{
-    img{
-      width: auto;
-      height: 100%;
+    &:not(.mainContent__image--banner){
+      img{
+        object-fit: cover;
+        height: 100%;
+        object-position: left;
+      }
     }
     &.col-lg-3{
       img{
@@ -770,6 +833,47 @@ button,
     p{
       margin-top: 0;
     }
+    ul{
+      li{
+        &:not(:last-child){
+          margin-bottom: 1rem;
+        }
+        p{
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    ol{
+      list-style: none;
+      li{
+        position: relative;
+        &:not(:last-child){
+          margin-bottom: 2rem;
+        }
+        p{
+          margin-bottom: 0.5rem;
+        }
+        >span{
+          position: absolute;
+          left: -1.5rem;
+          font-weight: 600;
+        }
+        h4{
+          margin: 0.5rem 0;
+          span{
+            font-weight: 400;
+            color: $color-text-dark;
+          }
+        }
+        img{
+          width: 2rem;
+          height: auto;
+          position: absolute;
+          left: -2.5rem;
+          top: -4px;
+        }
+      }
+    }
   }
   &__title{
     small{
@@ -783,6 +887,65 @@ button,
     img{
       width: 100%;
       height: auto;
+    }
+  }
+  &__form{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+      flex-grow: 1;
+    }
+    #contactSuccess,
+    #contactDanger{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: fit-content;
+      padding: 2rem;
+      background-color: $color-success-50;
+      border: 1px solid $color-success-100;
+      border-radius: $border-radius;
+      box-sizing: border-box;
+      margin: 0 2rem;
+      z-index: 1;
+      &:not(.hidden){
+        & ~ form{
+          opacity: 0.5;
+          pointer-events: none;
+          min-height: 260px;
+          > fieldset{
+            display: none;
+          }
+        }
+      }
+      h2,p{
+        text-align: center;
+      }
+      h2{
+        color: $color-success;
+        margin: 0;
+      }
+      .button{
+        margin-top: 3rem;
+        color: $color-success;
+      }
+      &.hidden{
+        display: none;
+      }
+    }
+    #contactDanger{
+      background-color: $color-danger-50;
+      border: 1px solid $color-danger-100;
+      h2{
+        color: $color-danger;
+      }
+      .button{
+        color: $color-danger;
+      }
     }
   }
   &--genially{
@@ -825,6 +988,31 @@ button,
       }
     }
   }
+  &#anexo,&#referencias{
+    h2,h3{
+      color: $color-text-dark;
+    }
+  }
+  &#anexo{
+    .mainContent{
+      &__text{
+        background-color: $color-gray-100;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+  &#referencias{
+    p{
+      text-indent: -2rem;
+      padding-left: 2rem;
+    }
+  }
+}
+
+.MCC{
+  .mainContent{
+    padding-right: 1.25rem;
+  }
 }
 
 .actionsContainer{
@@ -833,6 +1021,8 @@ button,
   gap: 2rem;
   height: 56px;
 }
+
+
 
 .actionsContainerProgresiones{
   padding-bottom: 2rem;
@@ -912,11 +1102,6 @@ button,
 }
 
 @media screen and (max-width: 767px){
-  body{
-    &.noScroll{
-      overflow: hidden !important;
-    }
-  }
   main{
     padding: 2rem 1rem 0 !important;
     >section{
@@ -933,6 +1118,18 @@ button,
           display: flex;
           justify-content: center;
           margin: 3rem 0 4rem;
+        }
+      }
+      &--gray{
+        p{
+          &:not(:last-child){
+            margin-bottom: 1.25rem !important;
+          }
+        }
+      }
+      &__video{
+        + .mainContent__resume{
+          margin-top: 2rem;
         }
       }
     }
@@ -986,21 +1183,51 @@ button,
       }
     }
   }
+  .MCC{
+    .mainContent{
+      padding-right: 2.25rem;
+    }
+  }
   #indiceMCC{
-    padding: 2rem;
+    padding: 1rem 2rem;
     width: 80dvw;
+    ul{
+      li{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 100%;
+        &.subitem{
+          max-width: calc(100% - 1.25rem);
+        }
+        a{
+          display: block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    h3{
+      margin: 0;
+    }
     &.hidden{
       right: calc(-80dvw - 100px);
     }
-  }
-  #buttonIndiceMCC{
-    bottom: calc(10dvh - 50px);
   }
   #mobileHeader{
     display: flex;
   }
   #destacados{
     margin-top: 4rem;
+  }
+  [data-tooltip] {
+    &:hover {
+      &::after {
+        max-width: calc(100vw - 102px);
+        right: 52px;
+      }
+    }
   }
   .hide-mobile{
     display: none !important;

@@ -82,7 +82,9 @@ Mensaje:\n
 
 $estadoEnvio = $mail->Send(); 
 if($estadoEnvio){
-    echo "El correo fue enviado correctamente.";
+    header("Location: https://curriculumcordoba.ar/contacto.html?consultaEnviada");
+    die();
 } else {
-    echo "Ocurrió un error inesperado.";
+    header("Location: https://curriculumcordoba.ar/contacto.html?consultaNoEnviada");
+    die();
 }

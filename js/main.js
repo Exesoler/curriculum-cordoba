@@ -8,9 +8,6 @@ import loadingGIF from './../assets/loading.gif';
 import { GlobalWorkerOptions } from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.5.136/build/pdf.min.mjs';
 GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.5.136/build/pdf.worker.min.mjs';
 
-import metasPDF from './../public/downloads/METAS_2025_v1.0_LOW.pdf';
-import marcoPDF from './../public/downloads/MCC_2025_v1.0_LOW.pdf';
-
 document.querySelector('header').innerHTML = header();
 document.querySelector('footer').innerHTML = footer();
 document.querySelector('main').insertAdjacentHTML("afterbegin", mobileHeader());
@@ -20,10 +17,37 @@ const backdrop = document.querySelector('.backdrop');
 
 const body = document.querySelector('body');
 
+const contactSuccess = document.querySelector('#contactSuccess');
+const contactDanger = document.querySelector('#contactDanger');
+const resetForm = document.querySelectorAll('#resetForm');
+
+const toggleContactForm = (message) => {
+
+    console.log(message);
+
+
+    switch (message) {
+        case 'success':
+            contactSuccess.classList.remove('hidden');
+            contactDanger.classList.add('hidden');
+            break;
+
+        case 'error':
+            contactSuccess.classList.add('hidden');
+            contactDanger.classList.remove('hidden');
+            break;
+    
+        default:
+            contactSuccess.classList.add('hidden');
+            contactDanger.classList.add('hidden');
+            break;
+    }
+};
+
 const disableMenuResponsive = () => {
-
+    
     // console.log('disableMenuResponsive() Active')
-
+    
     if(window.innerWidth > 767){
         menu.classList.remove('hidden');
         backdrop.classList.add('hidden');
@@ -37,13 +61,13 @@ const hasSubMenu = document.querySelector('.hasSubMenu');
 const subMenu = document.querySelector('.subMenu');
 
 const submenuCollapse = () => {
-
+    
     if(subMenu.classList.contains('collapsed')){
         subMenu.classList.remove('collapsed');
     }else{
         subMenu.classList.add('collapsed');
     }
-
+    
 };
 
 window.addEventListener("resize", () => {
@@ -55,6 +79,8 @@ window.addEventListener("resize", () => {
 let url = window.location.pathname;
 
 let filename = url.split('/').pop();
+
+let filenameHREF = window.location.href.split('/').pop();
 
 const addMenuActive = (filename) => {
     let menuItems = document.querySelectorAll('nav a');
@@ -87,10 +113,21 @@ hasSubMenu.addEventListener('click', () => {
 });
 
 if (filename == 'contacto.html') {
-    document.querySelector('#contact-submit').addEventListener('click', (e) => {
-        e.classList.add('loading');
-        e.innerHTML = `<img src="${loadingGIF}" alt="loading">`;
-    });
+    for (let i = 0; i < resetForm.length; i++) {
+        resetForm[i].addEventListener("click", function() {
+            toggleContactForm();
+        });
+    }
+}
+
+if (filenameHREF == 'contacto.html?consultaEnviada') {
+    localStorage.setItem("formSend", "true");
+    toggleContactForm('success');
+}
+
+if (filenameHREF == 'contacto.html?consultaNoEnviada') {
+    localStorage.setItem("formSend", "error");
+    toggleContactForm('error');
 }
 
 if (filename == 'metas_ciclo.html' || filename == 'progresiones_aprendizaje.html') {
@@ -112,6 +149,7 @@ if (videoFrame) {
 }
 
 
+
 const indiceMCC = document.querySelector('#indiceMCC');
 const buttonIndiceMCC = document.querySelector('#buttonIndiceMCC');
 const closeIndiceMCC = document.querySelector('#indiceMCC .close');
@@ -119,6 +157,7 @@ const itemIndiceMCC = document.querySelectorAll('#indiceMCC a');
 
 const toggleIndiceMCC = () => {
     indiceMCC.classList.toggle('hidden');
+    body.classList.toggle('noScroll');
     if (backdrop.style.opacity == '1') {
         backdrop.style.opacity = ((backdrop.style.opacity!='0') ? '0' : '1');
         setTimeout(() => {
