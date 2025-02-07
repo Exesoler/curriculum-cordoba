@@ -4536,6 +4536,13 @@ header .closeContainer {
   transform: rotate(90deg);
 }
 
+#backtop {
+  bottom: 5vh;
+  position: fixed;
+  right: 0;
+  z-index: 5;
+}
+
 footer .acercaContainer {
   background-color: #ededed;
   padding: 2rem 1rem;
@@ -4682,6 +4689,17 @@ button--tertiary:hover,
 .button--tertiary:hover {
   color: white;
   background-color: #13424a;
+}
+button--round,
+.button--round {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  padding: 0 !important;
 }
 button--icon,
 .button--icon {
@@ -4973,6 +4991,7 @@ button.loading img,
 }
 .mainContent--genially .mainContent__resume--next {
   margin-bottom: 0.5rem;
+  gap: 0;
 }
 .mainContent--genially .mainContent__resume--next p {
   background-color: #f4f4f4;
@@ -4982,6 +5001,11 @@ button.loading img,
   border-top-right-radius: 0.75rem;
   margin-bottom: 1rem;
   margin: 0;
+}
+.mainContent--genially .mainContent__resume--next p + p {
+  border-radius: 0;
+  margin-top: -2px;
+  padding-top: 0;
 }
 .mainContent--autor {
   display: flex;
@@ -5079,6 +5103,10 @@ button.loading img,
   transition: all 300ms ease-in-out;
 }
 
+#equipo .mainContent__text p small {
+  color: #999999;
+}
+
 @media screen and (min-width: 768px) {
   .hide-desktop {
     display: none !important;
@@ -5104,6 +5132,9 @@ button.loading img,
   }
   main .mainContent__video + .mainContent__resume {
     margin-top: 2rem;
+  }
+  main .mainContent--autor .mainContent__media {
+    margin-top: 0;
   }
   hr {
     margin: 2rem 0;
