@@ -33,6 +33,10 @@
   background: #002341;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*!
  * Bootstrap Grid v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -4541,6 +4545,11 @@ header .closeContainer {
   position: fixed;
   right: 0;
   z-index: 5;
+  transition: all 300ms ease-in-out;
+}
+#backtop.hidden {
+  right: -100%;
+  transition: all 300ms ease-in-out;
 }
 
 footer .acercaContainer {
