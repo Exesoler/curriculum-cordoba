@@ -23,9 +23,6 @@ const resetForm = document.querySelectorAll('#resetForm');
 
 const toggleContactForm = (message) => {
 
-    console.log(message);
-
-
     switch (message) {
         case 'success':
             contactSuccess.classList.remove('hidden');
@@ -45,9 +42,6 @@ const toggleContactForm = (message) => {
 };
 
 const disableMenuResponsive = () => {
-    
-    // console.log('disableMenuResponsive() Active')
-    
     if(window.innerWidth > 767){
         menu.classList.remove('hidden');
         backdrop.classList.add('hidden');
@@ -71,7 +65,6 @@ const submenuCollapse = () => {
 };
 
 window.addEventListener("resize", () => {
-    // console.log('resize event')
     disableMenuResponsive();
 });
 
@@ -105,8 +98,6 @@ if(window.innerWidth < 768){
     document.querySelector('header').classList.add('hidden');
 }
 
-window.scrollY = 0;
-
 hasSubMenu.addEventListener('click', () => {
     console.log('click para la función submenuCollapse')
     submenuCollapse();
@@ -134,6 +125,21 @@ if (filename == 'metas_ciclo.html' || filename == 'progresiones_aprendizaje.html
     submenuCollapse();
 }
 
+
+if(document.querySelector('#backtop')){
+    const backtop = document.querySelector('#backtop');
+    backtop.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+    });
+
+    document.addEventListener('scroll', () => {
+        if(window.scrollY > 250){
+            backtop.classList.remove('hidden');
+        }else{
+            backtop.classList.add('hidden');
+        }
+    });
+}
 
 const videoFrame = document.querySelector('#videoFrame');
 const video = document.querySelector('#videoFrame + video');

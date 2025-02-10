@@ -1,5 +1,3 @@
-import acercadeWEBP from '../assets/acercaDe.webp';
-import acercadeJPG from '../assets/acercaDe.jpg';
 import emailSVG from '../assets/email.svg';
 import logoEducacionSVG from '../assets/logoEducacion.svg';
 import logoCordobaSVG from '../assets/logoCordoba.svg';
@@ -17,8 +15,8 @@ export const footer = () => {
     </div>
     <!--<div class="col-12 col-md-6 acercaContainer__image">
         <picture>
-            <source srcset='${acercadeWEBP}' type='image/webp'>
-            <img src='${acercadeJPG}' type='image/jpg' alt='Acerca de Currículum Córdoba'>
+            <source srcset='url de la imagen' type='image/webp'>
+            <img src='url de la imagen' type='image/jpg' alt='Acerca de Currículum Córdoba'>
         </picture>
     </div>-->
     <div class="col-12 acercaContainer__text">
