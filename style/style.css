@@ -4540,6 +4540,98 @@ header .closeContainer {
   transform: rotate(90deg);
 }
 
+#buttonFormMCC {
+  display: flex;
+  padding-left: 1rem;
+  margin-bottom: 4rem;
+}
+#buttonFormMCC a {
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 1;
+  font-size: 1rem;
+  line-height: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+#buttonFormMCC a img {
+  margin-left: 1rem;
+  width: auto;
+  height: 1.5rem;
+}
+
+.formularioButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  margin-top: 3rem;
+}
+.formularioButton a {
+  transition: all 300ms ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+.formularioButton a p {
+  transition: all 300ms ease-in-out;
+  font-size: 1rem;
+  margin: 0;
+  min-height: unset;
+}
+.formularioButton a img {
+  transition: all 300ms ease-in-out;
+  width: 1.5rem;
+  height: auto;
+}
+.formularioButton a img:last-of-type {
+  padding: 0.5rem;
+  border-radius: 1000px;
+  overflow: visible;
+  margin-top: -0.2rem;
+  margin-right: -1rem;
+}
+.formularioButton--lengua a {
+  border-top: 3px solid #e2464c;
+}
+.formularioButton--lengua a p {
+  color: #e2464c;
+}
+.formularioButton--lengua a img:last-of-type {
+  background-color: #e2464c;
+}
+.formularioButton--lengua:hover a {
+  border-top: 3px solid #712326;
+}
+.formularioButton--lengua:hover a p {
+  color: #712326;
+}
+.formularioButton--lengua:hover a img:last-of-type {
+  background-color: #712326;
+}
+.formularioButton--matematica a {
+  border-top: 3px solid #258394;
+}
+.formularioButton--matematica a p {
+  color: #258394;
+}
+.formularioButton--matematica a img:last-of-type {
+  background-color: #258394;
+}
+.formularioButton--matematica:hover a {
+  border-top: 3px solid #13424a;
+}
+.formularioButton--matematica:hover a p {
+  color: #13424a;
+}
+.formularioButton--matematica:hover a img:last-of-type {
+  background-color: #13424a;
+}
+
 #backtop {
   bottom: 5vh;
   position: fixed;

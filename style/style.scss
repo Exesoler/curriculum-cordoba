@@ -512,6 +512,114 @@ header{
   }
 }
 
+#buttonFormMCC{
+  display: flex;
+  padding-left: 1rem;
+  margin-bottom: 4rem;
+  a{
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 1;
+    font-size: $font-size-base;
+    line-height: $font-size-base;
+    padding: 1rem 1.5rem;
+    border-radius: $border-radius;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; 
+    img{
+      margin-left: 1rem;
+      width: auto;
+      height: 1.5rem;
+    }
+  }
+}
+
+.formularioButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  margin-top: 3rem;
+  a{
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    p{
+      transition: $transition;
+      font-size: $font-size-base;
+      margin: 0;
+      min-height: unset;
+    }
+    img{
+      transition: $transition;
+      width: 1.5rem;
+      height: auto;
+      &:last-of-type{
+        padding: 0.5rem;
+        border-radius: $border-rounded;
+        overflow: visible;
+        margin-top: -.2rem;
+        margin-right: -1rem;
+      }
+    }
+  }
+  &--lengua{
+    a{
+      border-top: 3px solid $color-secondary;
+      p{
+        color: $color-secondary;
+      }
+      img{
+        &:last-of-type{
+          background-color: $color-secondary;
+        }
+      }
+    }
+    &:hover{
+      a{
+        border-top: 3px solid $color-secondary-600;
+        p{
+          color: $color-secondary-600;
+        }
+        img{
+          &:last-of-type{
+            background-color: $color-secondary-600;
+          }
+        }
+      }
+    }
+  }
+  &--matematica{
+    a{
+      border-top: 3px solid $color-tertiary;
+      p{
+        color: $color-tertiary;
+      }
+      img{
+        &:last-of-type{
+          background-color: $color-tertiary;
+        }
+      }
+    }
+    &:hover{
+      a{
+        border-top: 3px solid $color-tertiary-600;
+        p{
+          color: $color-tertiary-600;
+        }
+        img{
+          &:last-of-type{
+            background-color: $color-tertiary-600;
+          }
+        }
+      }
+    }
+  }
+}
+
 #backtop{
   bottom: 5vh;
   position: fixed;
