@@ -16,7 +16,7 @@ export const header = () => {
     <button class="button button--icon" onclick="closeMenu()"><img src="${closeSVG}" type='image/svg+xml'></button>
 </div>
 <div class="logoContainer">
-    <a href="index.html">
+    <a href="/">
         <picture>
             <source srcset='${logohSVG}' type='image/svg+xml'>
             <source srcset='${logohWEBP}' type='image/webp'>
