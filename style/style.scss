@@ -1,6 +1,8 @@
 $color-primary: #004582;
 $color-secondary: #e2464c;
 $color-tertiary: #258394;
+$color-sociales: #CB6615;
+$color-naturales: #437B60;
 $color-success: #299425;
 $color-danger: #aa0000;
 
@@ -36,6 +38,24 @@ $color-tertiary-150: mix(white, $color-tertiary, 30%) !default;
 $color-tertiary-100: mix(white, $color-tertiary, 50%) !default;
 $color-tertiary-75: mix(white, $color-tertiary, 70%) !default;
 $color-tertiary-50: mix(white, $color-tertiary, 90%) !default;
+
+$color-sociales-600: mix(black, $color-sociales, 50%) !default;
+$color-sociales-500: mix(black, $color-sociales, 30%) !default;
+$color-sociales-400: mix(black, $color-sociales, 10%) !default;
+$color-sociales-200: mix(white, $color-sociales, 10%) !default;
+$color-sociales-150: mix(white, $color-sociales, 30%) !default;
+$color-sociales-100: mix(white, $color-sociales, 50%) !default;
+$color-sociales-75: mix(white, $color-sociales, 70%) !default;
+$color-sociales-50: mix(white, $color-sociales, 90%) !default;
+
+$color-naturales-600: mix(black, $color-naturales, 50%) !default;
+$color-naturales-500: mix(black, $color-naturales, 30%) !default;
+$color-naturales-400: mix(black, $color-naturales, 10%) !default;
+$color-naturales-200: mix(white, $color-naturales, 10%) !default;
+$color-naturales-150: mix(white, $color-naturales, 30%) !default;
+$color-naturales-100: mix(white, $color-naturales, 50%) !default;
+$color-naturales-75: mix(white, $color-naturales, 70%) !default;
+$color-naturales-50: mix(white, $color-naturales, 90%) !default;
 
 $color-success-600: mix(black, $color-success, 50%) !default;
 $color-success-500: mix(black, $color-success, 30%) !default;
@@ -174,6 +194,12 @@ h{
     &.dark{
       color: $color-text-dark;
     }
+    &.outline{
+      color: $white;
+      text-shadow: 2px 0 $color-gray, -2px 0 $color-gray, 0 2px $color-gray, 0 -2px $color-gray, 1px 1px $color-gray, -1px -1px $color-gray, 1px -1px $color-gray, -1px 1px $color-gray;
+      font-size: 4.15rem;
+      text-align: center;
+    }
   }
 }
 
@@ -200,6 +226,12 @@ p{
   }
   &.tertiary{
     color: $color-tertiary;
+  }
+  &.sociales{
+    color: $color-sociales;
+  }
+  &.naturales{
+    color: $color-naturales;
   }
 }
 
@@ -618,6 +650,58 @@ header{
       }
     }
   }
+  &--sociales{
+    a{
+      border-top: 3px solid $color-sociales;
+      p{
+        color: $color-sociales;
+      }
+      img{
+        &:last-of-type{
+          background-color: $color-sociales;
+        }
+      }
+    }
+    &:hover{
+      a{
+        border-top: 3px solid $color-sociales-600;
+        p{
+          color: $color-sociales-600;
+        }
+        img{
+          &:last-of-type{
+            background-color: $color-sociales-600;
+          }
+        }
+      }
+    }
+  }
+  &--naturales{
+    a{
+      border-top: 3px solid $color-naturales;
+      p{
+        color: $color-naturales;
+      }
+      img{
+        &:last-of-type{
+          background-color: $color-naturales;
+        }
+      }
+    }
+    &:hover{
+      a{
+        border-top: 3px solid $color-naturales-600;
+        p{
+          color: $color-naturales-600;
+        }
+        img{
+          &:last-of-type{
+            background-color: $color-naturales-600;
+          }
+        }
+      }
+    }
+  }
 }
 
 #backtop{
@@ -779,6 +863,26 @@ button,
     &:hover{
       color: white;
       background-color: $color-tertiary-600;
+    }
+  }
+  &--sociales{
+    background-color: $color-sociales;
+    color: $white;
+    padding: 1rem 3rem;
+    border-radius: $border-rounded;
+    &:hover{
+      color: white;
+      background-color: $color-sociales-600;
+    }
+  }
+  &--naturales{
+    background-color: $color-naturales;
+    color: $white;
+    padding: 1rem 3rem;
+    border-radius: $border-rounded;
+    &:hover{
+      color: white;
+      background-color: $color-naturales-600;
     }
   }
   &--round{
@@ -1016,6 +1120,9 @@ button,
     &:has(br){
       line-height: 200%;
     }
+    &--svg{
+      margin-bottom: 1rem;
+    }
   }
   &__media{
     img{
@@ -1079,6 +1186,19 @@ button,
       }
       .button{
         color: $color-danger;
+      }
+    }
+  }
+  &__portada{
+    img{
+      transition: $transition;
+    }
+    a{
+      &:hover{
+        img{
+          transition: $transition;
+          box-shadow: $box-shadow-1;
+        }
       }
     }
   }

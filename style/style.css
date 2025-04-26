@@ -4210,6 +4210,12 @@ h1.secondary, h2.secondary, h3.secondary, h4.secondary, h5.secondary, h6.seconda
 h1.dark, h2.dark, h3.dark, h4.dark, h5.dark, h6.dark {
   color: #333333;
 }
+h1.outline, h2.outline, h3.outline, h4.outline, h5.outline, h6.outline {
+  color: #ffffff;
+  text-shadow: 2px 0 #dbdbdb, -2px 0 #dbdbdb, 0 2px #dbdbdb, 0 -2px #dbdbdb, 1px 1px #dbdbdb, -1px -1px #dbdbdb, 1px -1px #dbdbdb, -1px 1px #dbdbdb;
+  font-size: 4.15rem;
+  text-align: center;
+}
 
 a {
   color: #004582;
@@ -4235,6 +4241,12 @@ p.secondary {
 }
 p.tertiary {
   color: #258394;
+}
+p.sociales {
+  color: #CB6615;
+}
+p.naturales {
+  color: #437B60;
 }
 
 blockquote {
@@ -4631,6 +4643,42 @@ header .closeContainer {
 .formularioButton--matematica:hover a img:last-of-type {
   background-color: #13424a;
 }
+.formularioButton--sociales a {
+  border-top: 3px solid #CB6615;
+}
+.formularioButton--sociales a p {
+  color: #CB6615;
+}
+.formularioButton--sociales a img:last-of-type {
+  background-color: #CB6615;
+}
+.formularioButton--sociales:hover a {
+  border-top: 3px solid #66330b;
+}
+.formularioButton--sociales:hover a p {
+  color: #66330b;
+}
+.formularioButton--sociales:hover a img:last-of-type {
+  background-color: #66330b;
+}
+.formularioButton--naturales a {
+  border-top: 3px solid #437B60;
+}
+.formularioButton--naturales a p {
+  color: #437B60;
+}
+.formularioButton--naturales a img:last-of-type {
+  background-color: #437B60;
+}
+.formularioButton--naturales:hover a {
+  border-top: 3px solid #223e30;
+}
+.formularioButton--naturales:hover a p {
+  color: #223e30;
+}
+.formularioButton--naturales:hover a img:last-of-type {
+  background-color: #223e30;
+}
 
 #backtop {
   bottom: 5vh;
@@ -4790,6 +4838,30 @@ button--tertiary:hover,
 .button--tertiary:hover {
   color: white;
   background-color: #13424a;
+}
+button--sociales,
+.button--sociales {
+  background-color: #CB6615;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 1000px;
+}
+button--sociales:hover,
+.button--sociales:hover {
+  color: white;
+  background-color: #66330b;
+}
+button--naturales,
+.button--naturales {
+  background-color: #437B60;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 1000px;
+}
+button--naturales:hover,
+.button--naturales:hover {
+  color: white;
+  background-color: #223e30;
 }
 button--round,
 .button--round {
@@ -5013,6 +5085,9 @@ button.loading img,
 .mainContent__title:has(br) {
   line-height: 200%;
 }
+.mainContent__title--svg {
+  margin-bottom: 1rem;
+}
 .mainContent__media img {
   width: 100%;
   height: auto;
@@ -5081,6 +5156,13 @@ button.loading img,
 }
 .mainContent__form #contactDanger .button {
   color: #aa0000;
+}
+.mainContent__portada img {
+  transition: all 300ms ease-in-out;
+}
+.mainContent__portada a:hover img {
+  transition: all 300ms ease-in-out;
+  box-shadow: 0 6px 12px 0 rgba(100, 100, 100, 0.05);
 }
 .mainContent--genially > .col-12 > div {
   overflow: hidden;
