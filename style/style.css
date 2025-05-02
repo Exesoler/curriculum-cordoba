@@ -4215,6 +4215,7 @@ h1.outline, h2.outline, h3.outline, h4.outline, h5.outline, h6.outline {
   text-shadow: 2px 0 #dbdbdb, -2px 0 #dbdbdb, 0 2px #dbdbdb, 0 -2px #dbdbdb, 1px 1px #dbdbdb, -1px -1px #dbdbdb, 1px -1px #dbdbdb, -1px 1px #dbdbdb;
   font-size: 4.15rem;
   text-align: center;
+  font-weight: 900;
 }
 
 a {
@@ -4243,10 +4244,10 @@ p.tertiary {
   color: #258394;
 }
 p.sociales {
-  color: #CB6615;
+  color: #cb6615;
 }
 p.naturales {
-  color: #437B60;
+  color: #437b60;
 }
 
 blockquote {
@@ -4644,13 +4645,13 @@ header .closeContainer {
   background-color: #13424a;
 }
 .formularioButton--sociales a {
-  border-top: 3px solid #CB6615;
+  border-top: 3px solid #cb6615;
 }
 .formularioButton--sociales a p {
-  color: #CB6615;
+  color: #cb6615;
 }
 .formularioButton--sociales a img:last-of-type {
-  background-color: #CB6615;
+  background-color: #cb6615;
 }
 .formularioButton--sociales:hover a {
   border-top: 3px solid #66330b;
@@ -4662,13 +4663,13 @@ header .closeContainer {
   background-color: #66330b;
 }
 .formularioButton--naturales a {
-  border-top: 3px solid #437B60;
+  border-top: 3px solid #437b60;
 }
 .formularioButton--naturales a p {
-  color: #437B60;
+  color: #437b60;
 }
 .formularioButton--naturales a img:last-of-type {
-  background-color: #437B60;
+  background-color: #437b60;
 }
 .formularioButton--naturales:hover a {
   border-top: 3px solid #223e30;
@@ -4702,7 +4703,8 @@ footer .acercaContainer.hidden {
 footer .acercaContainer__title {
   margin-bottom: 1rem;
 }
-footer .acercaContainer__title h2, footer .acercaContainer__title h3 {
+footer .acercaContainer__title h2,
+footer .acercaContainer__title h3 {
   margin: 0;
 }
 footer .acercaContainer__image img {
@@ -4841,7 +4843,7 @@ button--tertiary:hover,
 }
 button--sociales,
 .button--sociales {
-  background-color: #CB6615;
+  background-color: #cb6615;
   color: #ffffff;
   padding: 1rem 3rem;
   border-radius: 1000px;
@@ -4853,7 +4855,7 @@ button--sociales:hover,
 }
 button--naturales,
 .button--naturales {
-  background-color: #437B60;
+  background-color: #437b60;
   color: #ffffff;
   padding: 1rem 3rem;
   border-radius: 1000px;
@@ -5088,6 +5090,48 @@ button.loading img,
 .mainContent__title--svg {
   margin-bottom: 1rem;
 }
+.mainContent__title--sliderText {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+  /* Move it (define the animation) */
+}
+.mainContent__title--sliderText h1 {
+  position: absolute;
+  width: 920px;
+  height: auto;
+  margin: 0;
+  line-height: 80px;
+  text-align: center;
+  /* Starting position */
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  animation: scroll-left 20s linear infinite;
+}
+.mainContent__title--sliderText h1.secondLine {
+  transform: translateX(1000px);
+  /* Apply animation to this element */
+  animation: scroll-left-2 20s linear infinite;
+  animation-delay: 10250ms !important;
+}
+@keyframes scroll-left {
+  0% { /* Browser bug fix */ /* Browser bug fix */
+    transform: translateX(1000px);
+  }
+  100% { /* Browser bug fix */ /* Browser bug fix */
+    transform: translateX(-1000px);
+  }
+}
+@keyframes scroll-left-2 {
+  0% { /* Browser bug fix */ /* Browser bug fix */
+    transform: translateX(1000px);
+  }
+  100% { /* Browser bug fix */ /* Browser bug fix */
+    transform: translateX(-1000px);
+  }
+}
 .mainContent__media img {
   width: 100%;
   height: auto;
@@ -5128,7 +5172,8 @@ button.loading img,
 .mainContent__form #contactDanger:not(.hidden) ~ form > fieldset {
   display: none;
 }
-.mainContent__form #contactSuccess h2, .mainContent__form #contactSuccess p,
+.mainContent__form #contactSuccess h2,
+.mainContent__form #contactSuccess p,
 .mainContent__form #contactDanger h2,
 .mainContent__form #contactDanger p {
   text-align: center;
@@ -5200,7 +5245,9 @@ button.loading img,
 .mainContent--autor > .mainContent__image.justify-content-end {
   margin-bottom: 2rem;
 }
-.mainContent#anexo h2, .mainContent#anexo h3, .mainContent#referencias h2, .mainContent#referencias h3 {
+.mainContent#anexo h2,
+.mainContent#anexo h3, .mainContent#referencias h2,
+.mainContent#referencias h3 {
   color: #333333;
 }
 .mainContent#anexo .mainContent__text {
@@ -5407,5 +5454,17 @@ button.loading img,
   }
   .actionsContainerProgresiones__item > p {
     margin: 0 0 1rem;
+  }
+  .mainContent__title--sliderText {
+    width: 100vw;
+    /* Move it (define the animation) */
+  }
+  @keyframes scroll-left {
+    0% { /* Browser bug fix */ /* Browser bug fix */
+      transform: translateX(100vw);
+    }
+    100% { /* Browser bug fix */ /* Browser bug fix */
+      transform: translateX(-920px);
+    }
   }
 }/*# sourceMappingURL=style.css.map */
