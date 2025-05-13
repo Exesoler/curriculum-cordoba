@@ -1510,6 +1510,11 @@ button,
           margin-top: 0;
         }
       }
+      &__title {
+        &--m-negative{
+          margin-top: 0rem;
+        }
+      }
     }
   }
   hr {

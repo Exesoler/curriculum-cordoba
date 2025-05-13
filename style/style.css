@@ -5369,6 +5369,9 @@ button.loading img,
   main .mainContent--autor .mainContent__media {
     margin-top: 0;
   }
+  main .mainContent__title--m-negative {
+    margin-top: 0rem;
+  }
   hr {
     margin: 2rem 0;
   }
