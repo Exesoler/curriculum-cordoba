@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="canonical" href="https://curriculumcordoba.ar/progresiones_aprendizaje.html" />
     <title>Progresiones de aprendizaje - Currículum Córdoba</title>
 
     
@@ -56,7 +57,7 @@
     <header class="hidden"></header>
     <main class="container-fluid">
       <section class="actionVolver">
-        <button class="button button--volver" onclick="window.location.href='index.html';">
+        <button class="button button--volver" onclick="window.location.href='/';">
           <img src="./assets/arrowBack.svg" alt="Volver icon">
           Volver
         </button>
@@ -66,15 +67,15 @@
           <h1>Progresiones de aprendizaje<br><small>Metas · Aprendizajes · Indicadores</small></h1>
         </div>
         <div class="col-12 col-md-6 col-lg-7 mainContent__resume">
-          <picture id="videoFrame">
+          <!-- <picture id="videoFrame" class="hidden">
             <source srcset='./assets/frameVideo_progresiones.webp' type='image/webp'>
             <img src='./assets/frameVideo_progresiones.jpg' type='image/jpg' alt='Flowers'>
-          </picture>
-          <video class="hidden" controls width="100%">
+          </picture> -->
+          <video controls width="100%" poster="./assets/frameVideo_progresiones.webp">
             <source src="./assets/PROGRESIONES_2025_v1.0.webm" type="video/webm" />
             <source src="./assets/PROGRESIONES_2025_v1.0.mp4" type="video/mp4" />
           </video>
-          <p>Las <strong>Progresiones de aprendizaje</strong> para cada campo o espacio curricular son materiales que acompañan las prácticas profesionales docentes: definen qué debe ser enseñado y aprendido en la escuela y convocan a imaginar nuevos horizontes para la invención, el desarrollo y la evaluación de propuestas de enseñanza.</p>
+          <p><strong>Progresiones de aprendizaje</strong> de cada campo o espacio curricular son materiales que acompañan las prácticas profesionales docentes, definen qué debe ser enseñado y aprendido en la escuela y convocan a imaginar nuevos horizontes para la invención, el desarrollo y la evaluación de propuestas de enseñanza.</p>
         </div>
         <div class="col-12 col-md-6 col-lg-5 mainContent__image">
           <picture>
@@ -83,51 +84,36 @@
           </picture>
         </div>
         <div class="col-12 mainContent__resume">
-          <p>La construcción de <strong>Progresiones de aprendizaje</strong> se encuentra atravesada por diversas inquietudes, que atienden a las necesidades actuales de la enseñanza y los aprendizajes, a los avances del campo académico de referencia, a la necesidad de integrar el desarrollo de capacidades fundamentales y temáticas relevantes contemporáneas. Al tiempo que recuperan todo lo aprendido como comunidad, en la puesta en práctica del currículum provincial en los últimos años.</p>
-          <p>En este primer momento, se presentan las <strong>Progresiones de Aprendizaje</strong> para Matemática y Lenguaje/Lengua y Literatura, a medida que el equipo curricular avanza en la producción de estos materiales para todas las áreas del currículum.</p>
+          <p>La construcción de estos textos recupera lo aprendido como comunidad educativa, en la puesta en práctica del currículum provincial en los últimos años. Al tiempo que, se encuentra atravesada por diversas inquietudes, que atienden a las necesidades actuales de la enseñanza y los aprendizajes, a los avances del campo académico de referencia y a la integración del desarrollo de capacidades fundamentales y temáticas relevantes contemporáneas.</p>
+          <p>Se irán socializando a medida que el equipo curricular provincial avanza en la producción de estos materiales para todas las áreas del currículum y se comparten en un proceso de consulta para su enriquecimiento y mejora.</p>
         </div>
       </section>
-      <section class="row mainContent mainContent--genially">
-        <div class="col-12 mainContent__resume mainContent__resume--next ">
-          <p>Haciendo clic en la próxima imagen interactiva, podrán navegar las <strong>Progresiones de Aprendizaje</strong>, lo que significa que irán eligiendo su propio camino al recorrer metas por ciclo, aprendizajes y contenidos para cada sala, grado o año e indicadores de logro.</p>
-          <p class="hide-desktop">Para una mejor experiencia, recomendamos realizar la navegación desde una PC o Notebook</p>
+      <section class="row mainContent">
+        <!-- <div class="col-12 mainContent__title mainContent__title--svg">
+          <img src="./assets/title_progresiones_aprendisaje.svg" alt="Title Progresiones de aprendizaje">
+        </div> -->
+        <div class="col-12 mainContent__title mainContent__title--sliderText">
+          <h1 class="outline">Progresiones de aprendizaje</h1>
+          <h1 class="outline secondLine hide-mobile">Progresiones de aprendizaje</h1>
         </div>
-        <!-- <div class="loader"><img src="./assets/loader.svg" alt="Loader icon"></div> -->
-        <div class="col-12">
-          <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe title="APRENDIZAJES LyM" frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genially.com/676570c253faf8c77b56dd87" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+        <div class="col-12 col-md-6 mainContent__portada">
+          <a href="progresiones_lengua_matematica.html">
+            <picture>
+              <source srcset='./assets/portada_lengua_matematica.webp' type='image/webp'>
+              <img src='./assets/portada_lengua_matematica.jpg' type='image/jpg' alt='Portada lengua y matemática'>
+            </picture>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 mainContent__portada">
+          <a href="progresiones_sociales_naturales.html">
+            <picture>
+              <source srcset='./assets/portada_sociales_naturales.webp' type='image/webp'>
+              <img src='./assets/portada_sociales_naturales.jpg' type='image/jpg' alt='Portada lengua y matemática'>
+            </picture>
+          </a>
         </div>
       </section>
       <hr>
-      <section class="row actionsContainerProgresiones">
-        <div class="col-12 col-md actionsContainerProgresiones__item">
-          <p class="secondary">Metas · Aprendizajes · Indicadores de<br>Lenguaje/Lengua y Literatura en PDF</p>
-          <div class="row actionsContainerProgresionesItem">
-            <div class="actionsContainerProgresionesItem__image hide-mobile">
-              <picture>
-                <source srcset='./assets/progresiones_libro1.webp' type='image/webp'>
-                <img src='./assets/progresiones_libro1.png' type='image/png' alt='Progresiones libro'>
-              </picture>
-            </div>
-            <div class="col-auto actionsContainerProgresionesItem__action">
-              <a href="./downloads/PROGRESIONES DE APRENDIZAJE DE LENGUAJE-LENGUA Y LITERATURA.pdf" class="button button--secondary"><img src="./assets/download--white.svg" alt="Download icon"> Descargar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md actionsContainerProgresiones__item">
-          <p class="tertiary">Metas · Aprendizajes · Indicadores de<br>Matemática en PDF</p>
-          <div class="row actionsContainerProgresionesItem">
-            <div class="actionsContainerProgresionesItem__image hide-mobile">
-              <picture>
-                <source srcset='./assets/progresiones_libro2.webp' type='image/webp'>
-                <img src='./assets/progresiones_libro2.png' type='image/png' alt='Progresiones libro'>
-              </picture>
-            </div>
-            <div class="col-auto actionsContainerProgresionesItem__action">
-              <a href="./downloads/PROGRESIONES DE APRENDIZAJE DE MATEMATICA.pdf" class="button button--tertiary"><img src="./assets/download--white.svg" alt="Download icon"> Descargar</a>
-            </div>
-          </div>
-        </div>
-      </section>
       <footer></footer>
     </main>
     <div class="backdrop hidden"></div>

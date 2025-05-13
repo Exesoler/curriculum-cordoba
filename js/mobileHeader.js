@@ -15,7 +15,7 @@ export const mobileHeader = () => {
             </button>
           </div>
           <div class="col-auto logoContainer">
-            <a href="index.html">
+            <a href="/">
                 <picture>
                     <source srcset='${logohSVG}' type='image/svg+xml'>
                     <source srcset='${logohWEBP}' type='image/webp'>
