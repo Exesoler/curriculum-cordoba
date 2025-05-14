@@ -1140,7 +1140,7 @@ button,
       margin-bottom: 2rem;
       h1 {
         position: absolute;
-        width: 920px;
+        width: 100vw;
         height: auto;
         margin: 0;
         line-height: 80px;
@@ -1154,9 +1154,9 @@ button,
         -webkit-animation: scroll-left 20s linear infinite;
         animation: scroll-left 20s linear infinite;
         &.secondLine {
-          -moz-transform: translateX(1000px);
-          -webkit-transform: translateX(1000px);
-          transform: translateX(1000px);
+          -moz-transform: translateX(100vw);
+          -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
           /* Apply animation to this element */
           -moz-animation: scroll-left-2 20s linear infinite;
           -webkit-animation: scroll-left-2 20s linear infinite;
@@ -1167,58 +1167,58 @@ button,
       /* Move it (define the animation) */
       @-moz-keyframes scroll-left {
         0% {
-          -moz-transform: translateX(1000px);
+          -moz-transform: translateX(100vw);
         }
         100% {
-          -moz-transform: translateX(-1000px);
+          -moz-transform: translateX(-100vw);
         }
       }
       @-webkit-keyframes scroll-left {
         0% {
-          -webkit-transform: translateX(1000px);
+          -webkit-transform: translateX(100vw);
         }
         100% {
-          -webkit-transform: translateX(-1000px);
+          -webkit-transform: translateX(-100vw);
         }
       }
       @keyframes scroll-left {
         0% {
-          -moz-transform: translateX(1000px); /* Browser bug fix */
-          -webkit-transform: translateX(1000px); /* Browser bug fix */
-          transform: translateX(1000px);
+          -moz-transform: translateX(100vw); /* Browser bug fix */
+          -webkit-transform: translateX(100vw); /* Browser bug fix */
+          transform: translateX(100vw);
         }
         100% {
-          -moz-transform: translateX(-1000px); /* Browser bug fix */
-          -webkit-transform: translateX(-1000px); /* Browser bug fix */
-          transform: translateX(-1000px);
+          -moz-transform: translateX(-100vw); /* Browser bug fix */
+          -webkit-transform: translateX(-100vw); /* Browser bug fix */
+          transform: translateX(-100vw);
         }
       }
       @-moz-keyframes scroll-left-2 {
         0% {
-          -moz-transform: translateX(1000px);
+          -moz-transform: translateX(100vw);
         }
         100% {
-          -moz-transform: translateX(-1000px);
+          -moz-transform: translateX(-100vw);
         }
       }
       @-webkit-keyframes scroll-left-2 {
         0% {
-          -webkit-transform: translateX(1000px);
+          -webkit-transform: translateX(100vw);
         }
         100% {
-          -webkit-transform: translateX(-1000px);
+          -webkit-transform: translateX(-100vw);
         }
       }
       @keyframes scroll-left-2 {
         0% {
-          -moz-transform: translateX(1000px); /* Browser bug fix */
-          -webkit-transform: translateX(1000px); /* Browser bug fix */
-          transform: translateX(1000px);
+          -moz-transform: translateX(100vw); /* Browser bug fix */
+          -webkit-transform: translateX(100vw); /* Browser bug fix */
+          transform: translateX(100vw);
         }
         100% {
-          -moz-transform: translateX(-1000px); /* Browser bug fix */
-          -webkit-transform: translateX(-1000px); /* Browser bug fix */
-          transform: translateX(-1000px);
+          -moz-transform: translateX(-100vw); /* Browser bug fix */
+          -webkit-transform: translateX(-100vw); /* Browser bug fix */
+          transform: translateX(-100vw);
         }
       }
     }
@@ -1628,6 +1628,17 @@ button,
 
   .mainContent__title--sliderText {
     width: 100vw;
+    h1 {
+      width: 920px;
+      /* Starting position */
+      -moz-transform: translateX(100vw);
+      -webkit-transform: translateX(100vw);
+      transform: translateX(100vw);
+      /* Apply animation to this element */
+      -moz-animation: scroll-left 20s linear infinite;
+      -webkit-animation: scroll-left 20s linear infinite;
+      animation: scroll-left 20s linear infinite;
+    }
     /* Move it (define the animation) */
     @-moz-keyframes scroll-left {
       0% {
@@ -1660,3 +1671,5 @@ button,
   }
 
 }
+
+

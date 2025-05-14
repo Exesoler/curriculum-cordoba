@@ -26,9 +26,15 @@ export const header = () => {
 </div>
 <nav>
     <ul>
-        <li><a href="metas_ciclo.html"><img src="${asideIcon__metasSVG}" type='image/svg+xml' alt="Metas por ciclo">Metas por ciclo</a></li>
         <li><a href="marco_curricular.html"><img src="${asideIcon__marcoCurricularSVG}" type='image/svg+xml' alt="Marco Curricular Común">Marco Curricular Común</a></li>
-        <li><a href="progresiones_aprendizaje.html"><img src="${asideIcon__progresionAprendizajesSVG}" type='image/svg+xml' alt="Progresiones de aprendizaje">Progresiones de aprendizaje</a></li>
+        <li class="hasSubMenu"><a href="progresiones_aprendizaje.html"><img src="${asideIcon__progresionAprendizajesSVG}" type='image/svg+xml' alt="Progresiones de aprendizaje">Progresiones de aprendizaje</a></li>
+        <li class="subMenu collapsed">
+            <ul>
+                <li><a href="metas_ciclo.html"><img src="${chevronRightSVG}" type='image/svg+xml'>Metas por ciclo</a></li>
+                <li><a href="progresiones_lengua_matematica.html"><img src="${chevronRightSVG}" type='image/svg+xml'>Lenguajes/Lengua y Literatura - Matemática</a></li>
+                <li><a href="progresiones_sociales_naturales.html"><img src="${chevronRightSVG}" type='image/svg+xml'>Ciencias Sociales y Ciencias Naturales</a></li>
+            </ul>
+        </li>
     </ul>
 </nav>
 `;}

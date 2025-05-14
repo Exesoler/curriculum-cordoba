@@ -5103,7 +5103,7 @@ button.loading img,
 }
 .mainContent__title--sliderText h1 {
   position: absolute;
-  width: 920px;
+  width: 100vw;
   height: auto;
   margin: 0;
   line-height: 80px;
@@ -5114,25 +5114,25 @@ button.loading img,
   animation: scroll-left 20s linear infinite;
 }
 .mainContent__title--sliderText h1.secondLine {
-  transform: translateX(1000px);
+  transform: translateX(100vw);
   /* Apply animation to this element */
   animation: scroll-left-2 20s linear infinite;
   animation-delay: 10250ms !important;
 }
 @keyframes scroll-left {
   0% { /* Browser bug fix */ /* Browser bug fix */
-    transform: translateX(1000px);
+    transform: translateX(100vw);
   }
   100% { /* Browser bug fix */ /* Browser bug fix */
-    transform: translateX(-1000px);
+    transform: translateX(-100vw);
   }
 }
 @keyframes scroll-left-2 {
   0% { /* Browser bug fix */ /* Browser bug fix */
-    transform: translateX(1000px);
+    transform: translateX(100vw);
   }
   100% { /* Browser bug fix */ /* Browser bug fix */
-    transform: translateX(-1000px);
+    transform: translateX(-100vw);
   }
 }
 .mainContent__media img {
@@ -5464,6 +5464,13 @@ button.loading img,
   .mainContent__title--sliderText {
     width: 100vw;
     /* Move it (define the animation) */
+  }
+  .mainContent__title--sliderText h1 {
+    width: 920px;
+    /* Starting position */
+    transform: translateX(100vw);
+    /* Apply animation to this element */
+    animation: scroll-left 20s linear infinite;
   }
   @keyframes scroll-left {
     0% { /* Browser bug fix */ /* Browser bug fix */
