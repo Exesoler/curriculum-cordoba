@@ -27,7 +27,7 @@ export const header = () => {
 <nav>
     <ul>
         <li><a href="marco_curricular.html"><img src="${asideIcon__marcoCurricularSVG}" type='image/svg+xml' alt="Marco Curricular Común">Marco Curricular Común</a></li>
-        <li class="hasSubMenu"><a><img src="${asideIcon__progresionAprendizajesSVG}" type='image/svg+xml' alt="Progresiones de aprendizaje">Progresiones de aprendizaje</a></li>
+        <li class="hasSubMenu"><a><img src="${asideIcon__marcoCurricularSVG}" type='image/svg+xml' alt="Progresiones de aprendizaje">Progresiones de aprendizaje</a></li>
         <li class="subMenu collapsed">
             <ul>
                 <li><a href="metas_ciclo.html"><img src="${chevronRightSVG}" type='image/svg+xml'>Metas por ciclo</a></li>
