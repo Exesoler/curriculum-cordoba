@@ -34,6 +34,7 @@ export const header = () => {
                 <li><a href="progresiones_aprendizaje.html"><img src="${chevronRightSVG}" type='image/svg+xml'>Metas Aprendizajes Indicadores</a></li>
             </ul>
         </li>
+        <li><a href="comunidades_aprendizaje.html"><img src="${asideIcon__marcoCurricularSVG}" type='image/svg+xml' alt="Comunidades de aprendizaje">Comunidades de aprendizaje</a></li>
     </ul>
 </nav>
 `;}

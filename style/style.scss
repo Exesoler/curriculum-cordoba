@@ -2,6 +2,7 @@ $color-primary: #004582;
 $color-secondary: #e2464c;
 $color-tertiary: #258394;
 $color-sociales: #cb6615;
+$color-comunidades: #EDA02A;
 $color-naturales: #437b60;
 $color-success: #299425;
 $color-danger: #aa0000;
@@ -48,6 +49,15 @@ $color-sociales-100: mix(white, $color-sociales, 50%) !default;
 $color-sociales-75: mix(white, $color-sociales, 70%) !default;
 $color-sociales-50: mix(white, $color-sociales, 90%) !default;
 
+$color-comunidades-600: mix(black, $color-comunidades, 50%) !default;
+$color-comunidades-500: mix(black, $color-comunidades, 30%) !default;
+$color-comunidades-400: mix(black, $color-comunidades, 10%) !default;
+$color-comunidades-200: mix(white, $color-comunidades, 10%) !default;
+$color-comunidades-150: mix(white, $color-comunidades, 30%) !default;
+$color-comunidades-100: mix(white, $color-comunidades, 50%) !default;
+$color-comunidades-75: mix(white, $color-comunidades, 70%) !default;
+$color-comunidades-50: mix(white, $color-comunidades, 90%) !default;
+
 $color-naturales-600: mix(black, $color-naturales, 50%) !default;
 $color-naturales-500: mix(black, $color-naturales, 30%) !default;
 $color-naturales-400: mix(black, $color-naturales, 10%) !default;
@@ -93,6 +103,7 @@ $border-radius-sm: 0.5rem;
 $border-rounded: 1000px;
 
 $font-size-base: 1rem;
+$font-size-lg: 1.2rem;
 $font-size-sm: 0.875rem;
 $font-size-button: $font-size-base + 0.125rem;
 
@@ -1007,6 +1018,9 @@ button,
   &:has(+ hr) {
     margin-bottom: 0 !important;
   }
+  &--center{
+    align-items: center;
+  }
   &--gray {
     background-color: $color-gray-75;
     padding: 2rem 1.5rem;
@@ -1044,6 +1058,11 @@ button,
         object-fit: cover;
         height: 100%;
         object-position: left;
+      }
+    }
+    &--contained{
+      img {
+        object-fit: contain !important;
       }
     }
     &.col-lg-3 {
@@ -1369,6 +1388,43 @@ button,
       padding-left: 2rem;
     }
   }
+  &__segmentos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+    picture{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      img{
+        background-color: $color-comunidades;
+        border-radius: $border-rounded;
+        padding: 3rem;
+        width: 5rem;
+        height: auto;
+        overflow: visible;
+      }
+    }
+    p{
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      color: $color-text-light;
+      font-size: $font-size-lg;
+      font-weight: 500;
+      background-color: $color-primary;
+      text-align: center;
+      border-radius: $border-rounded;
+      padding: 0.75rem 0;
+      margin: 0;
+      line-height: 1.1;
+    }
+  }
 }
 
 .MCC {
@@ -1514,6 +1570,9 @@ button,
         &--m-negative{
           margin-top: 0rem;
         }
+      }
+      &__segmentos{
+        margin-bottom: 5rem;
       }
     }
   }
