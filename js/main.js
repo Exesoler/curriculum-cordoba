@@ -8,6 +8,8 @@ import loadingGIF from './../assets/loading.gif';
 import { GlobalWorkerOptions } from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.5.136/build/pdf.min.mjs';
 GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.5.136/build/pdf.worker.min.mjs';
 
+import MicroModal from 'micromodal';  // es6 module
+
 document.querySelector('header').innerHTML = header();
 document.querySelector('footer').innerHTML = footer();
 document.querySelector('main').insertAdjacentHTML("afterbegin", mobileHeader());
@@ -190,3 +192,15 @@ if (buttonIndiceMCC) {
         });
     });
 }
+
+MicroModal.init({
+  onShow: modal => console.info(`${modal.id} is shown`), // [1]
+  onClose: modal => console.info(`${modal.id} is hidden`), // [2]
+  openTrigger: 'data-custom-open', // [3]
+  openClass: 'is-open', // [5]
+  disableScroll: true, // [6]
+  disableFocus: true, // [7]
+  awaitOpenAnimation: false, // [8]
+  awaitCloseAnimation: false, // [9]
+//   debugMode: true // [10]
+});
