@@ -103,14 +103,15 @@ $border-radius: 0.75rem;
 $border-radius-sm: 0.5rem;
 $border-rounded: 1000px;
 
-$font-size-base: 1rem;
+$font-size: 1rem;
 $font-size-lg: 1.2rem;
 $font-size-sm: 0.875rem;
-$font-size-button: $font-size-base + 0.125rem;
+$font-size-button: $font-size + 0.125rem;
 
 $transition: all 300ms ease-in-out;
 
 $box-shadow-1: 0 6px 12px 0 rgba(100, 100, 100, 0.05);
+$box-shadow-5: 0 6px 12px 0 rgba(100, 100, 100, 0.25);
 
 :root {
   font-family: "Fira Sans", sans-serif;
@@ -126,7 +127,7 @@ $box-shadow-1: 0 6px 12px 0 rgba(100, 100, 100, 0.05);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-size: $font-size-base;
+  font-size: $font-size;
 }
 
 ::-webkit-scrollbar {
@@ -230,6 +231,7 @@ a {
 
 p {
   text-align: justify;
+  font-family: "Fira Sans", sans-serif !important;
   &.autor {
     text-align: right !important;
     padding: 2rem 0;
@@ -569,8 +571,8 @@ header {
     align-items: center;
     flex-grow: 0;
     flex-shrink: 1;
-    font-size: $font-size-base;
-    line-height: $font-size-base;
+    font-size: $font-size;
+    line-height: $font-size;
     padding: 1rem 1.5rem;
     border-radius: $border-radius;
     border-top-left-radius: 0;
@@ -597,7 +599,7 @@ header {
     text-decoration: none;
     p {
       transition: $transition;
-      font-size: $font-size-base;
+      font-size: $font-size;
       margin: 0;
       min-height: unset;
     }
@@ -919,7 +921,7 @@ button,
     gap: 0.5rem;
     background-color: transparent;
     padding: 1rem 0;
-    font-size: $font-size-base;
+    font-size: $font-size;
     text-decoration: none;
     img {
       width: auto;
@@ -1408,25 +1410,24 @@ button,
       img{
         background-color: $color-comunidades;
         border-radius: $border-rounded;
-        padding: 3rem;
-        width: 5rem;
+        padding: 2rem;
+        width: 4rem;
         height: auto;
         overflow: visible;
       }
     }
     p{
       width: 100%;
-      max-width: 220px;
+      max-width: 11rem;
       height: auto;
       color: $color-text-light;
-      font-size: $font-size-lg;
-      font-weight: 500;
+      font-size: $font-size;
       background-color: $color-primary;
       text-align: center;
       border-radius: $border-rounded;
-      padding: 0.25rem 0;
+      padding: 0.4rem 0;
       margin: 0;
-      line-height: 1.1;
+      line-height: 1.2;
     }
   }
 }
@@ -1555,6 +1556,17 @@ button,
             max-width: 50px;
           }
         }
+        .closeModal{
+          width: 1.5rem;
+          height: 1.5rem;
+          cursor: pointer;
+          transition: $transition;
+          border-radius: $border-rounded;
+          &:hover{
+            box-shadow: $box-shadow-5;
+            transition: $transition;
+          }
+        }
       }
       &__container{
         width: 90dvw;
@@ -1582,6 +1594,10 @@ button,
 @media screen and (min-width: 768px) {
   .hide-desktop {
     display: none !important;
+  }
+  .closeModal{
+    margin-right: -2.5rem;
+    margin-top: -2.5rem;
   }
 }
 
@@ -1628,6 +1644,9 @@ button,
       }
       &__segmentos{
         margin-bottom: 5rem;
+        p{
+          max-width: 10.5rem;
+        }
       }
     }
   }
@@ -1811,3 +1830,10 @@ button,
 }
 
 
+// Gracias IOS
+
+@media (inverted-colors) {
+  img, video {
+    filter: invert(100);
+  }
+}

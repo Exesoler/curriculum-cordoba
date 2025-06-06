@@ -5291,24 +5291,23 @@ button.loading img,
 .mainContent__segmentos picture img {
   background-color: #EDA02A;
   border-radius: 1000px;
-  padding: 3rem;
-  width: 5rem;
+  padding: 2rem;
+  width: 4rem;
   height: auto;
   overflow: visible;
 }
 .mainContent__segmentos p {
   width: 100%;
-  max-width: 220px;
+  max-width: 11rem;
   height: auto;
   color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1rem;
   background-color: #004582;
   text-align: center;
   border-radius: 1000px;
-  padding: 0.25rem 0;
+  padding: 0.4rem 0;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .MCC .mainContent {
@@ -5412,6 +5411,17 @@ button.loading img,
   height: auto;
   max-width: 50px;
 }
+.modal.comunidades .modal__header .closeModal {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  border-radius: 1000px;
+}
+.modal.comunidades .modal__header .closeModal:hover {
+  box-shadow: 0 6px 12px 0 rgba(100, 100, 100, 0.25);
+  transition: all 300ms ease-in-out;
+}
 .modal.comunidades .modal__container {
   width: 90dvw;
   max-width: 900px;
@@ -5434,6 +5444,10 @@ button.loading img,
 @media screen and (min-width: 768px) {
   .hide-desktop {
     display: none !important;
+  }
+  .closeModal {
+    margin-right: -2.5rem;
+    margin-top: -2.5rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -5465,6 +5479,9 @@ button.loading img,
   }
   main .mainContent__segmentos {
     margin-bottom: 5rem;
+  }
+  main .mainContent__segmentos p {
+    max-width: 10.5rem;
   }
   hr {
     margin: 2rem 0;
@@ -5584,5 +5601,10 @@ button.loading img,
     max-height: 80px;
     max-width: 100%;
     width: auto;
+  }
+}
+@media (inverted-colors) {
+  img, video {
+    filter: invert(100);
   }
 }/*# sourceMappingURL=style.css.map */

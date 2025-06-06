@@ -72,7 +72,7 @@
             <img src='./assets/frameVideo_progresiones.jpg' type='image/jpg' alt='Flowers'>
           </picture> -->
           <video controls width="100%" poster="./assets/frameVideo_comunidades.webp">
-            <source src="./assets/Comunidades_v1.1.webm" type="video/webm" />
+            <!-- <source src="./assets/Comunidades_v1.1.webm" type="video/webm" /> -->
             <source src="./assets/Comunidades_v1.1.mp4" type="video/mp4" />
           </video>
         </div>
@@ -83,8 +83,8 @@
           </picture>
         </div>
         <div class="col-12 mainContent__resume">
-          <p>Las <strong>Comunidades de aprendizaje desde el currículum</strong> son propuestas formativas y de acompañamiento institucional  que se propone construir un camino dialógico entre colegas docentes con la intención de avanzar en procesos de apropiación y enriquecimiento del currículum desde la diversidad presente en las escuelas de la provincia. Es una invitación a entramar redes para generar espacios de escucha, análisis, reflexión y co-construcción.</p>
-          <p>Les invitamos a adentrarse en las distintas acciones que tienen lugar dentro de las comunidades de aprendizaje.</p>
+          <p>Las <strong>Comunidades de aprendizaje desde el currículum</strong> que se proponen son propuestas formativas y de acompañamiento institucional que se propone construir un camino dialógico entre colegas docentes con la intención de avanzar en procesos de apropiación y enriquecimiento del currículum desde la diversidad presente en las escuelas de la provincia. Es una invitación a entramar redes para generar espacios de escucha, análisis, reflexión y co-construcción.</p>
+          <p>Las y los invitamos a conocer más sobre las distintas acciones que tienen lugar dentro de las comunidades de aprendizaje.</p>
         </div>
       </section>
       <section class="row mainContent">
@@ -118,16 +118,22 @@
         </div>
         <hr>
         <div class="col-12 mainContent__title">
-          <h1>¿Cómo llegamos hasta acá?</h1>
+          <h2>¿Cómo llegamos hasta acá?</h2>
         </div>
         <div class="col-12 mainContent__text">
           <p>A medida que las <strong>Progresiones de Aprendizaje</strong> se van compartiendo y publicando, desarrollamos las <strong>Jornadas pedagógicas</strong> con especialistas, habilitamos <strong>Procesos de consulta</strong> de los materiales curriculares y comenzamos a construir el camino de las <strong>Comunidades de aprendizaje desde el curriculum.</strong></p>
         </div>
-        <div class="col-12 mainContent__video">
+        <div class="col-12 mainContent__video hide-mobile">
           <video autoplay loop width="100%">
             <source src="./assets/Comunidades_diagrama_v1.0.webm" type="video/webm" />
             <source src="./assets/Comunidades_diagrama_v1.0.mp4" type="video/mp4" />
           </video>
+        </div>
+        <div class="col-12 mainContent_image hide-desktop">
+          <picture>
+            <source srcset='./assets/ca_diagrama1_mobile.webp' type='image/webp'>
+            <img src='./assets/ca_diagrama1_mobile.jpg' type='image/jpg' alt='Diagrama de comunidades de aprendizaje'>
+          </picture>
         </div>
       </section>
       <footer></footer>
@@ -141,14 +147,15 @@
               <source srcset='./assets/ca_clubes_lectura.webp' type='image/webp'>
               <img src='./assets/ca_clubes_lectura.png' type='image/png' alt='Icono de clubes de lectura'>
             </picture>
+            <img src="./assets/closeModal.png" alt="Icono de cerrar modal" class="closeModal" data-micromodal-close>
           </div>
           <div class="modal__content" id="modal-1-content">
             <picture>
               <img src='./assets/logoClubesLectura.png' type='image/png' alt='Logo de clubes de lectura'>
             </picture>
-            <p>Cada Club de Lectura comienza con la llegada de una <strong>carta al/la lector/a</strong> que invita a recorrer un texto, especialmente seleccionado, para reflexionar sobre las prácticas profesionales.</p>
-            <p>Así se da inicio a un espacio dialógico a partir de una lectura personal y entre pares, en torno a un tópico o temática de actualización en las diferentes áreas curriculares, en el marco de la renovación curricular.</p>
-            <p>¿Cómo inscribirse? Los clubes se irán desarrollando a lo largo del año de manera sincrónica virtual y se publicarán en la página de la Secretaría de Innovación, Desarrollo Profesional y Tecnologías en la Educación.</p>
+            <p>Cada Club de Lectura comienza con la llegada de una carta al/la lector/a que invita a recorrer un texto, especialmente seleccionado, para reflexionar sobre las prácticas profesionales.</p>
+            <p>Así se da inicio a un <strong>espacio dialógico a partir de una lectura personal y entre pares</strong>, en torno a un tópico o temática de actualización en las diferentes áreas curriculares, en el marco de la renovación curricular.</p>
+            <p>¿Cómo inscribirse? Los clubes se irán desarrollando a lo largo del año de manera sincrónica virtual y se publicarán en la página de la <a href="https://www.igualdadycalidadcba.gov.ar/SIPEC-CBA/RedProvincial/Capacitacion/cursos-me.php" target="_blank">Secretaría de Innovación, Desarrollo Profesional y Tecnologías en la Educación.</a></p>
           </div>
         </div>
       </div>
@@ -162,12 +169,13 @@
               <source srcset='./assets/ca_laboratorio_ideas.webp' type='image/webp'>
               <img src='./assets/ca_laboratorio_ideas.png' type='image/png' alt='Icono de laboratorio de ideas'>
             </picture>
+            <img src="./assets/closeModal.png" alt="Icono de cerrar modal" class="closeModal" data-micromodal-close>
           </div>
           <div class="modal__content" id="modal-2-content">
             <picture>
               <img src='./assets/logoLaboratorioIdeas.png' type='image/png' alt='Logo de laboratorio de ideas'>
             </picture>
-            <p>Los Laboratorios de Ideas son instancias de trabajo entre pares que tienen como propósito <strong>co-diseñar propuestas didácticas y materiales</strong> para la enseñanza en el marco de la renovación curricular, a través de la construcción de entramados que permitan el intercambio de recursos, materiales y experiencias.</p>
+            <p>Los Laboratorios de Ideas son instancias de trabajo entre pares que tienen como propósito <strong>co-diseñar propuestas didácticas y materiales para la enseñanza</strong> en el marco de la renovación curricular, a través de la construcción de entramados que permitan el intercambio de recursos, materiales y experiencias.</p>
             <p>Próximamente compartiremos aquí más información sobre los procesos de inscripción.</p>
           </div>
         </div>
@@ -182,13 +190,13 @@
               <source srcset='./assets/ca_observatorio_practicas.webp' type='image/webp'>
               <img src='./assets/ca_observatorio_practicas.png' type='image/png' alt='Icono de observatorio de prácticas'>
             </picture>
+            <img src="./assets/closeModal.png" alt="Icono de cerrar modal" class="closeModal" data-micromodal-close>
           </div>
           <div class="modal__content" id="modal-3-content">
             <picture>
               <img src='./assets/logoObservatorioPracticas.png' type='image/png' alt='Logo de observatorio de prácticas'>
             </picture>
-            <p>Los Observatorios de Práctica son instancias de acompañamiento entre pares, de <strong>retroalimentación de las prácticas</strong> de la enseñanza, de construcción de narrativas de las experiencias co-creadas, de valoración y socialización de los saberes.</p>
-
+            <p>Los Observatorios de Práctica son instancias de acompañamiento entre pares, de <strong>retroalimentación de las prácticas de la enseñanza</strong>, de construcción de narrativas de las experiencias co-creadas, de valoración y socialización de los saberes.</p>
             <p>Se desarrollarán durante 2026.</p>
           </div>
         </div>
@@ -203,13 +211,13 @@
               <source srcset='./assets/ca_acompanamiento_institucional.webp' type='image/webp'>
               <img src='./assets/ca_acompanamiento_institucional.png' type='image/png' alt='Icono de acompañamiento institucional'>
             </picture>
+            <img src="./assets/closeModal.png" alt="Icono de cerrar modal" class="closeModal" data-micromodal-close>
           </div>
           <div class="modal__content" id="modal-4-content">
             <picture>
               <img src='./assets/logoAcompanamientoInstitucional.png' type='image/png' alt='Logo de acompañamiento institucional'>
             </picture>
-            <p>Los Encuentros de Acompañamiento Institucional están centrados en el trabajo con los materiales de la renovación curricular desde una perspectiva situada institucional. En ellos, se establecerán conversaciones en torno a temáticas específicas seleccionadas para cada nivel/ciclo de la escolaridad.</p>
-            <p>En los encuentros sincrónicos cada institución comparte <strong>experiencias y preguntas</strong> entre colegas.</p>
+            <p>Los Encuentros de Acompañamiento Institucional están centrados en el trabajo con los materiales de la renovación curricular desde una perspectiva situada institucional. En ellos, cada institución comparte experiencias y preguntas en torno a temáticas específicas seleccionadas para cada nivel/ciclo de la escolaridad.</p>
             <p>La inscripción se realiza a través del equipo directivo y la convocatoria llega a las escuelas a través de las supervisiones.</p>
           </div>
         </div>
