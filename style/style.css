@@ -4228,6 +4228,7 @@ a:hover {
 
 p {
   text-align: justify;
+  font-family: "Fira Sans", sans-serif !important;
 }
 p.autor {
   text-align: right !important;
@@ -4249,6 +4250,9 @@ p.sociales {
 }
 p.naturales {
   color: #437b60;
+}
+p.ciudadania {
+  color: #2F467B;
 }
 
 blockquote {
@@ -4681,6 +4685,24 @@ header .closeContainer {
 .formularioButton--naturales:hover a img:last-of-type {
   background-color: #223e30;
 }
+.formularioButton--ciudadania a {
+  border-top: 3px solid #2F467B;
+}
+.formularioButton--ciudadania a p {
+  color: #2F467B;
+}
+.formularioButton--ciudadania a img:last-of-type {
+  background-color: #2F467B;
+}
+.formularioButton--ciudadania:hover a {
+  border-top: 3px solid #18233e;
+}
+.formularioButton--ciudadania:hover a p {
+  color: #18233e;
+}
+.formularioButton--ciudadania:hover a img:last-of-type {
+  background-color: #18233e;
+}
 
 #backtop {
   bottom: 5vh;
@@ -4865,6 +4887,18 @@ button--naturales:hover,
 .button--naturales:hover {
   color: white;
   background-color: #223e30;
+}
+button--ciudadania,
+.button--ciudadania {
+  background-color: #2F467B;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 1000px;
+}
+button--ciudadania:hover,
+.button--ciudadania:hover {
+  color: white;
+  background-color: #18233e;
 }
 button--round,
 .button--round {
@@ -5347,6 +5381,14 @@ button.loading img,
 .actionsContainerProgresiones__item .actionsContainerProgresionesItem__image picture img {
   width: 175px;
   height: auto;
+}
+.actionsContainerProgresiones__item .actionsContainerProgresionesItem__image--fullwidth picture {
+  position: relative !important;
+  width: 100%;
+}
+.actionsContainerProgresiones__item .actionsContainerProgresionesItem__image--fullwidth img {
+  width: 100% !important;
+  height: auto !important;
 }
 #pdfContainer,
 #pdf-canvas {

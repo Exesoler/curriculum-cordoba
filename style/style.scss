@@ -4,6 +4,7 @@ $color-tertiary: #258394;
 $color-sociales: #cb6615;
 $color-comunidades: #EDA02A;
 $color-naturales: #437b60;
+$color-ciudadania: #2F467B;
 $color-success: #299425;
 $color-danger: #aa0000;
 
@@ -66,6 +67,15 @@ $color-naturales-150: mix(white, $color-naturales, 30%) !default;
 $color-naturales-100: mix(white, $color-naturales, 50%) !default;
 $color-naturales-75: mix(white, $color-naturales, 70%) !default;
 $color-naturales-50: mix(white, $color-naturales, 90%) !default;
+
+$color-ciudadania-600: mix(black, $color-ciudadania, 50%) !default;
+$color-ciudadania-500: mix(black, $color-ciudadania, 30%) !default;
+$color-ciudadania-400: mix(black, $color-ciudadania, 10%) !default;
+$color-ciudadania-200: mix(white, $color-ciudadania, 10%) !default;
+$color-ciudadania-150: mix(white, $color-ciudadania, 30%) !default;
+$color-ciudadania-100: mix(white, $color-ciudadania, 50%) !default;
+$color-ciudadania-75: mix(white, $color-ciudadania, 70%) !default;
+$color-ciudadania-50: mix(white, $color-ciudadania, 90%) !default;
 
 $color-success-600: mix(black, $color-success, 50%) !default;
 $color-success-500: mix(black, $color-success, 30%) !default;
@@ -252,6 +262,9 @@ p {
   }
   &.naturales {
     color: $color-naturales;
+  }
+  &.ciudadania {
+    color: $color-ciudadania;
   }
 }
 
@@ -720,6 +733,33 @@ header {
       }
     }
   }
+
+  &--ciudadania {
+    a {
+      border-top: 3px solid $color-ciudadania;
+      p {
+        color: $color-ciudadania;
+      }
+      img {
+        &:last-of-type {
+          background-color: $color-ciudadania;
+        }
+      }
+    }
+    &:hover {
+      a {
+        border-top: 3px solid $color-ciudadania-600;
+        p {
+          color: $color-ciudadania-600;
+        }
+        img {
+          &:last-of-type {
+            background-color: $color-ciudadania-600;
+          }
+        }
+      }
+    }
+  }
 }
 
 #backtop {
@@ -903,6 +943,16 @@ button,
     &:hover {
       color: white;
       background-color: $color-naturales-600;
+    }
+  }
+  &--ciudadania {
+    background-color: $color-ciudadania;
+    color: $white;
+    padding: 1rem 3rem;
+    border-radius: $border-rounded;
+    &:hover {
+      color: white;
+      background-color: $color-ciudadania-600;
     }
   }
   &--round {
@@ -1468,6 +1518,16 @@ button,
           img {
             width: 175px;
             height: auto;
+          }
+        }
+        &--fullwidth{
+          picture{
+            position: relative !important;
+            width: 100%;
+          }
+          img {
+            width: 100% !important;
+            height: auto !important;
           }
         }
       }
