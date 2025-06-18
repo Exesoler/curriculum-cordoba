@@ -483,6 +483,7 @@ header {
           height: 0;
           overflow: hidden;
           transition: $transition;
+          margin: 0 !important;
         }
       }
     }

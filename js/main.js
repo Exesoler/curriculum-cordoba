@@ -123,7 +123,7 @@ if (filenameHREF == 'contacto.html?consultaNoEnviada') {
     toggleContactForm('error');
 }
 
-if (filename == 'progresiones_lengua_matematica.html' || filename == 'metas_ciclo.html' || filename == 'progresiones_sociales_naturales.html' || filename == 'progresiones_aprendizaje.html') {
+if (filename == 'progresiones_lengua_matematica.html' || filename == 'progresiones_ciudadania_humanidades.html' || filename == 'metas_ciclo.html' || filename == 'progresiones_sociales_naturales.html' || filename == 'progresiones_aprendizaje.html') {
     submenuCollapse();
 }
 

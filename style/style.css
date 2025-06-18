@@ -4471,6 +4471,7 @@ header ul li.subMenu.collapsed {
   height: 0;
   overflow: hidden;
   transition: all 300ms ease-in-out;
+  margin: 0 !important;
 }
 header .closeContainer {
   position: absolute;
