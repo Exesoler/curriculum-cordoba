@@ -2,6 +2,7 @@
 import {header} from './header.js';
 import {footer} from './footer.js';
 import {mobileHeader} from './mobileHeader.js';
+import Glide from '@glidejs/glide'
 
 import loadingGIF from './../assets/loading.gif';
 
@@ -123,7 +124,7 @@ if (filenameHREF == 'contacto.html?consultaNoEnviada') {
     toggleContactForm('error');
 }
 
-if (filename == 'progresiones_lengua_matematica.html' || filename == 'progresiones_ciudadania_humanidades.html' || filename == 'metas_ciclo.html' || filename == 'progresiones_sociales_naturales.html' || filename == 'progresiones_aprendizaje.html') {
+if (filename == 'progresiones_lengua_matematica.html' || filename == 'progresiones_vida_trabajo.html' || filename == 'progresiones_ciudadania_humanidades.html' || filename == 'metas_ciclo.html' || filename == 'progresiones_sociales_naturales.html' || filename == 'progresiones_aprendizaje.html') {
     submenuCollapse();
 }
 
@@ -204,3 +205,20 @@ MicroModal.init({
   awaitCloseAnimation: false, // [9]
 //   debugMode: true // [10]
 });
+
+new Glide('.glide', {
+  type: 'slider',
+  startAt: 0,
+  gap: 15,
+  bound: true,
+  rewind: false,
+  perView: 3,
+  breakpoints: {
+    768: {
+      perView: 2
+    },
+    480: {
+      perView: 1
+    }
+  }
+}).mount();

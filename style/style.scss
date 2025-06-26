@@ -163,6 +163,7 @@ html {
 }
 
 @import "grid";
+@import "./../node_modules/@glidejs/glide/src/assets/sass/glide.core";
 
 @view-trasition {
   navigation: auto;
@@ -1481,6 +1482,36 @@ button,
       line-height: 1.2;
     }
   }
+  &__carrousel{
+    max-width: calc(80dvw - 5rem);
+    position: relative;
+    .controles{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: calc(100% + 3rem);
+      top: calc(50% - 1rem);
+      margin: 0 -1.5rem;
+      .glide__arrow{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($color-primary, $alpha: 0.75);
+        padding: 0.5rem;
+        border-radius: $border-rounded;
+        transition: $transition;
+        &:hover{
+          background-color: rgba($color-primary, $alpha: 1.0);
+          transition: $transition;
+        }
+        img{
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
 }
 
 .MCC {
@@ -1660,6 +1691,12 @@ button,
     margin-right: -2.5rem;
     margin-top: -2.5rem;
   }
+
+  .mainContent{
+    &__carrousel{
+      max-width: calc(80dvw - 5rem);
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1708,6 +1745,9 @@ button,
         p{
           max-width: 10.5rem;
         }
+      }
+      &__carrousel{
+        max-width: 98dvw;
       }
     }
   }

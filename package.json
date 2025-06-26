@@ -11,6 +11,7 @@
     "vite": "^6.0.5"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.7.1",
     "micromodal": "^0.6.1"
   }
 }
