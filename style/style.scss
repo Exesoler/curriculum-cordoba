@@ -1490,25 +1490,30 @@ button,
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: calc(100% + 3rem);
+      width: 100%;
       top: calc(50% - 1rem);
-      margin: 0 -1.5rem;
-      .glide__arrow{
+      // margin: 0 -1.5rem;
+    }
+    .glide{
+      &__arrow{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgba($color-primary, $alpha: 0.75);
-        padding: 0.5rem;
+        background-color: transparent;
+        padding: 0;
         border-radius: $border-rounded;
         transition: $transition;
         &:hover{
-          background-color: rgba($color-primary, $alpha: 1.0);
+          background-color: transparent;
           transition: $transition;
         }
         img{
           width: 2rem;
           height: 2rem;
         }
+      }
+      &__track{
+        transform: scale(0.93);
       }
     }
   }
@@ -1748,6 +1753,11 @@ button,
       }
       &__carrousel{
         max-width: 98dvw;
+        .glide {
+          &__track {
+            transform: scale(0.75);
+          }
+        }
       }
     }
   }
@@ -1861,7 +1871,7 @@ button,
 
 
   .mainContent__title--sliderText {
-    width: 100vw;
+    // width: 100vw;
     h1 {
       width: 920px;
       /* Starting position */

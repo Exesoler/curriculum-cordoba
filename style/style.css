@@ -5418,26 +5418,28 @@ button.loading img,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: calc(100% + 3rem);
+  width: 100%;
   top: calc(50% - 1rem);
-  margin: 0 -1.5rem;
 }
-.mainContent__carrousel .controles .glide__arrow {
+.mainContent__carrousel .glide__arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 69, 130, 0.75);
-  padding: 0.5rem;
+  background-color: transparent;
+  padding: 0;
   border-radius: 1000px;
   transition: all 300ms ease-in-out;
 }
-.mainContent__carrousel .controles .glide__arrow:hover {
-  background-color: #004582;
+.mainContent__carrousel .glide__arrow:hover {
+  background-color: transparent;
   transition: all 300ms ease-in-out;
 }
-.mainContent__carrousel .controles .glide__arrow img {
+.mainContent__carrousel .glide__arrow img {
   width: 2rem;
   height: 2rem;
+}
+.mainContent__carrousel .glide__track {
+  transform: scale(0.93);
 }
 
 .MCC .mainContent {
@@ -5627,6 +5629,9 @@ button.loading img,
   main .mainContent__carrousel {
     max-width: 98dvw;
   }
+  main .mainContent__carrousel .glide__track {
+    transform: scale(0.75);
+  }
   hr {
     margin: 2rem 0;
   }
@@ -5717,7 +5722,6 @@ button.loading img,
     margin: 0 0 1rem;
   }
   .mainContent__title--sliderText {
-    width: 100vw;
     /* Move it (define the animation) */
   }
   .mainContent__title--sliderText h1 {
