@@ -5477,6 +5477,21 @@ button.loading img,
 .mainContent__carrousel .glide__track {
   transform: scale(0.93);
 }
+.mainContent__carrousel .glide__bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.mainContent__carrousel .glide__bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 1000px;
+  background-color: #dfdfdf;
+}
+.mainContent__carrousel .glide__bullet--active {
+  background-color: #004582;
+}
 
 .MCC .mainContent {
   padding-right: 1.25rem;

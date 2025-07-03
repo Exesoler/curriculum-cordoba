@@ -1568,6 +1568,21 @@ button,
       &__track{
         transform: scale(0.93);
       }
+      &__bullets{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      &__bullet{
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: $border-rounded;
+        background-color: $color-gray-200;
+        &--active {
+          background-color: $color-primary;
+        }
+      }
     }
   }
 }
