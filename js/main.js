@@ -210,8 +210,9 @@ new Glide('.glide', {
   type: 'slider',
   startAt: 0,
   gap: 15,
+  autoplay: 3000,
   bound: true,
-  rewind: false,
+  rewind: true,
   perView: 3,
   breakpoints: {
     768: {
