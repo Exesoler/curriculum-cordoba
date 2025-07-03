@@ -5,6 +5,7 @@ $color-sociales: #cb6615;
 $color-comunidades: #EDA02A;
 $color-naturales: #437b60;
 $color-ciudadania: #2F467B;
+$color-tecnologia: #655280;
 $color-success: #299425;
 $color-danger: #aa0000;
 
@@ -76,6 +77,15 @@ $color-ciudadania-150: mix(white, $color-ciudadania, 30%) !default;
 $color-ciudadania-100: mix(white, $color-ciudadania, 50%) !default;
 $color-ciudadania-75: mix(white, $color-ciudadania, 70%) !default;
 $color-ciudadania-50: mix(white, $color-ciudadania, 90%) !default;
+
+$color-tecnologia-600: mix(black, $color-tecnologia, 50%) !default;
+$color-tecnologia-500: mix(black, $color-tecnologia, 30%) !default;
+$color-tecnologia-400: mix(black, $color-tecnologia, 10%) !default;
+$color-tecnologia-200: mix(white, $color-tecnologia, 10%) !default;
+$color-tecnologia-150: mix(white, $color-tecnologia, 30%) !default;
+$color-tecnologia-100: mix(white, $color-tecnologia, 50%) !default;
+$color-tecnologia-75: mix(white, $color-tecnologia, 70%) !default;
+$color-tecnologia-50: mix(white, $color-tecnologia, 90%) !default;
 
 $color-success-600: mix(black, $color-success, 50%) !default;
 $color-success-500: mix(black, $color-success, 30%) !default;
@@ -266,6 +276,9 @@ p {
   }
   &.ciudadania {
     color: $color-ciudadania;
+  }
+  &.tecnologia {
+    color: $color-tecnologia;
   }
 }
 
@@ -762,6 +775,33 @@ header {
       }
     }
   }
+
+  &--tecnologia {
+    a {
+      border-top: 3px solid $color-tecnologia;
+      p {
+        color: $color-tecnologia;
+      }
+      img {
+        &:last-of-type {
+          background-color: $color-tecnologia;
+        }
+      }
+    }
+    &:hover {
+      a {
+        border-top: 3px solid $color-tecnologia-600;
+        p {
+          color: $color-tecnologia-600;
+        }
+        img {
+          &:last-of-type {
+            background-color: $color-tecnologia-600;
+          }
+        }
+      }
+    }
+  }
 }
 
 #backtop {
@@ -955,6 +995,16 @@ button,
     &:hover {
       color: white;
       background-color: $color-ciudadania-600;
+    }
+  }
+  &--tecnologia {
+    background-color: $color-tecnologia;
+    color: $white;
+    padding: 1rem 3rem;
+    border-radius: $border-rounded;
+    &:hover {
+      color: white;
+      background-color: $color-tecnologia-600;
     }
   }
   &--round {
@@ -1205,6 +1255,9 @@ button,
     }
     &--m-negative{
       margin-top: -4rem;
+    }
+    &--m-negative-2{
+      margin-top: -7rem;
     }
     &--sliderText {
       width: 100%;
@@ -1567,6 +1620,22 @@ button,
             height: auto !important;
           }
         }
+        &--half{
+          height: 250px;
+          picture{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative !important;
+            width: 100%;
+            margin: 0 !important;
+            left: 5% !important;
+          }
+          img {
+            width: auto !important;
+            height: 250px !important;
+          }
+        }
       }
       &__action {
       }
@@ -1741,7 +1810,8 @@ button,
         }
       }
       &__title {
-        &--m-negative{
+        &--m-negative,
+        &--m-negative-2{
           margin-top: 0rem;
         }
       }

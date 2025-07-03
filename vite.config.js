@@ -12,6 +12,7 @@ module.exports = defineConfig({
         progresiones_sociales_naturales: './progresiones_sociales_naturales.html',
         progresiones_ciudadania_humanidades: './progresiones_ciudadania_humanidades.html',
         progresiones_vida_trabajo: './progresiones_vida_trabajo.html',
+        progresiones_tecnologia_computacion: './progresiones_tecnologia_computacion.html',
         metas_ciclo: './metas_ciclo.html',
         marco_curricular: './marco_curricular.html',
         contacto: './contacto.html',

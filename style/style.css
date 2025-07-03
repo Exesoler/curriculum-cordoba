@@ -4319,6 +4319,9 @@ p.naturales {
 p.ciudadania {
   color: #2F467B;
 }
+p.tecnologia {
+  color: #655280;
+}
 
 blockquote {
   display: flex;
@@ -4769,6 +4772,24 @@ header .closeContainer {
 .formularioButton--ciudadania:hover a img:last-of-type {
   background-color: #18233e;
 }
+.formularioButton--tecnologia a {
+  border-top: 3px solid #655280;
+}
+.formularioButton--tecnologia a p {
+  color: #655280;
+}
+.formularioButton--tecnologia a img:last-of-type {
+  background-color: #655280;
+}
+.formularioButton--tecnologia:hover a {
+  border-top: 3px solid #332940;
+}
+.formularioButton--tecnologia:hover a p {
+  color: #332940;
+}
+.formularioButton--tecnologia:hover a img:last-of-type {
+  background-color: #332940;
+}
 
 #backtop {
   bottom: 5vh;
@@ -4965,6 +4986,18 @@ button--ciudadania:hover,
 .button--ciudadania:hover {
   color: white;
   background-color: #18233e;
+}
+button--tecnologia,
+.button--tecnologia {
+  background-color: #655280;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 1000px;
+}
+button--tecnologia:hover,
+.button--tecnologia:hover {
+  color: white;
+  background-color: #332940;
 }
 button--round,
 .button--round {
@@ -5200,6 +5233,9 @@ button.loading img,
 }
 .mainContent__title--m-negative {
   margin-top: -4rem;
+}
+.mainContent__title--m-negative-2 {
+  margin-top: -7rem;
 }
 .mainContent__title--sliderText {
   width: 100%;
@@ -5488,6 +5524,22 @@ button.loading img,
   width: 100% !important;
   height: auto !important;
 }
+.actionsContainerProgresiones__item .actionsContainerProgresionesItem__image--half {
+  height: 250px;
+}
+.actionsContainerProgresiones__item .actionsContainerProgresionesItem__image--half picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative !important;
+  width: 100%;
+  margin: 0 !important;
+  left: 5% !important;
+}
+.actionsContainerProgresiones__item .actionsContainerProgresionesItem__image--half img {
+  width: auto !important;
+  height: 250px !important;
+}
 #pdfContainer,
 #pdf-canvas {
   width: 100%;
@@ -5617,7 +5669,7 @@ button.loading img,
   main .mainContent--autor .mainContent__media {
     margin-top: 0;
   }
-  main .mainContent__title--m-negative {
+  main .mainContent__title--m-negative, main .mainContent__title--m-negative-2 {
     margin-top: 0rem;
   }
   main .mainContent__segmentos {

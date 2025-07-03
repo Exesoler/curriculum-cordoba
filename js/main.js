@@ -24,6 +24,16 @@ const contactSuccess = document.querySelector('#contactSuccess');
 const contactDanger = document.querySelector('#contactDanger');
 const resetForm = document.querySelectorAll('#resetForm');
 
+const htmlList = [
+    'progresiones_lengua_matematica.html',
+    'progresiones_vida_trabajo.html',
+    'progresiones_ciudadania_humanidades.html',
+    'progresiones_tecnologia_computacion.html',
+    'metas_ciclo.html',
+    'progresiones_sociales_naturales.html',
+    'progresiones_aprendizaje.html'
+]
+
 const toggleContactForm = (message) => {
 
     switch (message) {
@@ -124,10 +134,9 @@ if (filenameHREF == 'contacto.html?consultaNoEnviada') {
     toggleContactForm('error');
 }
 
-if (filename == 'progresiones_lengua_matematica.html' || filename == 'progresiones_vida_trabajo.html' || filename == 'progresiones_ciudadania_humanidades.html' || filename == 'metas_ciclo.html' || filename == 'progresiones_sociales_naturales.html' || filename == 'progresiones_aprendizaje.html') {
+if (htmlList.includes(filename)) {
     submenuCollapse();
 }
-
 
 if(document.querySelector('#backtop')){
     const backtop = document.querySelector('#backtop');
